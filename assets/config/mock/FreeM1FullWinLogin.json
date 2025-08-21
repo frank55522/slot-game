@@ -1,0 +1,20 @@
+{
+    "description": "FreeGame獲得M1滿盤",
+    "tasks": [
+        {
+            "task": "Login_Info.json"
+        },
+        {
+            "task": "Game_Init.json"
+        },
+        {
+            "task": "JackpotPool_Init.json"
+        },
+        {
+            "task": "Spin_Down.json"
+        },
+        {
+            "task": "FG_M1Full_SpinResponse.json"
+        }
+    ]
+}

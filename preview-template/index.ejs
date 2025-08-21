@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <link rel="icon" href="./favicon.ico" />
+        <meta charset="utf-8" />
+        <title><%=title%></title>
+        <meta
+            name="viewport"
+            content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="full-screen" content="yes" />
+        <meta name="screen-orientation" content="portrait" />
+        <meta name="x5-fullscreen" content="true" />
+        <meta name="360-fullscreen" content="true" />
+        <meta name="renderer" content="webkit" />
+        <meta name="force-rendering" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <link rel="stylesheet" type="text/css" href="./index.css" />
+        <script src="/uiv3_api.js"></script>
+        <style>
+            iframe {
+                border: none;
+            }
+
+            #gameHelp,
+            #gameRule {
+                position: absolute;
+                height: 100vh;
+                width: 100vw;
+            }
+        </style>
+    </head>
+
+    <body>
+        <%- include("./custom.html") %>
+        <iframe src="" id="gameHelp" style="display: none"></iframe>
+        <script>
+            var gameVersion = '1.0.0';
+            var curGameVersion = (val) => (gameVersion = val);
+
+            // get url parm
+            let url = new URL(window.location.href);
+            let serviceProvider = url.searchParams.get('serviceProvider');
+            if (!serviceProvider && url.searchParams.toString() != '') {
+                serviceProvider = 'others';
+            } else if (serviceProvider == 'default' || url.searchParams.toString() == '') {
+                serviceProvider = 'default';
+            }
+            window['serviceProvider'] = serviceProvider;
+
+            // help iframe
+            let gameHelp = document.getElementById('gameHelp');
+            var versionName = 'online';
+            var curHelpVersion = (val) => (versionName = val);
+            var openGameHelp = (gameLocale) => {
+                if (gameLocale.toString() === 'false') {
+                    gameHelp.src = '';
+                    gameHelp.style.display = 'none';
+                } else {
+                    gameHelp.src = `./help/${versionName}_help_${gameLocale}.html`;
+                    gameHelp.style.display = UrlExists(gameHelp.src) ? 'block' : 'none';
+                }
+            };
+
+            var UrlExists = (url) => {
+                var http = new XMLHttpRequest();
+                http.open('HEAD', url, false);
+                http.send();
+                if (http.status != 404) return true;
+                else {
+                    console.warn(`Page( ${url} ) not found!`);
+                    return false;
+                }
+            };
+
+            // dynamic payout
+            var totalBet = 1;
+            var curTotalBet = (val) => (totalBet = val);
+
+            // listen on message
+            window.addEventListener('message', (e) => {
+                if (e.origin !== window.location.origin) return;
+                let jsonData = undefined;
+                try {
+                    jsonData = JSON.parse(e.data);
+                } catch {
+                    console.error('not json');
+                    return;
+                }
+                if (JSON.parse(e.data).name === 'openGameHelp') {
+                    openGameHelp(JSON.parse(e.data).data);
+                } else if (JSON.parse(e.data).name === 'getGameVersion') {
+                    gameHelp.contentWindow.postMessage(
+                        JSON.stringify({ name: 'getGameVersion', data: gameVersion }),
+                        window.location.origin
+                    );
+                } else if (JSON.parse(e.data).name === 'toggleGameRule') {
+                    toggleGameRule(JSON.parse(e.data).data);
+                } else if (JSON.parse(e.data).name === 'getPayout') {
+                    gameHelp.contentWindow.postMessage(
+                        JSON.stringify({ name: 'getPayout', data: totalBet }),
+                        window.location.origin
+                    );
+                }
+            });
+        </script>
+    </body>
+</html>

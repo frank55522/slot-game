@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Cocos Creator | <%= projectName %></title>
+
+        <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+        <meta
+            name="viewport"
+            content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
+        />
+
+        <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <!-- force webkit on 360 -->
+        <meta name="renderer" content="webkit" />
+        <meta name="force-rendering" content="webkit" />
+        <!-- force edge on IE -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <!-- force full screen on some browser -->
+        <meta name="full-screen" content="yes" />
+        <meta name="x5-fullscreen" content="true" />
+        <meta name="360-fullscreen" content="true" />
+
+        <!--fix fireball/issues/3568 -->
+        <!--<meta name="browsermode" content="application">-->
+        <meta name="x5-page-mode" content="app" />
+
+        <!--<link rel="apple-touch-icon" href=".png" />-->
+        <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+        <link rel="stylesheet" type="text/css" href="<%= cssUrl %>" />
+
+        <!-- Sentry Error Tracking -->
+        <script
+            src="https://js.sentry-cdn.com/e5603c21146452f130e4e52d40e01865.min.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div id="GameDiv">
+            <div id="background-img"></div>
+            <div id="Cocos3dGameContainer" style="position: absolute">
+                <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+            </div>
+        </div>
+
+        <%- include(cocosTemplate, {}) %>
+
+        <script>
+            var gameVersion = '1.0.0';
+            var curGameVersion = (val) => (gameVersion = val);
+
+            // get url parm
+            let url = new URL(window.location.href);
+            let serviceProvider = url.searchParams.get('serviceProvider');
+            if (!serviceProvider && url.searchParams.toString() != '') {
+                serviceProvider = 'others';
+            } else if (serviceProvider == 'default' || url.searchParams.toString() == '') {
+                serviceProvider = 'default';
+            }
+            window['serviceProvider'] = serviceProvider;
+
+            // help iframe
+            const iframeWrap = document.getElementById('GameDiv');
+            const iframe = `<iframe src="" id="gameHelp" style="display: none"></iframe>`;
+            iframeWrap.innerHTML += iframe;
+            let gameHelp = document.getElementById('gameHelp');
+            var versionName = 'online';
+            var curHelpVersion = (val) => (versionName = val);
+            var openGameHelp = (gameLocale) => {
+                if (gameLocale.toString() === 'false') {
+                    gameHelp.style.display = 'none';
+                } else {
+                    gameHelp.src = `./help/${versionName}_help_${gameLocale}.html`;
+                    if (UrlExists(gameHelp.src)) {
+                        gameHelp.onload = () => {
+                            gameHelp.style.display = 'block';
+                        };
+                    } else {
+                        gameHelp.style.display = 'none';
+                    }
+                }
+            };
+
+            var UrlExists = (url) => {
+                var http = new XMLHttpRequest();
+                http.open('HEAD', url, false);
+                http.send();
+                if (http.status != 404) return true;
+                else {
+                    console.warn(`Page( ${url} ) not found!`);
+                    return false;
+                }
+            };
+
+            // dynamic payout
+            var totalBet = 1;
+            var curTotalBet = (val) => (totalBet = val);
+
+            // listen on message
+            window.addEventListener('message', (e) => {
+                if (e.origin !== window.location.origin) return;
+                if (JSON.parse(e.data).name === 'openGameHelp') {
+                    openGameHelp(JSON.parse(e.data).data);
+                } else if (JSON.parse(e.data).name === 'getGameVersion') {
+                    gameHelp.contentWindow.postMessage(
+                        JSON.stringify({ name: 'getGameVersion', data: gameVersion }),
+                        window.location.origin
+                    );
+                } else if (JSON.parse(e.data).name === 'toggleGameRule') {
+                    toggleGameRule(JSON.parse(e.data).data);
+                } else if (JSON.parse(e.data).name === 'getPayout') {
+                    gameHelp.contentWindow.postMessage(
+                        JSON.stringify({ name: 'getPayout', data: totalBet }),
+                        window.location.origin
+                    );
+                }
+            });
+        </script>
+    </body>
+</html>

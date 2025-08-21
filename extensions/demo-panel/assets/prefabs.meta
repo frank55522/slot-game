@@ -1,0 +1,14 @@
+{
+  "ver": "1.1.0",
+  "importer": "directory",
+  "imported": true,
+  "uuid": "09345674-4ef3-4d14-9fa9-90cad5fd75b5",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "compressionType": {},
+    "isRemoteBundle": {},
+    "isBundle": true,
+    "bundleName": "demo-panel"
+  }
+}

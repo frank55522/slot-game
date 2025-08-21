@@ -1,0 +1,15 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "randomDataUsed": [0, 32, 27, 33, 26, 33]
+    },
+    "totalBet": 88,
+    "denom": 1,
+    "multiplier": 1,
+    "featureBet": 88,
+    "description": "BaseGame SuperWin",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

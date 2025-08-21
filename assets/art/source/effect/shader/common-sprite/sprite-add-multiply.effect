@@ -1,0 +1,27 @@
+CCEffect %{
+  temporaries:
+    blendState3: &blendState3
+      targets:
+      - blend: true
+        blendSrc: dst_color
+        blendDst: one
+        blendSrcAlpha: zero
+        blendDstAlpha: dst_alpha
+
+    depthStencilState1: &depthStencilState1 { depthTest: true, depthWrite: false }
+
+    rasterizerState1: &rasterizerState1 { cullMode: none }
+
+    properties1: &properties1
+      tintColor:     { value: [0.5, 0.5, 0.5, 0.5], editor: { type: color } }
+
+  techniques:
+  - name: add-multiply
+    passes:
+    - vert: sprite-vertis-shader-common:vertisShader
+      frag: sprite-fragment-shader-common-tint-color:multiply 
+      depthStencilState: *depthStencilState1
+      blendState: *blendState3
+      rasterizerState: *rasterizerState1
+      properties: *properties1
+}%

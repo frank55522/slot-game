@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Game Help</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="full-screen" content="true" />
+        <meta name="screen-orientation" content="portrait" />
+        <meta name="x5-fullscreen" content="true" />
+        <meta name="360-fullscreen" content="true" />
+        <style>
+            html,
+            body {
+                padding: 0;
+                border: 0;
+                margin: 0;
+                height: 100%;
+                background-color: #220606;
+                color: #fdb4b4;
+                font-family: 'Microsoft JhengHei', 'Microsoft YaHei', 'LiHei Pro Medium', 'SimHei', Helvetica,
+                    sans-serif;
+                overflow: hidden; /* 隱藏整個頁面的滾動條 */
+                touch-action: none;
+                pointer-events: auto;
+            }
+
+            ::-webkit-scrollbar {
+                height: 0px;
+                width: 0px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                border-radius: 15px;
+                background-color: rgba(#fff, 0.2);
+            }
+
+            ::-webkit-scrollbar-track {
+                border-radius: 0px;
+            }
+
+            #closeButton {
+                width: 50px;
+                height: 50px;
+                background-image: url('./UiIcon_Return.png');
+                background-size: cover;
+                cursor: pointer;
+                margin: auto 0;
+                margin-left: 10px;
+            }
+
+            .topBar {
+                position: relative;
+                height: 80px;
+                width: 100%;
+                background-color: #2d0b0b;
+                display: flex;
+                align-items: center;
+                z-index: 1;
+            }
+
+            .content {
+                position: relative;
+                padding: 10px 10px;
+                margin: auto;
+                width: 100%;
+                height: calc(100% - 80px);
+                min-width: 320px;
+                overflow: auto;
+                box-sizing: border-box;
+                justify-content: center;
+            }
+
+            .content h2 {
+                font-size: 1.3rem;
+                text-align: center;
+                color: #ffd453;
+                font-weight: 700;
+            }
+
+            .yellow-font {
+                color: #ffd453;
+                font-weight: 700;
+            }
+
+            .payout-font {
+                color: #ffd453;
+                font-weight: 700;
+            }
+
+            .content ul li {
+                line-height: 1.2;
+                padding: 5px 0;
+                list-style-type: square;
+            }
+
+            .content hr {
+                opacity: 0.1;
+            }
+
+            .content img {
+                vertical-align: middle;
+                image-rendering: -moz-crisp-edges; /* Firefox */
+                image-rendering: -o-crisp-edges; /* Opera */
+                image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+                image-rendering: crisp-edges;
+                -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+            }
+
+            .yellowText {
+                color: #ffb400;
+            }
+
+            .textImg {
+                width: 22px;
+            }
+
+            .textBigImg {
+                width: 34px;
+            }
+
+            .textImgByH {
+                height: 22px;
+            }
+
+            .textBigImgByH {
+                height: 34px;
+            }
+
+            .payoutWrap {
+                display: flex;
+                align-items: center;
+                flex-flow: column;
+                padding-top: 20px;
+            }
+
+            .payTable {
+                width: 50%;
+                padding: 10px 0;
+            }
+
+            .payTableImg {
+                width: 50%;
+            }
+
+            .payoutWrap .payRowTitle {
+                display: flex;
+                justify-content: center;
+                flex-flow: column;
+                align-items: center;
+                min-width: 150px;
+            }
+
+            .payImg {
+                width: 150px;
+            }
+
+            .payRowValue {
+                width: 150px;
+            }
+
+            .payRowValue div {
+                min-width: 60px;
+            }
+
+            .flex-both-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .flex-justify-center {
+                display: flex;
+                justify-content: center;
+            }
+
+            .flex-align-center {
+                display: flex;
+                align-items: center;
+            }
+
+            .flex-align-start-with-margin {
+                display: flex;
+                align-items: start;
+                margin-left: 10px;
+            }
+
+            .flex-col {
+                flex-flow: column;
+            }
+
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+
+            .text-align-center {
+                text-align: center;
+            }
+
+            .text-align-left {
+                text-align: left;
+            }
+
+            .w-100 {
+                width: 100%;
+            }
+
+            .p-5 {
+                padding: 5px;
+            }
+
+            @media (min-width: 600px) and (max-width: 1200px) {
+                .content {
+                    max-width: 70%;
+                }
+
+                .payoutWrap {
+                    flex-flow: row;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .content {
+                    max-width: 50%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="topBar">
+            <div id="closeButton" onclick="window.openGameHelp(false)"></div>
+        </div>
+        <div class="content" id="helpContent">
+            <h2>FEATURE SELECTION</h2>
+            <ul>
+                <li>
+                    The player will win
+                    <img src="./en/Grand.png" class="textImgByH" /> if
+                    <span class="yellowText">15</span>
+                    <img src="./C1_small.png" class="textImg" /> appear in the BASE GAME.
+                </li>
+                <li>
+                    There is <span class="yellowText">0.2X</span>, <span class="yellowText">0.4X</span>,
+                    <span class="yellowText">0.6X</span>, <span class="yellowText">0.8X</span>,
+                    <span class="yellowText">1X</span> or <span class="yellowText">10X</span> on each
+                    <img src="./C1_small.png" class="textImg" /> .
+                </li>
+                <li>
+                    The winning values on the
+                    <img src="./C1_small.png" class="textImg" alt="" /> is multiplied by the bet multiplier.
+                </li>
+                <li>
+                    <span class="yellowText">6</span> or more <img src="./C1_small.png" class="textImg" /> will trigger
+                    the FEATURE SELECTION in the BASE GAME.
+                </li>
+                <li>
+                    There are two options, FREE GAME and <img src="./en/FeatureGame.png" class="textImgByH" />
+                    FEATURE in the FEATURE SELECTION.
+                </li>
+                <li>
+                    When there are <span class="yellowText">15</span> <img src="./C1_small.png" class="textImg" /> in
+                    the BASE GAME, the player can select FREE GAME in the FEATURE SELECTION only. The player has not a
+                    chance to win <img src="./en/Grand.png" class="textImgByH" /> .
+                </li>
+                <li>
+                    When the player selects FREE GAME, the player will win the total credits on the
+                    <img src="./C1_small.png" class="textImg" /> and trigger the free games. The player also has a
+                    chance to win <img src="./en/Grand.png" class="textImgByH" /> .
+                </li>
+                <li>
+                    Click <img src="./en/FeatureGame.png" class="textImgByH" /> FEATURE to remain the
+                    <img src="./C1_small.png" class="textImg" /> triggering the FEATURE SELECTION, and start the
+                    <img src="./en/FeatureGame.png" class="textImgByH" />.
+                </li>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./en/FeatureSelection.png" class="w-50" />
+                </div>
+                <li>
+                    If the player loses connection during the FEATURE SELECTION, the system will select
+                    <img src="./en/FG01.png" class="textBigImgByH" />
+                    automatically and the winning prizes will be added into the balance.
+                </li>
+                <li>
+                    If the player loses connection during the FREE GAME or
+                    <img src="./en/FeatureGame.png" class="textImgByH" />
+                    , the system will calculate the game results automatically and the winning prizes will be added into
+                    the balance.
+                </li>
+            </ul>
+
+            <hr class="solid" />
+            <h2>FREE GAME FEATURE</h2>
+            <ul>
+                <li>
+                    FREE GAME FEATURE:<br />
+                    The <img src="./Base_SymbolWW.png" class="textImg" /> will appear on the reels
+                    <span class="yellowText">1</span> and <span class="yellowText">5</span> only in the free spins.<br />
+                    The <img src="./C1_small.png" class="textImg" /> will appear on the reels randomly in the free
+                    spins. When the <img src="./C1_small.png" class="textImg" /> appears, the player will win the total
+                    credits on the <img src="./C1_small.png" class="textImg" /> which are collected when FEATURE
+                    SELECTION triggers.<br />
+                    <span class="yellowText">8</span> free spins, additional <span class="yellowText">2</span> free
+                    spins will be awarded if <span class="yellowText">2</span> or more
+                    <img src="./C1_small.png" class="textImg" /> appear at the same time. The maximum free spins are
+                    <span class="yellowText">50</span>.<br />
+                </li>
+                <li>
+                    RESPIN GAME FEATURE:<br />
+                    In FREE GAME FEATURE, if both reels <span class="yellowText">1</span> and
+                    <span class="yellowText">5</span> are full of <img src="./Base_SymbolWW.png" class="textImg" /> ,
+                    the RESPIN FEATURE will be triggered.<br />
+                    In RESPIN GAME FEATURE, <img src="./C1_small.png" class="textImg" /> will not appear on the
+                    reels.<br />
+                    In RESPIN GAME FEATURE, the reels <span class="yellowText">2</span>,
+                    <span class="yellowText">3</span> and <span class="yellowText">4</span> will respin once
+                    additionally. <img src="./Base_HorseExpanding.png" class="textImg" /> is a wild symbol and will
+                    become <img src="./Base_WildExpanding.png" class="textImg" /> when winning combination appears
+                    during RESPIN FEATURE.
+                </li>
+            </ul>
+            <hr class="solid" />
+            <h2><img src="./en/FeatureGame.png" class="textImgByW" /> FEATURE</h2>
+            <ul>
+                <li>
+                    Win <span class="yellowText">6</span> free spins, the
+                    <img src="./C2_small.png" class="textImg" /> appeared during the
+                    <img src="./en/FeatureGame.png" class="textImgByH" /> will be locked on the reels.
+                </li>
+                <li>All positions spin individually.</li>
+                <li>
+                    All paylines will not be paid out during the
+                    <img src="./en/FeatureGame.png" class="textImgByH" /> FEATURE.
+                </li>
+                <li>
+                    The start-up percentage is
+                    <img src="./MultipleNum_100.png" class="textImgByH" /> .
+                </li>
+                <li>
+                    <img src="./MultipleNum_50.png" class="textImgByH" /> ,
+                    <img src="./MultipleNum_100.png" class="textImgByH" /> ,
+                    <img src="./MultipleNum_200.png" class="textImgByH" /> and
+                    <img src="./MultipleNum_500.png" class="textImgByH" /> will have a chance to appear on the
+                    <img src="./C2_small.png" class="textImg" /> .
+                </li>
+                <li>
+                    When a <img src="./C2_small.png" class="textImg" /> stops on the reels, the percentage of the
+                    <img src="./C2_small.png" class="textImg" /> will be accumulated on the screen first. The total
+                    credits of the remaining <img src="./C1_small.png" class="textImg" /> will be added up and shown on
+                    the <img src="./C2_small.png" class="textImg" /> , and winnings are the final credits multiplied by
+                    the final percentage.
+                </li>
+                <li>The <img src="./C2_small.png" class="textImg" /> that appears first is calculated first.</li>
+                <li>
+                    <img src="./Add_1Spin.png" class="textImgByH" /> ,
+                    <img src="./Add_2Spins.png" class="textImgByH" /> and
+                    <img src="./Add_3Spins.png" class="textImgByH" /> will have a chance to appear on the reels or
+                    <img src="./C2_small.png" class="textImg" /> symbols.
+                </li>
+                <li>The maximum free spins are <span class="yellowText">30</span>.</li>
+                <li>
+                    If <img src="./C1_small.png" class="textImg" /> or <img src="./C2_small.png" class="textImg" /> are
+                    fully covered whole reels in the <span class="yellowText">15</span> positions, the player will be
+                    awarded the <img src="./en/Grand.png" class="textImgByH" /> and calculate total winnings, and
+                    <img src="./en/FeatureGame.png" class="textImgByH" /> FEATURE will end.
+                </li>
+                <li>
+                    There is a chance that a position of the reels will not appear any
+                    <img src="./C2_small.png" class="textImg" /> in every spin.
+                </li>
+                <li>
+                    The remaining spins will only continue if at least one position is not covered by
+                    <img src="./C1_small.png" class="textImg" /> or <img src="./C2_small.png" class="textImg" /> .
+                </li>
+            </ul>
+            <hr class="solid" />
+            <h2><img src="./en/GoldenTrophyLink.png" class="textBigImgByH" /> JACKPOT FEATURE</h2>
+            <ul>
+                <li>
+                    <img src="./en/GoldenTrophyLink_small.png" class="textImgByH" /> &nbsp;JACKPOT MINI GAME is
+                    triggered randomly by <img src="./C1_small.png" class="textImg" /> on the reels.
+                </li>
+                <li>
+                    There are <span class="yellowText">12</span> <img src="./Mini_Icon_Choose.png" class="textImg" /> on
+                    the screen in the <img src="./en/GoldenTrophyLink_small.png" class="textImgByH" /> JACKPOT MINI
+                    GAME.
+                </li>
+                <li>
+                    The
+                    <img src="./Mini_Icon_Choose.png" class="textImg" /> consists of
+                    <img src="./Mini_Icon_Grand.png" class="textImg" /> ,
+                    <img src="./Mini_Icon_Major.png" class="textImg" /> ,
+                    <img src="./Mini_Icon_Minor.png" class="textImg" /> and
+                    <img src="./Mini_Icon_Mini.png" class="textImg" /> symbols.
+                </li>
+                <li>
+                    Click a <img src="./Mini_Icon_Choose.png" class="textImg" alt="" /> to reveal one of jackpot
+                    symbols, <img src="./Mini_Icon_Grand.png" class="textImg" alt="" /> ,
+                    <img src="./Mini_Icon_Major.png" class="textImg" alt="" /> ,
+                    <img src="./Mini_Icon_Minor.png" class="textImg" alt="" /> and
+                    <img src="./Mini_Icon_Mini.png" class="textImg" alt="" /> symbols. The player receiving three same
+                    jackpot symbols will win the jackpot and calculate total winnings.
+                </li>
+                <li><img src="./Mini_Icon_Grand.png" class="textImg" /> is linked progressive jackpots.</li>
+                <li>
+                    <img src="./Mini_Icon_Major.png" class="textImg" /> ,
+                    <img src="./Mini_Icon_Minor.png" class="textImg" /> and
+                    <img src="./Mini_Icon_Mini.png" class="textImg" /> are bonuses. The bonuses will be changed due to
+                    different bet.
+                </li>
+                <li>
+                    The higher the bet, the higher the chances to trigger
+                    <img src="./en/GoldenTrophyLink_small.png" class="textImgByH" /> JACKPOT MINI GAME.
+                </li>
+                <li>
+                    If the player loses connection during the
+                    <img src="./en/GoldenTrophyLink_small.png" class="textImgByH" /> JACKPOT MINI GAME, the system will
+                    calculate the game results automatically and the winning prizes will be added into the balance.
+                </li>
+            </ul>
+            <hr class="solid" />
+            <h2>SYMBOL PAYOUT VALUES</h2>
+            <ul>
+                <li>All wins are from the leftmost to the right on adjacent reels only.</li>
+            </ul>
+            <div class="payoutWrap">
+                <div class="payRowTitle">
+                    <div class="yellow-font">Bonus Symbol</div>
+                    <img src="./Base_SymbolC1.png" class="payImg" />
+                </div>
+                <div class="payRowValue flex-both-center flex-col"></div>
+                <div class="flex-both-center flex-col">
+                    <span
+                        ><span class="yellowText">6</span> or more <img src="./C1_small.png" class="textImg" />
+                        <br />
+                        in the BASE GAME will trigger the FEATURE SELECTION.
+                    </span>
+                </div>
+            </div>
+            <div class="payoutWrap">
+                <div class="payRowTitle">
+                    <div class="yellow-font">Wild Symbol</div>
+                    <img src="./Base_SymbolWW.png" class="payImg" />
+                </div>
+                <div class="payRowValue flex-both-center flex-col"></div>
+                <div class="flex-both-center flex-col">
+                    <span
+                        ><img src="./Base_SymbolWW.png" class="textImg" /> will substitute for all symbols except
+                        <img src="./C1_small.png" class="textImg" /> . <br />
+                        <img src="./Base_SymbolWW.png" class="textImg" /> appears on the reel
+                        <span class="yellowText">2</span>, <span class="yellowText">3</span> and
+                        <span class="yellowText">4</span> only in the BASE GAME. <br />
+                        During the FREE GAME,
+                        <img src="./Base_SymbolWW.png" class="textImg" /> appears on the reel
+                        <span class="yellowText">1</span> AND <span class="yellowText"> 5 </span>only.
+                    </span>
+                </div>
+            </div>
+            <div class="flex-both-center flex-wrap">
+                <div class="flex-both-center payTable">
+                    <img src="./M1_Symbol.png" class="payTableImg" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.25</span></div>
+                        <div>4 - <span class="payout-font">0.08</span></div>
+                        <div>3 - <span class="payout-font">0.03</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M2_Symbol.png" class="payTableImg" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.15</span></div>
+                        <div>4 - <span class="payout-font">0.05</span></div>
+                        <div>3 - <span class="payout-font">0.02</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M3_Symbol.png" class="payTableImg" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.10</span></div>
+                        <div>4 - <span class="payout-font">0.03</span></div>
+                        <div>3 - <span class="payout-font">0.02</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M4_Symbol.png" class="payTableImg" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.08</span></div>
+                        <div>4 - <span class="payout-font">0.03</span></div>
+                        <div>3 - <span class="payout-font">0.02</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M5_Symbol.png" class="payTableImg" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.06</span></div>
+                        <div>4 - <span class="payout-font">0.02</span></div>
+                        <div>3 - <span class="payout-font">0.01</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M6_Symbol.png" class="payTableImg" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.05</span></div>
+                        <div>4 - <span class="payout-font">0.02</span></div>
+                        <div>3 - <span class="payout-font">0.01</span></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="solid" />
+            <h2>MAXIMUM WAYS</h2>
+            <ul>
+                <li>
+                    Winning combinations must start from the leftmost reels and the symbols have to be on consecutive
+                    reels.
+                </li>
+                <li>
+                    Only the highest win is paid when there are more than one winning combination with a certain symbol.
+                </li>
+                <li>Base game setting = 243 maximum ways.</li>
+            </ul>
+            <div style="display: flex; justify-content: center">
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_1.png" class="w-100" />
+                    <span>243 maximum ways</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_2.png" class="w-100" />
+                    <span>3 of a kind pays 2 ways</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_3.png" class="w-100" />
+                    <span>No win</span>
+                </div>
+            </div>
+            <ul>
+                <li>Free game setting = 243 maximum ways.</li>
+            </ul>
+            <div style="display: flex; justify-content: center">
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_1.png" class="w-100" />
+                    <span>243 maximum ways</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_2.png" class="w-100" />
+                    <span>3 of a kind pays 2 ways</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_3.png" class="w-100" />
+                    <span>No win</span>
+                </div>
+            </div>
+
+            <hr class="solid" />
+            <h2>
+                <img src="./C1_small.png" class="textImg" />
+                <img src="./C2_small.png" class="textImg" /> NUMBERS DISPLAY RULE
+            </h2>
+            <ul>
+                <li>
+                    When displays the amount into K and M, if required, the amount will be rounding to 2 decimal places.
+                    <br />For example, 1K = 1,000.00~1,009.99; 1.99K = 1,990.00~1,999.99.
+                </li>
+                <li>The rule simplifies the numbers display only, and does not affect the actual amount.</li>
+            </ul>
+
+            <hr class="solid" />
+            <h2>GAME INFO</h2>
+            <div class="text-align-center">Game version: <span id="gameVersionDom"></span></div>
+            <div class="text-align-center">MALFUNCTION VOIDS ALL PAYS AND PLAYS.</div>
+        </div>
+    </body>
+    <script>
+        let originUrl =
+            !!window.location.ancestorOrigins && window.location.ancestorOrigins.length != 0
+                ? window.location.ancestorOrigins[0]
+                : window.location.origin;
+
+        var openGameHelp = (boolean) => {
+            window.parent.postMessage(JSON.stringify({ name: 'openGameHelp', data: false }), originUrl);
+            window.parent['closeHelpPage']();
+        };
+
+        window.parent.postMessage(JSON.stringify({ name: 'getGameVersion', data: {} }), originUrl);
+
+        let gameVerSpan = document.getElementById('gameVersionDom');
+
+        // dynamic payout
+
+        const symbolPayoutArray = [
+            // M1
+            250, 80, 30,
+            // M2
+            150, 50, 20,
+            // M3
+            100, 30, 20,
+            // M4
+            80, 30, 20,
+            // M5
+            60, 20, 10,
+            // M6
+            50, 20, 10
+        ];
+        let calPayoutCredit = (oddsData, totalBetData) => oddsData * totalBetData;
+
+        let symbolArraySpan = document.getElementsByClassName('payout-font');
+        let updatePayout = function (totalBetData) {
+            if (Number.isNaN(Number(totalBetData)) || symbolArraySpan.length !== symbolPayoutArray.length) {
+                Array.prototype.forEach.call(symbolArraySpan, function (el) {
+                    el.textContent = Number.NaN;
+                });
+            } else {
+                Array.prototype.forEach.call(symbolArraySpan, function (el) {
+                    el.textContent = calPayoutCredit(symbolPayoutArray.shift(), totalBetData).toFixed(2);
+                });
+            }
+        };
+
+        window.addEventListener('message', (e) => {
+            if (e.origin !== originUrl) return;
+            if (JSON.parse(e.data).name === 'getGameVersion') {
+                if (typeof JSON.parse(e.data).data === 'string') {
+                    gameVerSpan.textContent = JSON.parse(e.data).data;
+                } else {
+                    gameVerSpan.textContent = '-';
+                }
+            } else if (JSON.parse(e.data).name === 'getPayout') {
+                updatePayout(JSON.parse(e.data).data);
+            }
+        });
+
+        // requested to dynamic payout
+        window.parent.postMessage(JSON.stringify({ name: 'getPayout', data: {} }), originUrl);
+
+        document.addEventListener(
+            'touchstart',
+            (event) => {
+                if (event.touches && event.touches.length > 1) {
+                    // 禁止多指觸控
+                    event.preventDefault();
+                }
+            },
+            { passive: false }
+        );
+
+        document.addEventListener(
+            'touchmove',
+            (event) => {
+                if (event.touches && event.touches.length > 1) {
+                    // 禁止多指觸控
+                    event.preventDefault();
+                }
+            },
+            { passive: false }
+        );
+
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('gesturechange', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('gestureend', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</html>

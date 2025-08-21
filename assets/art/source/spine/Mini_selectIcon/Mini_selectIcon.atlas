@@ -1,0 +1,286 @@
+
+Mini_selectIcon.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BallLightpng
+  rotate: false
+  xy: 56, 95
+  size: 51, 55
+  orig: 64, 64
+  offset: 11, 0
+  index: -1
+Fire/Fire_00
+  rotate: false
+  xy: 56, 221
+  size: 38, 60
+  orig: 65, 65
+  offset: 14, 1
+  index: -1
+Fire/Fire_01
+  rotate: false
+  xy: 64, 283
+  size: 38, 62
+  orig: 65, 65
+  offset: 14, 1
+  index: -1
+Fire/Fire_02
+  rotate: false
+  xy: 109, 92
+  size: 38, 58
+  orig: 65, 65
+  offset: 13, 1
+  index: -1
+Fire/Fire_03
+  rotate: true
+  xy: 229, 129
+  size: 37, 58
+  orig: 65, 65
+  offset: 13, 0
+  index: -1
+Fire/Fire_04
+  rotate: false
+  xy: 56, 33
+  size: 37, 60
+  orig: 65, 65
+  offset: 13, 0
+  index: -1
+Fire/Fire_05
+  rotate: false
+  xy: 2, 9
+  size: 37, 59
+  orig: 65, 65
+  offset: 14, 0
+  index: -1
+Fire/Fire_06
+  rotate: false
+  xy: 289, 109
+  size: 37, 57
+  orig: 65, 65
+  offset: 14, 0
+  index: -1
+Fire/Fire_07
+  rotate: true
+  xy: 263, 72
+  size: 35, 51
+  orig: 65, 65
+  offset: 16, 0
+  index: -1
+Fire/Fire_08
+  rotate: true
+  xy: 292, 266
+  size: 35, 61
+  orig: 65, 65
+  offset: 16, 0
+  index: -1
+Fire/Fire_09
+  rotate: false
+  xy: 323, 303
+  size: 34, 62
+  orig: 65, 65
+  offset: 16, 0
+  index: -1
+Fire/Fire_10
+  rotate: true
+  xy: 292, 229
+  size: 35, 60
+  orig: 65, 65
+  offset: 15, 0
+  index: -1
+Fire/Fire_11
+  rotate: true
+  xy: 292, 192
+  size: 35, 60
+  orig: 65, 65
+  offset: 14, 0
+  index: -1
+Fire/Fire_12
+  rotate: false
+  xy: 149, 53
+  size: 36, 59
+  orig: 65, 65
+  offset: 13, 0
+  index: -1
+Fire/Fire_13
+  rotate: false
+  xy: 187, 53
+  size: 36, 59
+  orig: 65, 65
+  offset: 13, 0
+  index: -1
+Fire/Fire_14
+  rotate: false
+  xy: 225, 58
+  size: 36, 54
+  orig: 65, 65
+  offset: 13, 0
+  index: -1
+Fire/Fire_15
+  rotate: true
+  xy: 328, 383
+  size: 36, 50
+  orig: 65, 65
+  offset: 13, 0
+  index: -1
+Fire/Fire_16
+  rotate: false
+  xy: 225, 8
+  size: 34, 48
+  orig: 65, 65
+  offset: 15, 0
+  index: -1
+Fire/Fire_17
+  rotate: false
+  xy: 134, 2
+  size: 32, 49
+  orig: 65, 65
+  offset: 17, 0
+  index: -1
+Ingot_glow
+  rotate: false
+  xy: 316, 45
+  size: 33, 62
+  orig: 35, 64
+  offset: 1, 1
+  index: -1
+Ingot_round/VFX_Ingot_round_base000
+  rotate: true
+  xy: 2, 204
+  size: 78, 52
+  orig: 110, 110
+  offset: 16, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base002
+  rotate: false
+  xy: 104, 236
+  size: 78, 52
+  orig: 110, 110
+  offset: 15, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base004
+  rotate: true
+  xy: 184, 236
+  size: 75, 52
+  orig: 110, 110
+  offset: 16, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base006
+  rotate: false
+  xy: 251, 313
+  size: 70, 52
+  orig: 110, 110
+  offset: 17, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base008
+  rotate: false
+  xy: 164, 114
+  size: 63, 52
+  orig: 110, 110
+  offset: 23, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base009
+  rotate: true
+  xy: 2, 70
+  size: 63, 52
+  orig: 110, 110
+  offset: 24, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base010
+  rotate: true
+  xy: 238, 168
+  size: 67, 52
+  orig: 110, 110
+  offset: 24, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base011
+  rotate: true
+  xy: 238, 237
+  size: 74, 52
+  orig: 110, 110
+  offset: 20, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base012
+  rotate: false
+  xy: 172, 313
+  size: 77, 52
+  orig: 110, 110
+  offset: 17, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base016
+  rotate: false
+  xy: 252, 367
+  size: 74, 52
+  orig: 110, 110
+  offset: 20, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base017
+  rotate: false
+  xy: 172, 367
+  size: 78, 52
+  orig: 110, 110
+  offset: 15, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base018
+  rotate: true
+  xy: 164, 168
+  size: 66, 52
+  orig: 110, 110
+  offset: 20, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base019
+  rotate: true
+  xy: 2, 135
+  size: 67, 52
+  orig: 110, 110
+  offset: 24, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base021
+  rotate: true
+  xy: 56, 152
+  size: 67, 52
+  orig: 110, 110
+  offset: 19, 26
+  index: -1
+Ingot_round/VFX_Ingot_round_base022
+  rotate: true
+  xy: 110, 167
+  size: 67, 52
+  orig: 110, 110
+  offset: 24, 26
+  index: -1
+Light CircleBlur
+  rotate: false
+  xy: 108, 355
+  size: 62, 64
+  orig: 64, 64
+  offset: 2, 0
+  index: -1
+VFX_Ingot_swing_base005
+  rotate: false
+  xy: 2, 347
+  size: 104, 72
+  orig: 146, 146
+  offset: 21, 33
+  index: -1
+ef_p_water_04
+  rotate: true
+  xy: 2, 284
+  size: 61, 60
+  orig: 64, 64
+  offset: 1, 2
+  index: -1
+lightpointBlur
+  rotate: false
+  xy: 95, 52
+  size: 37, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+rilmlightCircle
+  rotate: true
+  xy: 108, 290
+  size: 63, 62
+  orig: 64, 64
+  offset: 1, 1
+  index: -1

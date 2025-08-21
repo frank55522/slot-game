@@ -1,0 +1,18 @@
+.send-message:
+  tags:
+    - dockerrunner1
+  variables:
+    TIME: '10'
+    PARSE_MODE: 'Markdown'
+    CHAT_ID: $FE_CHAT_ID     # Set Telegram chat id.
+    BOT_TOKEN: $FE_BOT_TOKEN # Set BOT_TOKEN repository secret
+    MESSAGE: 'Default telegram message !!'
+    DISABLE_NOTIFICATION: 'True'
+  before_script:
+    - 'apk --no-cache add curl'
+  script:
+    - |
+      curl  -s --max-time $TIME \
+            -H "Content-Type: application/json" \
+            -d "{\"text\":\"$MESSAGE\",\"parse_mode\":\"$PARSE_MODE\",\"chat_id\":$CHAT_ID,\"disable_notification\":$DISABLE_NOTIFICATION}" \
+            "https://api.telegram.org/bot$BOT_TOKEN/sendMessage"

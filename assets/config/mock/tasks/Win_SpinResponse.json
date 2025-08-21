@@ -1,0 +1,118 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "balance": 184622812.16,
+        "spinResult": {
+            "playerTotalWin": 390,
+            "baseGameResult": {
+                "usedTableIndex": 0,
+                "screenSymbol": [
+                    [3, 5, 5],
+                    [3, 5, 6],
+                    [3, 5, 5],
+                    [3, 5, 5],
+                    [3, 7, 6]
+                ],
+                "baseGameTotalWin": 390,
+                "waysGameResult": {
+                    "playerWin": 390,
+                    "waysResult": [
+                        {
+                            "symbolID": 3,
+                            "hitDirection": "LeftToRight",
+                            "hitNumber": 5,
+                            "count": 1,
+                            "hitOdds": 150,
+                            "symbolWin": 150,
+                            "screenHitData": [
+                                [true, false, false],
+                                [true, false, false],
+                                [true, false, false],
+                                [true, false, false],
+                                [true, false, false]
+                            ]
+                        },
+                        {
+                            "symbolID": 5,
+                            "hitDirection": "LeftToRight",
+                            "hitNumber": 4,
+                            "count": 8,
+                            "hitOdds": 30,
+                            "symbolWin": 240,
+                            "screenHitData": [
+                                [false, true, true],
+                                [false, true, false],
+                                [false, true, true],
+                                [false, true, true],
+                                [false, false, false]
+                            ]
+                        }
+                    ]
+                },
+                "specialFeatureResult": [
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    }
+                ],
+                "displayInfo": {
+                    "displayMethod": [[false], [false], [false], [false], [false]],
+                    "bigWinType": "normal_3",
+                    "prizePredictionType": "NoPredictionType",
+                    "fortuneLevelType": "level1",
+                    "dampInfo": [
+                        [4, 3, 6, 7, 6],
+                        [2, 4, 0, 0, 2]
+                    ],
+                    "rngInfo": [[3, 6, 4, 1, 11]]
+                },
+                "extendInfoForbaseGameResult": {
+                    "isPowerUp": true,
+                    "ballCount": 0,
+                    "ballTotalCredit": 0,
+                    "ballScreenLabel": [
+                        [0, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 0]
+                    ],
+                    "extendPlayerWin": 0,
+                    "extendGameFeature": 0
+                }
+            },
+            "bigWinType": "normal_3",
+            "probabilityDetail": {
+                "randomNumberUsed": 6,
+                "randomDataUsed": [0, 3, 6, 4, 1, 11]
+            }
+        },
+        "gameSeq": 13861130,
+        "ts": 1631671470372
+    },
+    "description": "有得分盤面",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

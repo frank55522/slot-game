@@ -1,0 +1,130 @@
+precision mediump float;
+  #include <output>
+
+  in vec2 uv;
+  in vec2 m_uv;
+  in vec2 d_uv;
+  in vec4 color;
+  in vec2 smooth_mask_uv;
+  uniform sampler2D mainTexture;
+  #if mask_Map
+    uniform sampler2D maskMap;
+    uniform FragMaskConstants {
+      vec4 maskColor;
+      float maskAlphaValue;
+    };
+  #endif
+  #if noise_Map
+    uniform sampler2D noiseMap;
+    uniform FragnoiseConstant {
+      vec4 noiseValue;
+      vec4 noiseScale;
+    };
+  #endif
+  #if dissolve_Map
+    #pragma builtin(local)
+    layout(set = 2, binding = 10) uniform sampler2D cc_spriteTexture;
+    uniform sampler2D dissolveMap;
+    uniform FragDissolveConstants {
+      vec4 dissolveColor;
+      vec4 dissolveValue;
+    };
+  #endif
+  uniform Constant {
+    float smooth_UV_Edge;
+  };
+  
+  vec4 addSmooth () {
+    
+    vec4 col = color * texture(cc_spriteTexture, uv) * color.a;
+    #if noise_Map
+      float offsetU = texture(noiseMap, uv + vec2(noiseValue.w * noiseValue.x, 0.0)).r - noiseValue.z;
+      float offsetV = texture(noiseMap, uv + vec2(0.0, noiseValue.w * noiseValue.y)).r - noiseValue.z;
+            offsetU*=noiseScale.x;
+            offsetV*=noiseScale.y;
+            col = color * texture( cc_spriteTexture, uv + vec2(offsetU, offsetV)) * color.a;
+    #endif
+    #if mask_Map
+      vec4 cola = texture(maskMap, m_uv);
+       if(cola.a < maskAlphaValue){
+          discard;
+      }
+      col.a = cola.a;
+    #endif
+    #if dissolve_Map
+      vec4 dissolve = texture(dissolveMap, d_uv);
+      float dissolveFDelta = dissolve.r - dissolveValue.r;
+      if(dissolveFDelta < 0.0) {
+          discard;
+      }
+      float smoothEdge = dissolveValue.g;
+      float Edge = dissolveValue.r;
+      if( Edge == 0.0) {
+            smoothEdge = 0.0;
+      }
+      float fWeight = 1.0 - clamp(dissolveFDelta/smoothEdge, 0.0, 1.0);
+      
+      
+      col.rgb += dissolveColor.rgb * fWeight;
+
+      
+    #endif
+    vec4 mask = vec4( smooth_mask_uv, 0.0 , 1.0);
+    vec2 middelUV = vec2(smooth_mask_uv.x - 0.5 , smooth_mask_uv.y - 0.5);
+    float fdelta = 0.5;
+    float fGap = smooth_UV_Edge;
+    if(fGap > fdelta ){
+      fGap = fdelta;
+    }
+    if( middelUV.y < fdelta || middelUV.y > fdelta ){ mask.a = clamp( (fdelta - abs(middelUV.y))/fGap , 0.0 , 1.0 ); };
+    if( middelUV.x < fdelta || middelUV.x > fdelta ){ mask.a *= clamp((fdelta - abs(middelUV.x))/fGap , 0.0 , 1.0 ); };
+    col.a *= mask.a;
+    return CCFragOutput(col);
+  }
+
+  vec4 premultiplied () {
+    vec4 col = color * texture(cc_spriteTexture, uv) * color.a;
+    #if noise_Map
+      float offsetU = texture(noiseMap, uv + vec2(noiseValue.w * noiseValue.x, 0.0)).r - noiseValue.z;
+      float offsetV = texture(noiseMap, uv + vec2(0.0, noiseValue.w * noiseValue.y)).r - noiseValue.z;
+            offsetU*=noiseScale.x;
+            offsetV*=noiseScale.y;
+            col = color * texture(cc_spriteTexture, uv + vec2(offsetU, offsetV)) * color.a;
+    #endif
+    #if mask_Map
+      vec4 cola = texture(maskMap, m_uv);
+       if(cola.a < maskAlphaValue){
+          discard;
+      }
+           col.a = cola.a;
+    #endif
+    #if dissolve_Map
+      vec4 dissolve = texture(dissolveMap, d_uv);
+      float dissolveFDelta = dissolve.r - dissolveValue.r;
+      if(dissolveFDelta < 0.0) {
+          discard;
+      }
+      float smoothEdge = dissolveValue.g;
+      float Edge = dissolveValue.r;
+      if( Edge == 0.0) {
+            smoothEdge = 0.0;
+      }
+      float fWeight = 1.0 - clamp(dissolveFDelta/smoothEdge, 0.0, 1.0);
+      
+      
+      col.rgb += dissolveColor.rgb * fWeight;
+
+      
+    #endif
+    vec4 mask = vec4( smooth_mask_uv, 0.0 , 1.0);
+    vec2 middelUV = vec2(smooth_mask_uv.x - 0.5 , smooth_mask_uv.y - 0.5);
+    float fdelta = 0.5;
+    float fGap = smooth_UV_Edge;
+    if(fGap > fdelta ){
+      fGap = fdelta;
+    }
+    if( middelUV.y < fdelta || middelUV.y > fdelta ){ mask.a = clamp( (fdelta - abs(middelUV.y))/fGap , 0.0 , 1.0 ); };
+    if( middelUV.x < fdelta || middelUV.x > fdelta ){ mask.a *= clamp((fdelta - abs(middelUV.x))/fGap , 0.0 , 1.0 ); };
+    col.a *= mask.a;
+    return CCFragOutput(col);
+}

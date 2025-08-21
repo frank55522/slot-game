@@ -1,0 +1,43 @@
+CCEffect %{
+  temporaries:
+    blendState4: &blendState4
+      targets:
+      - blend: true
+        blendSrc: src_alpha
+        blendDst: one_minus_src_alpha
+        blendDstAlpha: one_minus_src_alpha
+
+    blendState5: &blendState5
+      targets:
+      - blend: true
+        blendSrc: src_alpha
+        blendDst: one
+        blendDstAlpha: one_minus_src_alpha
+
+    depthStencilState2: &depthStencilState2 { depthTest: false, depthWrite: false }
+
+    rasterizerState1: &rasterizerState1 { cullMode: none }
+
+  techniques:
+  - name: OutlineSpBlur
+    passes:
+    - vert: sprite-vertis-shader-common:vertisShader
+      frag: sprite-fragment-out-line:frag 
+      depthStencilState: *depthStencilState2
+      blendState: *blendState4
+      rasterizerState: *rasterizerState1
+      properties:
+          outlineColor:      { value: [1, 1, 1, 1], editor: { type: color } }
+          ColorRange: { value: 5.0, editor: {slide: true, step: .1, range: [0.0,10.0]} }
+
+  - name: OutlineSpBlurAdd
+    passes:
+    - vert: sprite-vertis-shader-common:vertisShader
+      frag: sprite-fragment-out-line:frag
+      depthStencilState: *depthStencilState2
+      blendState: *blendState5
+      rasterizerState: *rasterizerState1
+      properties:
+          outlineColor:      { value: [1, 1, 1, 1], editor: { type: color } }
+          ColorRange: { value: 5.0, editor: {slide: true, step: .1, range: [0.0,10.0]} }
+}%

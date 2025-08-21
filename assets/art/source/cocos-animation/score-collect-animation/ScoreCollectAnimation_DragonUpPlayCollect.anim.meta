@@ -1,0 +1,13 @@
+{
+  "ver": "2.0.3",
+  "importer": "animation-clip",
+  "imported": true,
+  "uuid": "dd1cefdf-a009-4905-a333-04bae7b44606",
+  "files": [
+    ".cconb"
+  ],
+  "subMetas": {},
+  "userData": {
+    "name": "ScoreCollectAnimation_DragonUpPlayCollect"
+  }
+}

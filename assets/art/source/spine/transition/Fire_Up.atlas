@@ -1,0 +1,27 @@
+
+Fire_Up.png
+size: 235,179
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG_1_1
+  rotate: false
+  xy: 2, 75
+  size: 181, 102
+  orig: 184, 104
+  offset: 1, 1
+  index: -1
+Ef_Light003
+  rotate: false
+  xy: 185, 129
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+Trwirl_4_0
+  rotate: false
+  xy: 2, 2
+  size: 181, 71
+  orig: 184, 104
+  offset: 0, 18
+  index: -1

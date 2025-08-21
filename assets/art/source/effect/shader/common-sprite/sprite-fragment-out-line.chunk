@@ -1,0 +1,44 @@
+
+  precision highp float;
+
+  #pragma builtin(local)
+  layout(set = 2, binding = 10) uniform sampler2D cc_spriteTexture;
+
+  in vec4 v_color;
+  in vec2 v_uv;
+  uniform Constant {
+    vec4 outlineColor;
+    float Raidus;
+    float ColorRange;
+  };
+
+  vec4 frag () {
+    float fdeltaU = 1.0/128.0;
+    vec4 oTex = texture(cc_spriteTexture, v_uv);
+    float alpha = oTex.a;
+    alpha += texture(cc_spriteTexture, v_uv - vec2(fdeltaU, 0.0)).a;
+    alpha += texture(cc_spriteTexture, v_uv - vec2(fdeltaU*ColorRange, 0.0)).a;
+    alpha += texture(cc_spriteTexture, v_uv + vec2(fdeltaU, 0.0)).a;
+    alpha += texture(cc_spriteTexture, v_uv + vec2(fdeltaU*ColorRange, 0.0)).a;
+    alpha += texture(cc_spriteTexture, v_uv - vec2(0.0, fdeltaU)).a;
+    alpha += texture(cc_spriteTexture, v_uv - vec2(0.0, fdeltaU*ColorRange)).a;
+    alpha += texture(cc_spriteTexture, v_uv + vec2(0.0, fdeltaU)).a;
+    alpha += texture(cc_spriteTexture, v_uv + vec2(0.0, fdeltaU*ColorRange)).a;
+    alpha += texture(cc_spriteTexture, v_uv - vec2(fdeltaU, fdeltaU)).a;
+    alpha += texture(cc_spriteTexture, v_uv + vec2(fdeltaU, fdeltaU)).a;
+    alpha += texture(cc_spriteTexture, v_uv + vec2(-fdeltaU, fdeltaU)).a;
+    alpha += texture(cc_spriteTexture, v_uv + vec2(fdeltaU, -fdeltaU)).a;
+    alpha /= 13.0;
+  
+    vec4 o = v_color;
+   
+    if(alpha <= 0.0) {
+      discard;
+    } 
+
+    float outlineW = .8;
+    float fmixR = 1.0 - (clamp(alpha - outlineW, 0.0, 1.0))*5.0;
+    o = mix(oTex, outlineColor*outlineColor.a, fmixR*outlineColor.a);
+    o.a = alpha;
+    return o;
+  }

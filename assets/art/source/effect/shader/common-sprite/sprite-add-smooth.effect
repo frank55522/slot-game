@@ -1,0 +1,23 @@
+CCEffect %{
+  temporaries:
+    blendState1: &blendState1
+      targets:
+      - blend: true
+        blendSrc: src_alpha
+        blendDst: one
+        blendSrcAlpha: src_alpha
+        blendDstAlpha: one
+
+    depthStencilState1: &depthStencilState1 { depthTest: true, depthWrite: false }
+
+    rasterizerState1: &rasterizerState1 { cullMode: none }
+
+  techniques:
+  - name: add-smooth
+    passes:
+    - vert: sprite-vertis-shader-common:vertisShader
+      frag: sprite-fragment-shader-common:addSmooth 
+      rasterizerState: *rasterizerState1
+      depthStencilState: *depthStencilState1
+      blendState: *blendState1
+}%

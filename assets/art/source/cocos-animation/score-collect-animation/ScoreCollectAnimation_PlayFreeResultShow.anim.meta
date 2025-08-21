@@ -1,0 +1,13 @@
+{
+  "ver": "2.0.3",
+  "importer": "animation-clip",
+  "imported": true,
+  "uuid": "a7e7c9da-ce94-44c5-bd5a-b7244da23bfc",
+  "files": [
+    ".cconb"
+  ],
+  "subMetas": {},
+  "userData": {
+    "name": "ScoreCollectAnimation_PlayFreeResultShow"
+  }
+}

@@ -1,0 +1,204 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "balance": 2441093.983,
+        "spinResult": {
+            "playerTotalWin": 308100,
+            "baseGameResult": {
+                "usedTableIndex": 0,
+                "screenSymbol": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [5, 3, 7],
+                    [7, 3, 5],
+                    [2, 4, 6]
+                ],
+                "baseGameTotalWin": 0,
+                "waysGameResult": {
+                    "playerWin": 0,
+                    "waysResult": []
+                },
+                "specialFeatureResult": [
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "waitingForClient",
+                        "specialOperations": ["freeGame_03", "freeGame_02", "freeGame_01", "topUpGame_01"],
+                        "jsonExtendData": "{\"ballCount\":6,\"ballTotalCredit\":460,\"ballScreenLabel\":[[100,20,100],[100,40,100],[0,0,0],[0,0,0],[0,0,0]],\"bonusHitPool\":-1,\"bonusHitCase\":-1}",
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    }
+                ],
+                "displayInfo": {
+                    "displayMethod": [[false], [false], [false], [false], [false]],
+                    "bigWinType": "normal_1",
+                    "prizePredictionType": "NoPredictionType",
+                    "fortuneLevelType": "level1",
+                    "dampInfo": [
+                        [6, 3, 4, 6, 2],
+                        [2, 2, 6, 5, 2]
+                    ],
+                    "rngInfo": [[14, 14, 0, 0, 0]]
+                },
+                "extendInfoForbaseGameResult": {
+                    "isPowerUp": false,
+                    "ballCount": 6,
+                    "ballTotalCredit": 460,
+                    "ballScreenLabel": [
+                        [100, 20, 100],
+                        [100, 40, 100],
+                        [0, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 0]
+                    ],
+                    "extendPlayerWin": 0,
+                    "extendGameFeature": 0
+                }
+            },
+            "bonusGameResult": {
+                "bonusGameTotalWin": 200000,
+                "jackpotTotalWin": 0,
+                "totalRound": 1,
+                "bonusGameOneRoundResult": [
+                    {
+                        "specialHitInfo": "bonusGame_02",
+                        "hitPool": [1],
+                        "poolamount": [200000],
+                        "oneRoundTotalWinWithoutJP": 200000,
+                        "oneRoundJPTotalWin": 0
+                    }
+                ]
+            },
+            "topUpGameResult": {
+                "topUpGameTotalWin": 108100,
+                "totalRound": 6,
+                "topUpGameOneRoundResult": [
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 0,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 9, 9],
+                            [9, 9, 9],
+                            [9, 9, 9]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "bonusGame_02",
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 1,
+                            "totalRound": 6,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [5, 6, 6, 3, 4],
+                                [6, 4, 7, 6, 5],
+                                [5, 6, 6, 3, 4],
+                                [6, 4, 7, 6, 5],
+                                [5, 6, 6, 3, 4],
+                                [6, 4, 7, 6, 5]
+                            ],
+                            "rngInfo": [
+                                [4, 6, 4, 5, 10],
+                                [4, 6, 4, 5, 10],
+                                [4, 6, 4, 5, 10]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": false,
+                            "goldReSpin": 0,
+                            "accumulateMultiplier": 4600,
+                            "accumulateCredit": 107640,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [2760, 5060, 7360],
+                                [9660, 11960, 14260],
+                                [16560, 18860, 21160]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [500, 500, 500],
+                                [500, 500, 500],
+                                [500, 500, 500]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    }
+                ]
+            },
+            "bigWinType": "jumboWin",
+            "probabilityDetail": {
+                "randomNumberUsed": 111,
+                "randomDataUsed": [
+                    4, 6, 4, 5, 10, 4, 6, 4, 5, 10, 4, 6, 4, 5, 10, 49, 96550, 96550, 96550, 96550, 96550, 96550, 96550,
+                    96550, 96550, 10, 6, 58, 22, 59, 17, 48, 20, 8, 21, 52, 0, 63, 57, 18, 22, 47, 9, 57, 33, 49, 19,
+                    12, 25, 24, 40, 22, 61, 28, 16, 2, 43, 48, 19, 84, 22, 28, 53, 31, 15, 2, 30, 33, 65, 7, 5, 55, 22,
+                    42, 54, 11, 10, 55, 57, 31, 47, 59, 64, 21, 51, 27, 26, 30, 26, 55, 23, 41, 0, 52, 53, 35, 23, 43,
+                    10, 55, 32, 7, 32, 26, 18, 29, 38, 1, 46, 44, 48
+                ]
+            }
+        },
+        "gameSeq": 235201362,
+        "ts": 1637917727764
+    },
+    "description": "獲得DragonUp滿盤Grand",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

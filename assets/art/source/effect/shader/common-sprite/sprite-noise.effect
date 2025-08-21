@@ -1,0 +1,28 @@
+CCEffect %{
+  temporaries:
+    blendState4: &blendState4
+      targets:
+      - blend: true
+        blendSrc: src_alpha
+        blendDst: one_minus_src_alpha
+        blendDstAlpha: one_minus_src_alpha
+
+    depthStencilState2: &depthStencilState2 { depthTest: false, depthWrite: false }
+
+    rasterizerState1: &rasterizerState1 { cullMode: none }
+
+  techniques:
+  - name: noiseEffect
+    passes:
+    - vert: sprite-vertis-shader-noise:vertisShader
+      frag: sprite-fragment-noise:frag 
+      depthStencilState: *depthStencilState2
+      blendState: *blendState4
+      rasterizerState: *rasterizerState1
+      properties:
+        noiseMap:  { value: white } 
+        noiseSpeed: { target: noiseValue.xy, value: [1.0, 1.0]}
+        noiseTime: { target: noiseValue.w, value: 0.9, editor: {slide: true, step: 0.01, range: [0.0, 1.0]} }
+        noiseUpdateTest : { target: noiseValue.z, value: 0.9, editor: {slide: true, step: 0.01, range: [0.0, 1.0]} }
+        noiseScale: { value: [1.0, 1.0, 0.0, 0.0]}
+}%

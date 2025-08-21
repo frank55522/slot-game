@@ -1,0 +1,15 @@
+{
+    "name": "gameLoginReturn",
+    "data": {
+        "balance": 468315.235,
+        "data": true,
+        "loginRoom": "18002_TB",
+        "showName": "sptest3234",
+        "ts": 1535946240585
+    },
+    "description": "玩家登入SFS資訊",
+    "event": "gameLoginReturn",
+    "delay": 0,
+    "repeat": -1,
+    "duration": 0
+}

@@ -1,0 +1,557 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "",
+    "_objFlags": 0,
+    "_native": "",
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "asyncLoadAssets": false,
+    "persistent": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "WW",
+    "_objFlags": 0,
+    "_parent": null,
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 2
+      },
+      {
+        "__id__": 4
+      },
+      {
+        "__id__": 6
+      },
+      {
+        "__id__": 30
+      },
+      {
+        "__id__": 32
+      },
+      {
+        "__id__": 34
+      },
+      {
+        "__id__": 36
+      }
+    ],
+    "_prefab": {
+      "__id__": 38
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": -1.0339757656912848e-25,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999999999999998,
+      "y": 0.9999999999999998,
+      "z": 0.9999999999999998
+    },
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": -1.1848489498583665e-23
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.UITransform",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 3
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "bf+uN/CcxDXJ+P+b6O7vht"
+  },
+  {
+    "__type__": "sp.Skeleton",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 5
+    },
+    "_visFlags": 0,
+    "_customMaterial": null,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "loop": true,
+    "_premultipliedAlpha": true,
+    "_timeScale": 1,
+    "_useTint": false,
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "_defaultCacheMode": 0,
+    "_debugBones": false,
+    "_debugSlots": false,
+    "_skeletonData": {
+      "__uuid__": "1977f29a-937a-4a60-8dd9-2163f87f1ac4",
+      "__expectedType__": "sp.SkeletonData"
+    },
+    "defaultSkin": "default",
+    "defaultAnimation": "",
+    "_sockets": [],
+    "_debugMesh": false,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "92bXYoNzxHNInshxjSV7Fn"
+  },
+  {
+    "__type__": "1bae5dN+VdF06mRB63nwC33",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 7
+    },
+    "arrayTimelineData": [
+      {
+        "__id__": 8
+      },
+      {
+        "__id__": 19
+      }
+    ],
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "5fAazrxOlBqbff1ISUVonq"
+  },
+  {
+    "__type__": "Timeline",
+    "timelineName": "PlayWin_EN",
+    "timelineData": [
+      {
+        "__id__": 9
+      }
+    ]
+  },
+  {
+    "__type__": "TimelineSetupData",
+    "timelineType": 0,
+    "timelineAnimation": {
+      "__id__": 10
+    },
+    "timelineSpine": {
+      "__id__": 13
+    },
+    "timelineTime": {
+      "__id__": 16
+    }
+  },
+  {
+    "__type__": "TimelineAnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0,
+    "useSpine": false,
+    "useAnim": false,
+    "useParticle": false,
+    "spineSetupData": {
+      "__id__": 11
+    },
+    "animSetupData": {
+      "__id__": 12
+    },
+    "particleData": []
+  },
+  {
+    "__type__": "SpineSetupData",
+    "spine": null,
+    "_spineName": 0,
+    "spineNameString": "",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false
+  },
+  {
+    "__type__": "AnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0
+  },
+  {
+    "__type__": "TimelineSpineSetupData",
+    "spine": {
+      "__id__": 4
+    },
+    "_spineName": 1,
+    "spineNameString": "BasePlayWin",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false,
+    "useSpine": false,
+    "useAnim": false,
+    "useParticle": false,
+    "spineSetupData": {
+      "__id__": 14
+    },
+    "animSetupData": {
+      "__id__": 15
+    },
+    "particleData": []
+  },
+  {
+    "__type__": "SpineSetupData",
+    "spine": null,
+    "_spineName": 0,
+    "spineNameString": "",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false
+  },
+  {
+    "__type__": "AnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0
+  },
+  {
+    "__type__": "TimelineTimeSetupData",
+    "toNextStateTime": 0,
+    "useSpine": false,
+    "useAnim": false,
+    "useParticle": false,
+    "spineSetupData": {
+      "__id__": 17
+    },
+    "animSetupData": {
+      "__id__": 18
+    },
+    "particleData": []
+  },
+  {
+    "__type__": "SpineSetupData",
+    "spine": null,
+    "_spineName": 0,
+    "spineNameString": "",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false
+  },
+  {
+    "__type__": "AnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0
+  },
+  {
+    "__type__": "Timeline",
+    "timelineName": "PlayWin_CN",
+    "timelineData": [
+      {
+        "__id__": 20
+      }
+    ]
+  },
+  {
+    "__type__": "TimelineSetupData",
+    "timelineType": 0,
+    "timelineAnimation": {
+      "__id__": 21
+    },
+    "timelineSpine": {
+      "__id__": 24
+    },
+    "timelineTime": {
+      "__id__": 27
+    }
+  },
+  {
+    "__type__": "TimelineAnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0,
+    "useSpine": false,
+    "useAnim": false,
+    "useParticle": false,
+    "spineSetupData": {
+      "__id__": 22
+    },
+    "animSetupData": {
+      "__id__": 23
+    },
+    "particleData": []
+  },
+  {
+    "__type__": "SpineSetupData",
+    "spine": null,
+    "_spineName": 0,
+    "spineNameString": "",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false
+  },
+  {
+    "__type__": "AnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0
+  },
+  {
+    "__type__": "TimelineSpineSetupData",
+    "spine": {
+      "__id__": 4
+    },
+    "_spineName": 1,
+    "spineNameString": "BasePlayWin",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false,
+    "useSpine": false,
+    "useAnim": false,
+    "useParticle": false,
+    "spineSetupData": {
+      "__id__": 25
+    },
+    "animSetupData": {
+      "__id__": 26
+    },
+    "particleData": []
+  },
+  {
+    "__type__": "SpineSetupData",
+    "spine": null,
+    "_spineName": 0,
+    "spineNameString": "",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false
+  },
+  {
+    "__type__": "AnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0
+  },
+  {
+    "__type__": "TimelineTimeSetupData",
+    "toNextStateTime": 0,
+    "useSpine": false,
+    "useAnim": false,
+    "useParticle": false,
+    "spineSetupData": {
+      "__id__": 28
+    },
+    "animSetupData": {
+      "__id__": 29
+    },
+    "particleData": []
+  },
+  {
+    "__type__": "SpineSetupData",
+    "spine": null,
+    "_spineName": 0,
+    "spineNameString": "",
+    "trackIndex": 0,
+    "timeScale": 1,
+    "delayTime": 0,
+    "isLoop": false,
+    "isResetSlots": false,
+    "isResetBones": false,
+    "isEndClose": false
+  },
+  {
+    "__type__": "AnimationSetupData",
+    "animation": null,
+    "_animationName": 0,
+    "animationNameString": "",
+    "delayTime": 0
+  },
+  {
+    "__type__": "4d158WPozxOyJOrBRIZm4NL",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 31
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "32iwc7Wn1MgZL9vzebVlX/"
+  },
+  {
+    "__type__": "c6c8bIoBrlExpJIMCKhai/y",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 33
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "e6ySOGU8tCeoOW9jf17jTb"
+  },
+  {
+    "__type__": "5d3a1p111ZHZLukTSMGlVFy",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 35
+    },
+    "symbolType": 0,
+    "animation": {
+      "__id__": 6
+    },
+    "labelText": null,
+    "subSprite": null,
+    "respinNumFrames": [],
+    "hasReSpinPos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 20,
+      "z": 0
+    },
+    "multiPos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 26,
+      "z": 0
+    },
+    "normalPos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "goldFont": null,
+    "multipleFont": null,
+    "baseFont": null,
+    "specialFont": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "2bN+6w2UtDlYxrqXGe9N9Z"
+  },
+  {
+    "__type__": "4589dyHBaJOcK2fo1KiHumX",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 37
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "23Bd7wqkxHwrQPq5EHCrSo"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "3d5q7VKANNVKa7N35aGSCM"
+  }
+]

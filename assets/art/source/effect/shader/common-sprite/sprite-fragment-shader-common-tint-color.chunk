@@ -1,0 +1,28 @@
+
+  precision highp float;
+
+  #pragma builtin(local)
+  layout(set = 2, binding = 10) uniform sampler2D cc_spriteTexture;
+
+  in vec4 v_color;
+  in vec2 v_uv;
+  uniform FragConstants {
+    vec4 tintColor;
+  };
+
+  vec4 frag () {
+    vec4 o = texture(cc_spriteTexture, v_uv)*v_color;
+    return o;
+  }
+
+  vec4 add () {
+    vec4 o = texture(cc_spriteTexture, v_uv)*v_color*tintColor*2.0;
+    return o;
+  }
+
+  vec4 multiply () {
+    vec4 o;
+    vec4 texColor = texture(cc_spriteTexture, v_uv)*v_color;
+    o.rgb = tintColor.rgb * texColor.rgb * vec3(2.0);
+    return o;
+}

@@ -1,0 +1,20 @@
+{
+    "description": "登入測試有獲得MiniGame案例",
+    "tasks": [
+        {
+            "task": "Login_Info.json"
+        },
+        {
+            "task": "Game_Init.json"
+        },
+        {
+            "task": "JackpotPool_Init.json"
+        },
+        {
+            "task": "Spin_Down.json"
+        },
+        {
+            "task": "MiniGame_ThreeWin_SpinResponse.json"
+        }
+    ]
+}

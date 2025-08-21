@@ -1,0 +1,23 @@
+{
+  "__version__": "1.0.2",
+  "general": {
+    "designResolution": {
+      "width": 900,
+      "height": 1600
+    }
+  },
+  "layer": [
+    {
+      "name": "REEL_MASK_PANEL",
+      "value": 524288
+    }
+  ],
+  "script": {
+    "importMap": "project://import-map.json"
+  },
+  "fbx": {
+    "legacyFbxImporter": {
+      "visible": true
+    }
+  }
+}

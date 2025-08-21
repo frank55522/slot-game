@@ -1,0 +1,12 @@
+{
+    "imports": {
+        "src/":"./assets/src/",
+        "util/":"./assets/src/sgv3/util/",
+        "Logger":"./assets/src/core/utils/Logger.ts",
+        "AudioManager": "./assets/src/audio/AudioManager.ts",
+        "TimelineTool": "./extensions/timeline-tool/assets/src/timeline-tool/TimelineTool.ts",
+        "ParticleContentTool": "./extensions/timeline-tool/assets/src/particle-tool/ParticleContentTool.ts",
+        "i18n/": "./extensions/i18n/assets/",
+        "common-ui/": "./extensions/common-ui/assets/src/"
+    }
+}

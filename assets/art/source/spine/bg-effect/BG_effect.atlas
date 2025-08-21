@@ -1,0 +1,216 @@
+
+BG_effect.png
+size: 764,535
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Angle_01
+  rotate: false
+  xy: 2, 475
+  size: 9, 13
+  orig: 9, 13
+  offset: 0, 0
+  index: -1
+Angle_02
+  rotate: false
+  xy: 157, 424
+  size: 10, 17
+  orig: 10, 17
+  offset: 0, 0
+  index: -1
+Beard_01
+  rotate: false
+  xy: 503, 8
+  size: 111, 39
+  orig: 111, 39
+  offset: 0, 0
+  index: -1
+Beard_02
+  rotate: false
+  xy: 2, 375
+  size: 17, 19
+  orig: 17, 19
+  offset: 0, 0
+  index: -1
+Body_01
+  rotate: false
+  xy: 2, 397
+  size: 102, 81
+  orig: 102, 81
+  offset: 0, 0
+  index: -1
+Body_02
+  rotate: 270
+  xy: 653, 25
+  size: 186, 108
+  orig: 186, 108
+  offset: 0, 0
+  index: -1
+Brow_01
+  rotate: false
+  xy: 178, 419
+  size: 10, 13
+  orig: 10, 13
+  offset: 0, 0
+  index: -1
+Brow_02
+  rotate: false
+  xy: 135, 422
+  size: 22, 12
+  orig: 22, 12
+  offset: 0, 0
+  index: -1
+Coin_Shouck/Coin_shock_048
+  rotate: false
+  xy: 2, 429
+  size: 576, 105
+  orig: 576, 154
+  offset: 0, 0
+  index: -1
+Coin_Shouck/Coin_shock_051
+  rotate: 180
+  xy: 2, 323
+  size: 576, 105
+  orig: 576, 154
+  offset: 0, 0
+  index: -1
+Coin_Shouck/Coin_shock_054
+  rotate: false
+  xy: 2, 216
+  size: 576, 105
+  orig: 576, 154
+  offset: 0, 0
+  index: -1
+Coin_Shouck/Coin_shock_057
+  rotate: 180
+  xy: 2, 110
+  size: 576, 105
+  orig: 576, 154
+  offset: 0, 0
+  index: -1
+Coin_Shouck/Coin_shock_060
+  rotate: false
+  xy: 2, 3
+  size: 576, 105
+  orig: 576, 154
+  offset: 0, 0
+  index: -1
+Eye_01
+  rotate: false
+  xy: 190, 426
+  size: 10, 9
+  orig: 10, 9
+  offset: 0, 0
+  index: -1
+Eye_02
+  rotate: false
+  xy: 169, 428
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+Eye_03
+  rotate: false
+  xy: 90, 398
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+Hair_01
+  rotate: false
+  xy: 111, 417
+  size: 26, 20
+  orig: 26, 20
+  offset: 0, 0
+  index: -1
+Hair_02
+  rotate: false
+  xy: 99, 436
+  size: 37, 19
+  orig: 37, 19
+  offset: 0, 0
+  index: -1
+Hair_03
+  rotate: false
+  xy: 2, 206
+  size: 72, 51
+  orig: 72, 51
+  offset: 0, 0
+  index: -1
+Hair_04
+  rotate: false
+  xy: 2, 405
+  size: 26, 19
+  orig: 26, 20
+  offset: 0, 1
+  index: -1
+Hair_05
+  rotate: false
+  xy: 2, 381
+  size: 70, 22
+  orig: 70, 23
+  offset: 0, 0
+  index: -1
+Head_01
+  rotate: true
+  xy: 657, 270
+  size: 118, 94
+  orig: 118, 122
+  offset: 0, 28
+  index: -1
+Head_02
+  rotate: false
+  xy: 449, 401
+  size: 69, 49
+  orig: 69, 49
+  offset: 0, 0
+  index: -1
+Head_03
+  rotate: false
+  xy: 2, 6
+  size: 66, 48
+  orig: 66, 48
+  offset: 0, 0
+  index: -1
+Head_04
+  rotate: false
+  xy: 140, 412
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+Head_05
+  rotate: false
+  xy: 99, 403
+  size: 24, 18
+  orig: 24, 18
+  offset: 0, 0
+  index: -1
+Leg_01
+  rotate: false
+  xy: 578, 49
+  size: 36, 91
+  orig: 36, 91
+  offset: 0, 0
+  index: -1
+Leg_02
+  rotate: false
+  xy: 70, 185
+  size: 40, 47
+  orig: 40, 47
+  offset: 0, 0
+  index: -1
+Railing_02
+  rotate: true
+  xy: 580, 269
+  size: 264, 75
+  orig: 264, 75
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 580, 142
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1

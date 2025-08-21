@@ -1,0 +1,41 @@
+{
+  "ver": "1.0.23",
+  "importer": "image",
+  "imported": true,
+  "uuid": "ed914903-44bd-474d-a7ba-cc4e63ad2e9a",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "ed914903-44bd-474d-a7ba-cc4e63ad2e9a@6c48a",
+      "displayName": "DragonSoreCollectLight",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "ed914903-44bd-474d-a7ba-cc4e63ad2e9a"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "ed914903-44bd-474d-a7ba-cc4e63ad2e9a@6c48a",
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

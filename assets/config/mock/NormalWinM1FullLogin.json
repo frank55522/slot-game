@@ -1,0 +1,20 @@
+{
+    "description": "BaseGame拿到M1的滿盤",
+    "tasks": [
+        {
+            "task": "Login_Info.json"
+        },
+        {
+            "task": "Game_Init.json"
+        },
+        {
+            "task": "JackpotPool_Init.json"
+        },
+        {
+            "task": "Spin_Down.json"
+        },
+        {
+            "task": "WinM1Full_SpinResponse.json"
+        }
+    ]
+}

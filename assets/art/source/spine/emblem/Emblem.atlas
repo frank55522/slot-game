@@ -1,0 +1,408 @@
+
+Emblem.png
+size: 452,507
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DragonBall/DragonBall
+  rotate: false
+  xy: 348, 403
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+DragonBall_State3/DragonFire__000
+  rotate: true
+  xy: 237, 405
+  size: 100, 109
+  orig: 169, 169
+  offset: 31, 38
+  index: -1
+DragonBall_State3/DragonFire__008
+  rotate: true
+  xy: 237, 405
+  size: 100, 109
+  orig: 169, 169
+  offset: 31, 38
+  index: -1
+DragonBall_State3/DragonFire__001
+  rotate: true
+  xy: 111, 333
+  size: 106, 107
+  orig: 169, 169
+  offset: 27, 36
+  index: -1
+DragonBall_State3/DragonFire__002
+  rotate: true
+  xy: 220, 297
+  size: 106, 107
+  orig: 169, 169
+  offset: 27, 36
+  index: -1
+DragonBall_State3/DragonFire__003
+  rotate: false
+  xy: 329, 295
+  size: 106, 106
+  orig: 169, 169
+  offset: 27, 36
+  index: -1
+DragonBall_State3/DragonFire__004
+  rotate: false
+  xy: 2, 356
+  size: 107, 105
+  orig: 169, 169
+  offset: 27, 36
+  index: -1
+DragonBall_State3/DragonFire__005
+  rotate: true
+  xy: 328, 187
+  size: 106, 108
+  orig: 169, 169
+  offset: 28, 36
+  index: -1
+DragonBall_State3/DragonFire__006
+  rotate: false
+  xy: 111, 115
+  size: 107, 108
+  orig: 169, 169
+  offset: 28, 37
+  index: -1
+DragonBall_State3/DragonFire__007
+  rotate: true
+  xy: 220, 79
+  size: 106, 111
+  orig: 169, 169
+  offset: 29, 37
+  index: -1
+DragonBall_State3/DragonFire__009
+  rotate: true
+  xy: 2, 248
+  size: 106, 107
+  orig: 169, 169
+  offset: 27, 36
+  index: -1
+DragonBall_State3/DragonFire__010
+  rotate: true
+  xy: 111, 225
+  size: 106, 107
+  orig: 169, 169
+  offset: 27, 36
+  index: -1
+DragonBall_State3/DragonFire__011
+  rotate: false
+  xy: 220, 189
+  size: 106, 106
+  orig: 169, 169
+  offset: 28, 36
+  index: -1
+DragonBall_State3/DragonFire__012
+  rotate: false
+  xy: 2, 140
+  size: 107, 106
+  orig: 169, 169
+  offset: 27, 36
+  index: -1
+DragonBall_State3/DragonFire__013
+  rotate: true
+  xy: 333, 79
+  size: 106, 108
+  orig: 169, 169
+  offset: 28, 36
+  index: -1
+DragonBall_State3/DragonFire__014
+  rotate: false
+  xy: 2, 28
+  size: 107, 110
+  orig: 169, 169
+  offset: 28, 37
+  index: -1
+DragonBall_State3/DragonFire__015
+  rotate: false
+  xy: 111, 2
+  size: 106, 111
+  orig: 169, 169
+  offset: 29, 37
+  index: -1
+DragonBoom/DragonBoom_000
+  rotate: false
+  xy: 42, 466
+  size: 39, 39
+  orig: 50, 50
+  offset: 5, 6
+  index: -1
+DragonBoom/DragonBoom_001
+  rotate: false
+  xy: 2, 467
+  size: 38, 38
+  orig: 50, 50
+  offset: 6, 6
+  index: -1
+DragonBoom/DragonBoom_002
+  rotate: false
+  xy: 83, 463
+  size: 42, 42
+  orig: 50, 50
+  offset: 4, 4
+  index: -1
+DragonBoom/DragonBoom_003
+  rotate: false
+  xy: 127, 463
+  size: 42, 42
+  orig: 50, 50
+  offset: 4, 4
+  index: -1
+DragonBoom/JPPoint
+  rotate: false
+  xy: 171, 441
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+
+Emblem2.png
+size: 494,470
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DragonBoom/DragonBalll_Mark
+  rotate: true
+  xy: 2, 356
+  size: 112, 123
+  orig: 128, 128
+  offset: 8, 2
+  index: -1
+DragonFire/DragonFire_001
+  rotate: false
+  xy: 329, 2
+  size: 162, 118
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_002
+  rotate: false
+  xy: 2, 239
+  size: 162, 114
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_003
+  rotate: false
+  xy: 127, 355
+  size: 162, 113
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_004
+  rotate: false
+  xy: 166, 239
+  size: 162, 114
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_005
+  rotate: false
+  xy: 2, 122
+  size: 162, 115
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_006
+  rotate: false
+  xy: 2, 3
+  size: 162, 117
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_010
+  rotate: false
+  xy: 330, 239
+  size: 162, 114
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_011
+  rotate: false
+  xy: 291, 355
+  size: 162, 113
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_012
+  rotate: false
+  xy: 166, 122
+  size: 162, 115
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_013
+  rotate: false
+  xy: 330, 122
+  size: 162, 115
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_014
+  rotate: false
+  xy: 166, 3
+  size: 161, 117
+  orig: 169, 169
+  offset: 1, 35
+  index: -1
+
+Emblem3.png
+size: 455,387
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DragonBoom/DragonBoom_006
+  rotate: false
+  xy: 2, 15
+  size: 142, 129
+  orig: 170, 170
+  offset: 13, 23
+  index: -1
+DragonBoom/DragonBoom_007
+  rotate: false
+  xy: 146, 9
+  size: 149, 134
+  orig: 170, 170
+  offset: 10, 21
+  index: -1
+DragonBoom/DragonBoom_008
+  rotate: false
+  xy: 297, 2
+  size: 156, 141
+  orig: 170, 170
+  offset: 6, 17
+  index: -1
+DragonFire/DragonFire_000
+  rotate: false
+  xy: 296, 266
+  size: 143, 119
+  orig: 169, 169
+  offset: 1, 35
+  index: -1
+DragonFire/DragonFire_007
+  rotate: false
+  xy: 2, 267
+  size: 145, 118
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_008
+  rotate: false
+  xy: 2, 146
+  size: 143, 119
+  orig: 169, 169
+  offset: 1, 35
+  index: -1
+DragonFire/DragonFire_009
+  rotate: false
+  xy: 293, 145
+  size: 148, 119
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_015
+  rotate: false
+  xy: 149, 267
+  size: 145, 118
+  orig: 169, 169
+  offset: 0, 35
+  index: -1
+DragonFire/DragonFire_016
+  rotate: false
+  xy: 147, 146
+  size: 144, 119
+  orig: 169, 169
+  offset: 1, 35
+  index: -1
+
+Emblem4.png
+size: 509,460
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DragonBoom/DragonBoom_009
+  rotate: false
+  xy: 163, 315
+  size: 158, 143
+  orig: 170, 170
+  offset: 5, 16
+  index: -1
+DragonBoom/DragonBoom_010
+  rotate: false
+  xy: 323, 310
+  size: 164, 148
+  orig: 170, 170
+  offset: 2, 14
+  index: -1
+DragonBoom/DragonBoom_011
+  rotate: false
+  xy: 2, 164
+  size: 168, 149
+  orig: 170, 170
+  offset: 1, 14
+  index: -1
+DragonBoom/DragonBoom_012
+  rotate: false
+  xy: 172, 157
+  size: 170, 151
+  orig: 170, 170
+  offset: 0, 13
+  index: -1
+DragonBoom/DragonBoom_013
+  rotate: false
+  xy: 344, 156
+  size: 163, 152
+  orig: 170, 170
+  offset: 2, 13
+  index: -1
+DragonBoom/DragonBoom_014
+  rotate: false
+  xy: 2, 10
+  size: 163, 152
+  orig: 170, 170
+  offset: 2, 13
+  index: -1
+DragonBoom/DragonBoom_015
+  rotate: false
+  xy: 167, 3
+  size: 163, 152
+  orig: 170, 170
+  offset: 2, 13
+  index: -1
+DragonBoom/DragonBoom_016
+  rotate: false
+  xy: 332, 2
+  size: 160, 152
+  orig: 170, 170
+  offset: 5, 13
+  index: -1
+DragonBoom/DragonBoom_017
+  rotate: false
+  xy: 2, 317
+  size: 159, 141
+  orig: 170, 170
+  offset: 6, 13
+  index: -1
+
+Emblem5.png
+size: 345,174
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DragonBoom/DragonBoom_004
+  rotate: false
+  xy: 2, 2
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+DragonBoom/DragonBoom_005
+  rotate: false
+  xy: 174, 3
+  size: 169, 169
+  orig: 170, 170
+  offset: 0, 1
+  index: -1

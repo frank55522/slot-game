@@ -1,0 +1,37 @@
+#Template Job
+.ssh-job:
+  variables:
+    PRIVATE_KEY: ""
+    SERVER_URL: ""
+    SERVER_USER: ""
+    SERVER_PORT: ""
+    SSH_COMMAND: ""
+  tags: 
+    - dockerrunner1
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$PRIVATE_KEY")
+    - echo $SSH_COMMAND    
+  script:
+    - ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_URL -p $SERVER_PORT 
+      $SSH_COMMAND
+
+.ssh-game-builder:
+  extends: .ssh-job
+  variables:
+    PRIVATE_KEY: $CI_PRIVATE_KEY
+    SERVER_URL: $CI_SERVER_URL
+    SERVER_USER: $GAME_BUILDER_SERVER_USER
+    SERVER_PORT: $GAME_BUILDER_SERVER_PORT
+    SSH_COMMAND: ""
+
+.ssh-rd-site:
+  extends: .ssh-job
+  variables:
+    PRIVATE_KEY: $CI_PRIVATE_KEY
+    SERVER_URL: $CI_SERVER_URL
+    SERVER_USER: $RD_SERVER_USER
+    SERVER_PORT: $RD_SERVER_PORT
+    SSH_COMMAND: ""
+

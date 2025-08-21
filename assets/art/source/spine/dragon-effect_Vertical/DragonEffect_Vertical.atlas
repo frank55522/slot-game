@@ -1,0 +1,48 @@
+
+DragonEffect_Vertical.png
+size: 486,400
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Dragon1
+  rotate: false
+  xy: 244, 2
+  size: 240, 76
+  orig: 240, 76
+  offset: 0, 0
+  index: -1
+Dragon_00
+  rotate: false
+  xy: 2, 80
+  size: 240, 76
+  orig: 240, 76
+  offset: 0, 0
+  index: -1
+Dragon_01
+  rotate: false
+  xy: 244, 80
+  size: 240, 76
+  orig: 240, 76
+  offset: 0, 0
+  index: -1
+Dragon_02
+  rotate: false
+  xy: 2, 2
+  size: 240, 76
+  orig: 240, 76
+  offset: 0, 0
+  index: -1
+Light CircleBlur
+  rotate: false
+  xy: 2, 158
+  size: 240, 240
+  orig: 240, 240
+  offset: 0, 0
+  index: -1
+rilmlightCircle
+  rotate: false
+  xy: 244, 158
+  size: 240, 240
+  orig: 240, 240
+  offset: 0, 0
+  index: -1

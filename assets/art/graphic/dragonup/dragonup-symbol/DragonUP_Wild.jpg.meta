@@ -1,0 +1,41 @@
+{
+  "ver": "1.0.23",
+  "importer": "image",
+  "imported": true,
+  "uuid": "dcdbdbaa-b6d3-46a9-9b47-03a9ae44cd02",
+  "files": [
+    ".jpg",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "dcdbdbaa-b6d3-46a9-9b47-03a9ae44cd02@6c48a",
+      "displayName": "DragonUP_Wild",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "dcdbdbaa-b6d3-46a9-9b47-03a9ae44cd02"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": false,
+    "type": "texture",
+    "redirect": "dcdbdbaa-b6d3-46a9-9b47-03a9ae44cd02@6c48a",
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

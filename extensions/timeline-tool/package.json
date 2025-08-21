@@ -1,0 +1,16 @@
+{
+    "package_version": 2,
+    "version": "2.0.8",
+    "name": "timeline-tool",
+    "description": "i18n:timeline-tool.description",
+    "author": "jumbo",
+    "editor": ">=3.3.2",
+    "contributions": {
+        "asset-db": {
+            "mount": {
+                "path": "./assets",
+                "readonly": true
+            }
+        }
+    }
+}

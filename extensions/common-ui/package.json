@@ -1,0 +1,16 @@
+{
+    "package_version": 2,
+    "version": "2.2.12",
+    "name": "common-ui",
+    "description": "i18n:common-ui.description",
+    "author": "jumbo",
+    "editor": ">=3.3.2",
+    "contributions": {
+        "asset-db": {
+            "mount": {
+                "path": "./assets",
+                "readonly": true
+            }
+        }
+    }
+}

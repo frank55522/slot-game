@@ -1,0 +1,45 @@
+{
+  "ver": "1.0.23",
+  "importer": "image",
+  "imported": true,
+  "uuid": "4ae9b648-49dc-456e-a4d6-ca6e1b209f80",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "4ae9b648-49dc-456e-a4d6-ca6e1b209f80@6c48a",
+      "displayName": "LightFrame",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "4ae9b648-49dc-456e-a4d6-ca6e1b209f80"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "4ae9b648-49dc-456e-a4d6-ca6e1b209f80@6c48a",
+    "compressSettings": {
+      "useCompressTexture": true,
+      "presetId": "b02XZfxTZD26OVIuSrFN88"
+    },
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

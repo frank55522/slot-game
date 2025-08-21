@@ -1,0 +1,12 @@
+[submodule "extensions/common-ui"]
+	path = extensions/common-ui
+	url=../../h5_game_lab/h5_game_package/common_ui.git
+	branch = publish
+[submodule "extensions/timeline-tool"]
+	path = extensions/timeline-tool
+	url = ../../h5_game_lab/h5_game_package/timeline_tool.git
+	branch = publish
+[submodule "extensions/demo-panel"]
+	path = extensions/demo-panel
+	url = ../../h5_game_lab/h5_game_package/demo_panel.git
+	branch = publish

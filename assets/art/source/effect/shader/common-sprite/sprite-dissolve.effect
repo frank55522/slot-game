@@ -1,0 +1,28 @@
+CCEffect %{
+  temporaries:
+    blendState4: &blendState4
+      targets:
+      - blend: true
+        blendSrc: src_alpha
+        blendDst: one_minus_src_alpha
+        blendDstAlpha: one_minus_src_alpha
+
+    depthStencilState2: &depthStencilState2 { depthTest: false, depthWrite: false }
+
+    rasterizerState1: &rasterizerState1 { cullMode: none }
+
+  techniques:
+  - name: spriteDissolve
+    passes:
+    - vert: sprite-vertis-shader-dissolve:vertisShader
+      frag: sprite-fragment-dissolve:frag 
+      depthStencilState: *depthStencilState2
+      blendState: *blendState4
+      rasterizerState: *rasterizerState1
+      properties:
+        u_fluxayTexture: { value: white }
+        dissolveMap:  { value: white }
+        dissolveColor: { value: [1.0, 1.0, 1.0, 1.0],  editor: { type: color }}
+        dissolveEdge: { target: dissolveValue.g, value: 0.01 }
+        dissolveThreshold: { target: dissolveValue.r, value: 0.9, editor: {slide: true, step: 0.01, range: [0.0, 1.0]} }
+}%

@@ -1,0 +1,34 @@
+
+Raise_JackpotFX.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+JPPool_Major_Glow
+  rotate: false
+  xy: 2, 2
+  size: 324, 90
+  orig: 350, 100
+  offset: 13, 7
+  index: -1
+JPPool_Mini_Glow
+  rotate: false
+  xy: 2, 95
+  size: 179, 54
+  orig: 200, 60
+  offset: 10, 4
+  index: -1
+JPPool_Minor_Glow
+  rotate: false
+  xy: 183, 94
+  size: 180, 55
+  orig: 200, 60
+  offset: 10, 4
+  index: -1
+Light Circle Hard
+  rotate: false
+  xy: 365, 71
+  size: 79, 78
+  orig: 80, 80
+  offset: 1, 1
+  index: -1

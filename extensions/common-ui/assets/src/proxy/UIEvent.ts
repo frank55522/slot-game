@@ -1,0 +1,30 @@
+export class UIEvent {
+    public static readonly UPDATE_AUTO_PLAY_COUNT: string = 'updateAutoPlayCount';
+    public static readonly UPDATE_PLAYER_BALANCE: string = 'updatePlayerBalance';
+    public static readonly UPDATE_PLAYER_WIN: string = 'updatePlayerWin';
+    public static readonly CLEAR_PLAYER_WIN: string = 'clearPlayerWin';
+    public static readonly UPDATE_TOTAL_BET: string = 'updateTotalBet';
+    public static readonly UPDATE_SPIN_SEQ_NUM: string = 'updateSpinSeqNum';
+    public static readonly CREATE_BET_MENU: string = 'createBetMenu';
+    public static readonly UPDATE_BET_MENU: string = 'updateBetMenu';
+    public static readonly SPIN_KEY_DOWN: string = 'spinKeyDown';
+    public static readonly CHANGE_BUTTON_STATE: string = 'changeButtonState';
+    public static readonly ENABLE_NORMAL_BUTTON: string = 'enableNormalButton';
+    public static readonly DISABLE_NORMAL_BUTTON: string = 'disableNormalButton';
+    public static readonly SET_QUICK_SPIN_STATUS: string = 'setQuickSpinStatus';
+    public static readonly CHECK_QUICK_SPIN_STATUS: string = 'checkQuickSpinStatus';
+    public static readonly SET_QUICK_SPIN_FROM_WEB: string = 'setQuickSpinFromWeb';
+    public static readonly SET_BBW_POSITION_TO_BOTTOM: string = 'changeBBWPosition';
+    public static readonly RESTORE_BBW_POSITION: string = 'restoreBBWPosition';
+    public static readonly ON_CLICK_BET_BUTTON: string = 'onClickBetButton';
+    public static readonly ON_CLICK_FEATURE_BET: string = 'onClickFeatureBet';
+    public static readonly RESTORE_BET_BUTTON: string = 'restoreBetButton';
+    public static readonly ON_CLICK_DENOM_BUTTON: string = 'onClickDenomButton';
+    public static readonly SET_DENOM_DISPLAY: string = 'setDenomDisplay';
+    public static readonly INJECT_BET_MENU: string = 'injectBetMenu';
+    public static readonly SHOW_BET_MENU: string = 'showBetMenu';
+    public static readonly HIDE_ALL_MENU: string = 'hideAllMenu';
+    public static readonly INJECT_FEATURE_BET_VIEW: string = 'injectFeatureBetView';
+    public static readonly ANY_MENU_OPEN: string = 'anyMenuOpen';
+    public static readonly GET_BASE_BUTTONS: string = 'getBaseButtons';
+}

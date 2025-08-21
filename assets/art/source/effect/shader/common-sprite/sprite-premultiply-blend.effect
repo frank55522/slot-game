@@ -1,0 +1,23 @@
+CCEffect %{
+  temporaries:
+    blendState2: &blendState2
+      targets:
+      - blend: true
+        blendSrc: src_alpha
+        blendDst: one_minus_src_alpha
+        blendSrcAlpha: src_alpha
+        blendDstAlpha: one_minus_src_alpha
+
+    depthStencilState1: &depthStencilState1 { depthTest: true, depthWrite: false }
+
+    rasterizerState1: &rasterizerState1 { cullMode: none }
+
+  techniques:
+  - name: premultiply-blend
+    passes:
+    - vert: sprite-vertis-shader-common:vertisShader
+      frag: sprite-fragment-shader-common:premultiplied 
+      rasterizerState: *rasterizerState1
+      depthStencilState: *depthStencilState1
+      blendState: *blendState2
+}%

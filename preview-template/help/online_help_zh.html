@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="utf-8" />
+        <title>游戏说明</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="full-screen" content="true" />
+        <meta name="screen-orientation" content="portrait" />
+        <meta name="x5-fullscreen" content="true" />
+        <meta name="360-fullscreen" content="true" />
+        <style>
+            html,
+            body {
+                padding: 0;
+                border: 0;
+                margin: 0;
+                height: 100%;
+                background-color: #220606;
+                color: #fdb4b4;
+                font-family: 'Microsoft JhengHei', 'Microsoft YaHei', 'LiHei Pro Medium', 'SimHei', Helvetica,
+                    sans-serif;
+                overflow: hidden; /* 隱藏整個頁面的滾動條 */
+                touch-action: none;
+                pointer-events: auto;
+            }
+
+            ::-webkit-scrollbar {
+                height: 0px;
+                width: 0px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                border-radius: 15px;
+                background-color: rgba(#fff, 0.2);
+            }
+
+            ::-webkit-scrollbar-track {
+                border-radius: 0px;
+            }
+
+            #closeButton {
+                width: 50px;
+                height: 50px;
+                background-image: url('./UiIcon_Return.png');
+                background-size: cover;
+                cursor: pointer;
+                margin: auto 0;
+                margin-left: 10px;
+            }
+
+            .topBar {
+                position: relative;
+                height: 80px;
+                width: 100%;
+                background-color: #2d0b0b;
+                display: flex;
+                align-items: center;
+                z-index: 1;
+            }
+
+            .content {
+                position: relative;
+                padding: 10px 10px;
+                margin: auto;
+                width: 100%;
+                height: calc(100% - 80px);
+                min-width: 320px;
+                overflow: auto;
+                box-sizing: border-box;
+                justify-content: center;
+            }
+
+            .content h2 {
+                font-size: 1.3rem;
+                text-align: center;
+                color: #ffd453;
+                font-weight: 700;
+            }
+
+            .yellow-font {
+                color: #ffd453;
+                font-weight: 700;
+            }
+
+            .payout-font {
+                color: #ffd453;
+                font-weight: 700;
+            }
+
+            .content ul li {
+                line-height: 1.2;
+                padding: 5px 0;
+                list-style-type: square;
+            }
+
+            .content hr {
+                opacity: 0.1;
+            }
+
+            .content img {
+                vertical-align: middle;
+                image-rendering: -moz-crisp-edges; /* Firefox */
+                image-rendering: -o-crisp-edges; /* Opera */
+                image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+                image-rendering: crisp-edges;
+                -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+            }
+
+            .yellowText {
+                color: #ffb400;
+            }
+
+            .textImg {
+                width: 22px;
+            }
+
+            .textBigImg {
+                width: 34px;
+            }
+
+            .textImgByH {
+                height: 22px;
+            }
+
+            .textBigImgByH {
+                height: 34px;
+            }
+
+            .payoutWrap {
+                display: flex;
+                align-items: center;
+                flex-flow: column;
+                padding-top: 20px;
+            }
+
+            .payTable {
+                width: 50%;
+                padding: 10px 0;
+            }
+
+            .payTableImg {
+                width: 50%;
+            }
+
+            .payoutWrap .payRowTitle {
+                display: flex;
+                justify-content: center;
+                flex-flow: column;
+                align-items: center;
+                min-width: 150px;
+            }
+
+            .payImg {
+                width: 150px;
+            }
+
+            .payRowValue {
+                width: 150px;
+            }
+
+            .payRowValue div {
+                min-width: 60px;
+            }
+
+            .flex-both-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .flex-justify-center {
+                display: flex;
+                justify-content: center;
+            }
+
+            .flex-align-center {
+                display: flex;
+                align-items: center;
+            }
+
+            .flex-align-start-with-margin {
+                display: flex;
+                align-items: start;
+                margin-left: 10px;
+            }
+
+            .flex-col {
+                flex-flow: column;
+            }
+
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+
+            .text-align-center {
+                text-align: center;
+            }
+
+            .text-align-left {
+                text-align: left;
+            }
+
+            .w-100 {
+                width: 100%;
+            }
+
+            .p-5 {
+                padding: 5px;
+            }
+
+            @media (min-width: 600px) and (max-width: 1200px) {
+                .content {
+                    max-width: 70%;
+                }
+
+                .payoutWrap {
+                    flex-flow: row;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .content {
+                    max-width: 50%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="topBar">
+            <div id="closeButton" onclick="window.openGameHelp(false)"></div>
+        </div>
+        <div class="content" id="helpContent">
+            <h2>特色选择</h2>
+            <ul>
+                <li>
+                    在基本游戏中，<span class="yellowText">15</span>个
+                    <img src="./C1_small.png" class="textImg" alt="" /> 出现时，即可获得
+                    <img src="./zh/Grand.png" class="textImgByH" alt="" />。
+                </li>
+                <li>
+                    每个 <img src="./C1_small.png" class="textImg" alt="" /> 上的值将随机出现
+                    <span class="yellowText">0.2X</span>、 <span class="yellowText">0.4X</span>、
+                    <span class="yellowText">0.6X</span>、 <span class="yellowText">0.8X</span>、
+                    <span class="yellowText">1X</span>或 <span class="yellowText">10X</span>。
+                </li>
+                <li>
+                    出现在 <img src="./C1_small.png" class="textImg" alt="" />
+                    的值将随着玩家选择不同的投注倍数，而乘上相对的投注倍数。
+                </li>
+                <li>
+                    在基本游戏中，<span class="yellowText">6</span>个或<span class="yellowText">6</span>个以上的
+                    <img src="./C1_small.png" class="textImg" alt="" /> 出现时，将触发特色选择。
+                </li>
+                <li>在特色选择中有免费游戏及 <img src="./zh/FeatureGame.png" class="textImgByH" /> 可选择。</li>
+                <li>
+                    在基本游戏中，<span class="yellowText">15</span>个
+                    <img src="./C1_small.png" class="textImg" alt="" />
+                    出现时，特色选择中只能选择免费游戏，且无法再次获得
+                    <img src="./zh/Grand.png" class="textImgByH" alt="" /> 。
+                </li>
+                <li>
+                    点选免费游戏时，将获得
+                    <img src="./C1_small.png" class="textImg" alt="" /> 上的分数总和，并启动免费游戏，且有机会获得
+                    <img src="./zh/Grand.png" class="textImgByH" alt="" /> 。
+                </li>
+                <li>
+                    点选 <img src="./zh/FeatureGame.png" class="textImgByH" /> 时，保留触发特色选择的
+                    <img src="./C1_small.png" class="textImg" alt="" /> ，并启动
+                    <img src="./zh/FeatureGame.png" class="textImgByH" /> 。
+                </li>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./zh/FeatureSelection.png" class="w-50" alt="" />
+                </div>
+                <li>
+                    若玩家在特色选择期间中断游戏，系统将会自动选择<img
+                        src="./zh/FG01.png"
+                        class="textImgByH"
+                        alt=""
+                    />并计算游戏结果，并将获奖金额加入至余额中。
+                </li>
+                <li>
+                    若玩家在免费游戏或
+                    <img src="./zh/FeatureGame.png" class="textImgByH" alt="" />
+                    期间中断游戏，系统将会自动计算游戏结果，并将获奖金额加入至余额中。
+                </li>
+            </ul>
+
+            <hr class="solid" />
+            <h2>免费游戏特色</h2>
+            <ul>
+                <li>
+                    免费游戏特色：<br />
+                    在免费游戏特色中，<img src="./Base_SymbolWW.png" class="textImg" alt="" />只会出现在第
+                    <span class="yellowText">1</span>及<span class="yellowText">5</span>转轮。<br />
+                    在免费游戏特色中，<img src="./C1_small.png" class="textImg" alt="" />将随机出现在转轮的符号上，当
+                    <img src="./C1_small.png" class="textImg" alt="" />出现时，则可获得触发特色选择时
+                    <img src="./C1_small.png" class="textImg" alt="" />的分数总和，获得后会消失在画面上。<br />
+                    <span class="yellowText">8</span>场免费游戏，当<span class="yellowText">2</span>个或
+                    <span class="yellowText">2</span>个以上的<img src="./C1_small.png" class="textImg" alt="" />
+                    同时出现时，则可获得<span class="yellowText">2</span>场额外的免费游戏。最大可获得
+                    <span class="yellowText">50</span>场免费游戏。<br />
+                </li>
+                <li>
+                    重转游戏特色：<br />
+                    在免费游戏特色中，若第<span class="yellowText">1</span>、<span class="yellowText">5</span>
+                    转轮都充满<img src="./Base_SymbolWW.png" class="textImg" alt="" />，将进入重转游戏特色。<br />
+                    在重转游戏特色中，<img src="./C1_small.png" class="textImg" alt="" />不会出现在转轮上。<br />
+                    在重转游戏特色中，第<span class="yellowText">2</span>、<span class="yellowText">3</span>及
+                    <span class="yellowText">4</span>转轮会额外重转一次。
+                    <img src="./Base_HorseExpanding.png" class="textImg" alt="" />是百搭，当出现赢分组合时会变成
+                    <img src="./Base_WildExpanding.png" class="textImg" alt="" />。<br />
+                </li>
+            </ul>
+            <hr class="solid" />
+            <h2><img src="./zh/FeatureGame.png" class="textImgByH" /> 特色</h2>
+            <ul>
+                <li>
+                    获得<span class="yellowText">6</span>场免费游戏。在
+                    <img src="./zh/FeatureGame.png" class="textImgByH" />
+                    中出现的
+                    <img src="./C2_small.png" class="textImg" alt="" /> 会保留在画面上。
+                </li>
+                <li>每个位置皆独立旋转。</li>
+                <li>所有符号均不会形成得分组合。</li>
+                <li>起始百分比为 <img src="./MultipleNum_100.png" class="textImgByH" alt="" /> 。</li>
+                <li>
+                    <img src="./C2_small.png" class="textImg" alt="" /> 上有机会出现
+                    <img src="./MultipleNum_50.png" class="textImgByH" alt="" /> 、
+                    <img src="./MultipleNum_100.png" class="textImgByH" alt="" /> 、
+                    <img src="./MultipleNum_200.png" class="textImgByH" alt="" /> 及
+                    <img src="./MultipleNum_500.png" class="textImgByH" alt="" /> 。
+                </li>
+                <li>
+                    当 <img src="./C2_small.png" class="textImg" alt="" /> 滚停在轮带上时，
+                    <img src="./C2_small.png" class="textImg" alt="" />
+                    上的百分比会先累计到萤幕上方的百分比上，接着一开始保留在画面上的
+                    <img src="./C1_small.png" class="textImg" alt="" /> 上的分数会累计至
+                    <img src="./C2_small.png" class="textImg" alt="" /> ，最后将分数乘上萤幕上方的百分比形成最后的分数。
+                </li>
+                <li>先出现的 <img src="./C2_small.png" class="textImg" alt="" /> 会先计算。</li>
+                <li>
+                    转轮和 <img src="./C2_small.png" class="textImg" alt="" /> 上有机会出现
+                    <img src="./Add_1Spin.png" class="textImgByH" alt="" /> 、
+                    <img src="./Add_2Spins.png" class="textImgByH" alt="" /> 及
+                    <img src="./Add_3Spins.png" class="textImgByH" alt="" /> 。
+                </li>
+                <li>最大可获得<span class="yellowText">30</span>场免费游戏。</li>
+                <li>
+                    如果<span class="yellowText">15</span>个位置都获得
+                    <img src="./C1_small.png" class="textImg" alt="" /> 或
+                    <img src="./C2_small.png" class="textImg" alt="" /> ，则可获得
+                    <img src="./zh/Grand.png" class="textImgByH" alt="" /> ，并结算分数及结束
+                    <img src="./zh/FeatureGame.png" class="textImgByH" /> 特色。
+                </li>
+                <li>每一场转动都会有机会使一个位置不会出现 <img src="./C2_small.png" class="textImg" alt="" /> 。</li>
+                <li>
+                    当至少有一个位置未被 <img src="./C1_small.png" class="textImg" alt="" /> 或
+                    <img src="./C2_small.png" class="textImg" alt="" /> 覆盖时，才会继续剩余的场次。
+                </li>
+            </ul>
+            <hr class="solid" />
+            <h2><img src="./zh/GoldenTrophyLink.png" class="textBigImgByH" alt="" /> 积宝奖特色</h2>
+            <ul>
+                <li>
+                    <img src="./zh/GoldenTrophyLink_small.png" class="textImgByH" alt="" /> 积宝奖小游戏由基本游戏中转轮上的
+                    <img src="./C1_small.png" class="textImg" alt="" /> 随机触发。
+                </li>
+                <li>
+                    <img src="./zh/GoldenTrophyLink_small.png" class="textImgByH" alt="" /> 积宝奖小游戏会在画面中出现
+                    <span class="yellowText">12</span>个 <img src="./Mini_Icon_Choose.png" class="textImg" alt="" /> 。
+                </li>
+                <li>
+                    <img src="./Mini_Icon_Choose.png" class="textImg" alt="" /> 后方隐藏
+                    <img src="./Mini_Icon_Grand.png" class="textImg" alt="" /> 、
+                    <img src="./Mini_Icon_Major.png" class="textImg" alt="" /> 、
+                    <img src="./Mini_Icon_Minor.png" class="textImg" alt="" /> 及
+                    <img src="./Mini_Icon_Mini.png" class="textImg" alt="" /> 4种符号。
+                </li>
+                <li>
+                    每次点选 <img src="./Mini_Icon_Choose.png" class="textImg" alt="" /> 可能得到任一个积宝奖符号
+                    <img src="./Mini_Icon_Grand.png" class="textImg" alt="" /> 、
+                    <img src="./Mini_Icon_Major.png" class="textImg" alt="" /> 、
+                    <img src="./Mini_Icon_Minor.png" class="textImg" alt="" /> 或
+                    <img src="./Mini_Icon_Mini.png" class="textImg" alt="" />
+                    ，当获得三个相同的积宝奖符号即可赢得该积宝奖并结算总奖金。
+                </li>
+                <li><img src="./Mini_Icon_Grand.png" class="textImg" alt="" /> 为连机累进彩金。</li>
+                <li>
+                    <img src="./Mini_Icon_Major.png" class="textImg" alt="" /> 、
+                    <img src="./Mini_Icon_Minor.png" class="textImg" alt="" /> 和
+                    <img src="./Mini_Icon_Mini.png" class="textImg" alt="" />
+                    为红利彩金，依照投注区间改变。
+                </li>
+                <li>
+                    玩家投注越高触发
+                    <img src="./zh/GoldenTrophyLink_small.png" class="textImgByH" alt="" /> 积宝奖小游戏的机会越高。
+                </li>
+                <li>
+                    若玩家在
+                    <img src="./zh/GoldenTrophyLink_small.png" class="textImgByH" alt="" /> 积宝奖小游戏期间中断游戏，
+                    系统将会自动计算游戏结果，并将获奖金额加入至余额中。
+                </li>
+            </ul>
+            <hr class="solid" />
+            <h2>符号赔付值</h2>
+            <ul>
+                <li>所有符号必须由最左至右连续出现，方可获奖。</li>
+            </ul>
+            <div class="payoutWrap">
+                <div class="payRowTitle">
+                    <div class="yellow-font">特色符号</div>
+                    <img src="./Base_SymbolC1.png" class="payImg" alt="" />
+                </div>
+                <div class="payRowValue flex-both-center flex-col"></div>
+                <div class="flex-both-center flex-col">
+                    <span
+                        >在基本游戏中，<span class="yellowText">6</span>个或<span class="yellowText">6</span>个以上的
+                        <img src="./C1_small.png" class="textImg" alt="" /> 出现时，将触发特色选择。
+                    </span>
+                </div>
+            </div>
+            <div class="payoutWrap">
+                <div class="payRowTitle">
+                    <div class="yellow-font">百搭符号</div>
+                    <img src="./Base_SymbolWW.png" class="payImg" alt="" />
+                </div>
+                <div class="payRowValue flex-both-center flex-col"></div>
+                <div class="flex-both-center flex-col">
+                    <span>
+                        <img src="./Base_SymbolWW.png" class="textImg" alt="" /> 可替代所有符号，除了
+                        <img src="./C1_small.png" class="textImg" alt="" /> 以外。<br />
+                        基本游戏中， <img src="./Base_SymbolWW.png" class="textImg" alt="" /> 只出现在第<span
+                            class="yellowText"
+                            >2</span
+                        >、<span class="yellowText">3</span>及<span class="yellowText">4</span>转轮。<br />
+                        在免费游戏中，
+                        <img src="./Base_SymbolWW.png" class="textImg" alt="" /> 只出现在第<span class="yellowText"
+                            >1</span
+                        >、 <span class="yellowText">5</span>转轮。
+                    </span>
+                </div>
+            </div>
+            <div class="flex-both-center flex-wrap">
+                <div class="flex-both-center payTable">
+                    <img src="./M1_Symbol.png" class="payTableImg" alt="" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.25</span></div>
+                        <div>4 - <span class="payout-font">0.08</span></div>
+                        <div>3 - <span class="payout-font">0.03</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M2_Symbol.png" class="payTableImg" alt="" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.15</span></div>
+                        <div>4 - <span class="payout-font">0.05</span></div>
+                        <div>3 - <span class="payout-font">0.02</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M3_Symbol.png" class="payTableImg" alt="" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.10</span></div>
+                        <div>4 - <span class="payout-font">0.03</span></div>
+                        <div>3 - <span class="payout-font">0.02</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M4_Symbol.png" class="payTableImg" alt="" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.08</span></div>
+                        <div>4 - <span class="payout-font">0.03</span></div>
+                        <div>3 - <span class="payout-font">0.02</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M5_Symbol.png" class="payTableImg" alt="" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.06</span></div>
+                        <div>4 - <span class="payout-font">0.02</span></div>
+                        <div>3 - <span class="payout-font">0.01</span></div>
+                    </div>
+                </div>
+                <div class="flex-both-center payTable">
+                    <img src="./M6_Symbol.png" class="payTableImg" alt="" />
+                    <div class="payRowValue flex-align-start-with-margin flex-col">
+                        <div>5 - <span class="payout-font">0.05</span></div>
+                        <div>4 - <span class="payout-font">0.02</span></div>
+                        <div>3 - <span class="payout-font">0.01</span></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="solid" />
+            <h2>最多路数</h2>
+            <ul>
+                <li>所有符号必须由最左至右连续出现，方可获奖。</li>
+                <li>当同一路有多种获奖组合，仅会赔付最高的获奖组合。</li>
+                <li>基本游戏设定 = 最多243路。</li>
+            </ul>
+            <div style="display: flex; justify-content: center">
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_1.png" class="w-100" alt="" />
+                    <span>最多 243 路</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_2.png" class="w-100" alt="" />
+                    <span>3连线赔付2路</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_3.png" class="w-100" alt="" />
+                    <span>没有获奖</span>
+                </div>
+            </div>
+            <ul>
+                <li>免费游戏设定 = 最多 243 路。</li>
+            </ul>
+            <div style="display: flex; justify-content: center">
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_1.png" class="w-100" alt="" />
+                    <span>最多 243 路</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_2.png" class="w-100" alt="" />
+                    <span>3连线赔付2路</span>
+                </div>
+                <div class="flex-align-center flex-col p-5">
+                    <img src="./base_ways_3.png" class="w-100" alt="" />
+                    <span>没有获奖</span>
+                </div>
+            </div>
+
+            <hr class="solid" />
+            <h2>
+                <img src="./C1_small.png" class="textImg" alt="" />
+                <img src="./C2_small.png" class="textImg" alt="" /> 数字显示规则
+            </h2>
+            <ul>
+                <li>
+                    金额用K和M格式显示时，若有需要显示小数位，最多显示两位。
+                    <br />如： 1K = 1,000.00~1,009.99、1.99K = 1,990.00~1,999.99
+                </li>
+                <li>此规则仅为显示资讯简化，不影响实际金额。</li>
+            </ul>
+
+            <hr class="solid" />
+            <h2>游戏信息</h2>
+            <div class="text-align-center">游戏版本: <span id="gameVersionDom"></span></div>
+            <div class="text-align-center">游戏出现故障，所有赔付和游戏都视为无效。</div>
+        </div>
+    </body>
+    <script>
+        let originUrl =
+            !!window.location.ancestorOrigins && window.location.ancestorOrigins.length != 0
+                ? window.location.ancestorOrigins[0]
+                : window.location.origin;
+
+        var openGameHelp = (boolean) => {
+            window.parent.postMessage(JSON.stringify({ name: 'openGameHelp', data: false }), originUrl);
+            window.parent['closeHelpPage']();
+        };
+
+        window.parent.postMessage(JSON.stringify({ name: 'getGameVersion', data: {} }), originUrl);
+
+        let gameVerSpan = document.getElementById('gameVersionDom');
+
+        // dynamic payout
+
+        const symbolPayoutArray = [
+            // M1
+            250, 80, 30,
+            // M2
+            150, 50, 20,
+            // M3
+            100, 30, 20,
+            // M4
+            80, 30, 20,
+            // M5
+            60, 20, 10,
+            // M6
+            50, 20, 10
+        ];
+        let calPayoutCredit = (oddsData, totalBetData) => oddsData * totalBetData;
+
+        let symbolArraySpan = document.getElementsByClassName('payout-font');
+        let updatePayout = function (totalBetData) {
+            if (Number.isNaN(Number(totalBetData)) || symbolArraySpan.length !== symbolPayoutArray.length) {
+                Array.prototype.forEach.call(symbolArraySpan, function (el) {
+                    el.textContent = Number.NaN;
+                });
+            } else {
+                Array.prototype.forEach.call(symbolArraySpan, function (el) {
+                    el.textContent = calPayoutCredit(symbolPayoutArray.shift(), totalBetData).toFixed(2);
+                });
+            }
+        };
+
+        window.addEventListener('message', (e) => {
+            if (e.origin !== originUrl) return;
+            if (JSON.parse(e.data).name === 'getGameVersion') {
+                if (typeof JSON.parse(e.data).data === 'string') {
+                    gameVerSpan.textContent = JSON.parse(e.data).data;
+                } else {
+                    gameVerSpan.textContent = '-';
+                }
+            } else if (JSON.parse(e.data).name === 'getPayout') {
+                updatePayout(JSON.parse(e.data).data);
+            }
+        });
+
+        // requested to dynamic payout
+        window.parent.postMessage(JSON.stringify({ name: 'getPayout', data: {} }), originUrl);
+
+        document.addEventListener(
+            'touchstart',
+            (event) => {
+                if (event.touches && event.touches.length > 1) {
+                    // 禁止多指觸控
+                    event.preventDefault();
+                }
+            },
+            { passive: false }
+        );
+
+        document.addEventListener(
+            'touchmove',
+            (event) => {
+                if (event.touches && event.touches.length > 1) {
+                    // 禁止多指觸控
+                    event.preventDefault();
+                }
+            },
+            { passive: false }
+        );
+
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('gesturechange', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('gestureend', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</html>

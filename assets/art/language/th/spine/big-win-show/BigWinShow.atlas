@@ -1,0 +1,656 @@
+
+BigWinShow.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+B
+  rotate: true
+  xy: 319, 161
+  size: 94, 116
+  orig: 94, 116
+  offset: 0, 0
+  index: -1
+B_Bulb
+  rotate: true
+  xy: 2, 242
+  size: 80, 93
+  orig: 84, 97
+  offset: 2, 2
+  index: -1
+I
+  rotate: true
+  xy: 41, 389
+  size: 35, 77
+  orig: 35, 77
+  offset: 0, 0
+  index: -1
+I_Light
+  rotate: true
+  xy: 120, 383
+  size: 40, 70
+  orig: 42, 71
+  offset: 1, 0
+  index: -1
+J
+  rotate: true
+  xy: 97, 189
+  size: 85, 119
+  orig: 85, 119
+  offset: 0, 0
+  index: -1
+J_Bulb
+  rotate: true
+  xy: 2, 324
+  size: 63, 94
+  orig: 67, 98
+  offset: 2, 2
+  index: -1
+M_Bulb
+  rotate: false
+  xy: 218, 184
+  size: 99, 87
+  orig: 103, 91
+  offset: 2, 2
+  index: -1
+N
+  rotate: true
+  xy: 179, 276
+  size: 73, 76
+  orig: 73, 76
+  offset: 0, 0
+  index: -1
+N_Light
+  rotate: false
+  xy: 432, 336
+  size: 72, 70
+  orig: 74, 71
+  offset: 1, 0
+  index: -1
+O_Bulb
+  rotate: false
+  xy: 202, 88
+  size: 97, 94
+  orig: 100, 96
+  offset: 2, 1
+  index: -1
+StarGlow
+  rotate: false
+  xy: 192, 372
+  size: 48, 46
+  orig: 51, 50
+  offset: 1, 2
+  index: -1
+SuperWin_en
+  rotate: false
+  xy: 242, 351
+  size: 188, 55
+  orig: 210, 98
+  offset: 9, 33
+  index: -1
+U
+  rotate: true
+  xy: 301, 59
+  size: 100, 115
+  orig: 100, 115
+  offset: 0, 0
+  index: -1
+U_Bulb
+  rotate: false
+  xy: 341, 257
+  size: 83, 92
+  orig: 87, 96
+  offset: 2, 2
+  index: -1
+W
+  rotate: false
+  xy: 257, 273
+  size: 82, 76
+  orig: 82, 76
+  offset: 0, 0
+  index: -1
+W_Light
+  rotate: false
+  xy: 98, 312
+  size: 79, 69
+  orig: 80, 71
+  offset: 1, 1
+  index: -1
+Win
+  rotate: false
+  xy: 2, 103
+  size: 198, 84
+  orig: 198, 84
+  offset: 0, 0
+  index: -1
+WinLight
+  rotate: false
+  xy: 2, 2
+  size: 211, 84
+  orig: 212, 85
+  offset: 1, 1
+  index: -1
+Wipe/BigWin_wipe_01
+  rotate: true
+  xy: 192, 496
+  size: 11, 22
+  orig: 105, 49
+  offset: 26, 1
+  index: -1
+Wipe/BigWin_wipe_02
+  rotate: true
+  xy: 265, 493
+  size: 14, 34
+  orig: 105, 49
+  offset: 26, 0
+  index: -1
+Wipe/BigWin_wipe_03
+  rotate: true
+  xy: 434, 489
+  size: 18, 37
+  orig: 105, 49
+  offset: 26, 0
+  index: -1
+Wipe/BigWin_wipe_04
+  rotate: true
+  xy: 135, 475
+  size: 20, 37
+  orig: 105, 49
+  offset: 26, 0
+  index: -1
+Wipe/BigWin_wipe_05
+  rotate: true
+  xy: 199, 421
+  size: 25, 37
+  orig: 105, 49
+  offset: 26, 0
+  index: -1
+Wipe/BigWin_wipe_06
+  rotate: true
+  xy: 316, 415
+  size: 28, 37
+  orig: 105, 49
+  offset: 27, 0
+  index: -1
+Wipe/BigWin_wipe_07
+  rotate: true
+  xy: 394, 408
+  size: 31, 37
+  orig: 105, 49
+  offset: 27, 0
+  index: -1
+Wipe/BigWin_wipe_08
+  rotate: true
+  xy: 433, 408
+  size: 31, 37
+  orig: 105, 49
+  offset: 31, 0
+  index: -1
+Wipe/BigWin_wipe_09
+  rotate: true
+  xy: 472, 408
+  size: 31, 37
+  orig: 105, 49
+  offset: 35, 0
+  index: -1
+Wipe/BigWin_wipe_10
+  rotate: true
+  xy: 2, 399
+  size: 31, 37
+  orig: 105, 49
+  offset: 38, 0
+  index: -1
+Wipe/BigWin_wipe_11
+  rotate: true
+  xy: 355, 413
+  size: 30, 37
+  orig: 105, 49
+  offset: 42, 0
+  index: -1
+Wipe/BigWin_wipe_12
+  rotate: true
+  xy: 277, 419
+  size: 26, 37
+  orig: 105, 49
+  offset: 46, 0
+  index: -1
+Wipe/BigWin_wipe_13
+  rotate: true
+  xy: 238, 420
+  size: 25, 37
+  orig: 105, 49
+  offset: 49, 0
+  index: -1
+Wipe/BigWin_wipe_14
+  rotate: true
+  xy: 427, 441
+  size: 23, 36
+  orig: 105, 49
+  offset: 53, 1
+  index: -1
+Wipe/BigWin_wipe_15
+  rotate: true
+  xy: 444, 466
+  size: 21, 35
+  orig: 105, 49
+  offset: 56, 2
+  index: -1
+Wipe/BigWin_wipe_16
+  rotate: true
+  xy: 379, 491
+  size: 16, 29
+  orig: 105, 49
+  offset: 61, 8
+  index: -1
+Wipe/BigWin_wipe_17
+  rotate: true
+  xy: 216, 494
+  size: 13, 24
+  orig: 105, 49
+  offset: 64, 13
+  index: -1
+Wipe/BigWin_wipe_18
+  rotate: true
+  xy: 123, 497
+  size: 10, 19
+  orig: 105, 49
+  offset: 67, 18
+  index: -1
+Wipe/BigWin_wipe_19
+  rotate: true
+  xy: 21, 501
+  size: 6, 13
+  orig: 105, 49
+  offset: 71, 24
+  index: -1
+Wipe/MegaWin_en_00
+  rotate: true
+  xy: 12, 503
+  size: 4, 7
+  orig: 105, 49
+  offset: 11, 17
+  index: -1
+Wipe/MegaWin_en_01
+  rotate: true
+  xy: 76, 498
+  size: 9, 23
+  orig: 105, 49
+  offset: 11, 14
+  index: -1
+Wipe/MegaWin_en_02
+  rotate: true
+  xy: 301, 493
+  size: 14, 26
+  orig: 105, 49
+  offset: 11, 12
+  index: -1
+Wipe/MegaWin_en_03
+  rotate: true
+  xy: 76, 477
+  size: 19, 28
+  orig: 105, 49
+  offset: 11, 10
+  index: -1
+Wipe/MegaWin_en_04
+  rotate: true
+  xy: 170, 450
+  size: 22, 37
+  orig: 105, 49
+  offset: 14, 1
+  index: -1
+Wipe/MegaWin_en_05
+  rotate: true
+  xy: 209, 448
+  size: 22, 38
+  orig: 105, 49
+  offset: 18, 0
+  index: -1
+Wipe/MegaWin_en_06
+  rotate: true
+  xy: 249, 447
+  size: 22, 38
+  orig: 105, 49
+  offset: 23, 0
+  index: -1
+Wipe/MegaWin_en_07
+  rotate: true
+  xy: 465, 441
+  size: 23, 38
+  orig: 105, 49
+  offset: 27, 0
+  index: -1
+Wipe/MegaWin_en_08
+  rotate: true
+  xy: 289, 447
+  size: 22, 38
+  orig: 105, 49
+  offset: 32, 0
+  index: -1
+Wipe/MegaWin_en_09
+  rotate: true
+  xy: 52, 429
+  size: 23, 38
+  orig: 105, 49
+  offset: 36, 0
+  index: -1
+Wipe/MegaWin_en_10
+  rotate: true
+  xy: 118, 426
+  size: 23, 38
+  orig: 105, 49
+  offset: 41, 0
+  index: -1
+Wipe/MegaWin_en_11
+  rotate: true
+  xy: 158, 425
+  size: 23, 39
+  orig: 105, 49
+  offset: 45, 0
+  index: -1
+Wipe/MegaWin_en_12
+  rotate: true
+  xy: 174, 474
+  size: 20, 39
+  orig: 105, 49
+  offset: 52, 0
+  index: -1
+Wipe/MegaWin_en_13
+  rotate: true
+  xy: 215, 472
+  size: 20, 39
+  orig: 105, 49
+  offset: 55, 0
+  index: -1
+Wipe/MegaWin_en_14
+  rotate: true
+  xy: 52, 454
+  size: 21, 39
+  orig: 105, 49
+  offset: 59, 0
+  index: -1
+Wipe/MegaWin_en_15
+  rotate: true
+  xy: 256, 471
+  size: 20, 36
+  orig: 105, 49
+  offset: 64, 2
+  index: -1
+Wipe/MegaWin_en_16
+  rotate: true
+  xy: 473, 489
+  size: 18, 28
+  orig: 105, 49
+  offset: 70, 10
+  index: -1
+Wipe/MegaWin_en_17
+  rotate: true
+  xy: 106, 476
+  size: 19, 27
+  orig: 105, 49
+  offset: 73, 11
+  index: -1
+Wipe/MegaWin_en_18
+  rotate: true
+  xy: 329, 493
+  size: 14, 24
+  orig: 105, 49
+  offset: 78, 14
+  index: -1
+Wipe/MegaWin_en_19
+  rotate: true
+  xy: 144, 497
+  size: 10, 23
+  orig: 105, 49
+  offset: 82, 15
+  index: -1
+Wipe/SuperWin_en_00
+  rotate: true
+  xy: 2, 504
+  size: 3, 8
+  orig: 105, 49
+  offset: 6, 18
+  index: -1
+Wipe/SuperWin_en_01
+  rotate: true
+  xy: 55, 500
+  size: 7, 19
+  orig: 105, 49
+  offset: 6, 18
+  index: -1
+Wipe/SuperWin_en_02
+  rotate: true
+  xy: 169, 497
+  size: 10, 21
+  orig: 105, 49
+  offset: 6, 18
+  index: -1
+Wipe/SuperWin_en_03
+  rotate: true
+  xy: 355, 493
+  size: 14, 22
+  orig: 105, 49
+  offset: 6, 18
+  index: -1
+Wipe/SuperWin_en_04
+  rotate: true
+  xy: 2, 481
+  size: 18, 23
+  orig: 105, 49
+  offset: 6, 18
+  index: -1
+Wipe/SuperWin_en_05
+  rotate: true
+  xy: 481, 466
+  size: 21, 23
+  orig: 105, 49
+  offset: 6, 18
+  index: -1
+Wipe/SuperWin_en_06
+  rotate: true
+  xy: 92, 428
+  size: 23, 24
+  orig: 105, 49
+  offset: 8, 18
+  index: -1
+Wipe/SuperWin_en_07
+  rotate: true
+  xy: 145, 451
+  size: 22, 23
+  orig: 105, 49
+  offset: 12, 19
+  index: -1
+Wipe/SuperWin_en_08
+  rotate: false
+  xy: 2, 433
+  size: 23, 23
+  orig: 105, 49
+  offset: 15, 20
+  index: -1
+Wipe/SuperWin_en_09
+  rotate: false
+  xy: 2, 458
+  size: 23, 21
+  orig: 105, 49
+  offset: 19, 22
+  index: -1
+Wipe/SuperWin_en_10
+  rotate: false
+  xy: 294, 471
+  size: 24, 20
+  orig: 105, 49
+  offset: 22, 23
+  index: -1
+Wipe/SuperWin_en_11
+  rotate: false
+  xy: 52, 478
+  size: 22, 20
+  orig: 105, 49
+  offset: 27, 23
+  index: -1
+Wipe/SuperWin_en_12
+  rotate: false
+  xy: 320, 471
+  size: 23, 20
+  orig: 105, 49
+  offset: 30, 23
+  index: -1
+Wipe/SuperWin_en_13
+  rotate: false
+  xy: 345, 471
+  size: 23, 20
+  orig: 105, 49
+  offset: 34, 23
+  index: -1
+Wipe/SuperWin_en_14
+  rotate: false
+  xy: 27, 480
+  size: 23, 19
+  orig: 105, 49
+  offset: 37, 24
+  index: -1
+Wipe/SuperWin_en_15
+  rotate: false
+  xy: 370, 469
+  size: 23, 20
+  orig: 105, 49
+  offset: 41, 23
+  index: -1
+Wipe/SuperWin_en_16
+  rotate: false
+  xy: 395, 469
+  size: 22, 20
+  orig: 105, 49
+  offset: 45, 23
+  index: -1
+Wipe/SuperWin_en_17
+  rotate: false
+  xy: 93, 453
+  size: 24, 21
+  orig: 105, 49
+  offset: 48, 22
+  index: -1
+Wipe/SuperWin_en_18
+  rotate: false
+  xy: 119, 452
+  size: 24, 21
+  orig: 105, 49
+  offset: 52, 22
+  index: -1
+Wipe/SuperWin_en_19
+  rotate: false
+  xy: 27, 457
+  size: 23, 21
+  orig: 105, 49
+  offset: 56, 22
+  index: -1
+Wipe/SuperWin_en_20
+  rotate: false
+  xy: 329, 447
+  size: 23, 22
+  orig: 105, 49
+  offset: 60, 21
+  index: -1
+Wipe/SuperWin_en_21
+  rotate: false
+  xy: 354, 445
+  size: 22, 22
+  orig: 105, 49
+  offset: 64, 20
+  index: -1
+Wipe/SuperWin_en_22
+  rotate: false
+  xy: 378, 445
+  size: 22, 22
+  orig: 105, 49
+  offset: 68, 20
+  index: -1
+Wipe/SuperWin_en_23
+  rotate: false
+  xy: 402, 443
+  size: 23, 22
+  orig: 105, 49
+  offset: 71, 19
+  index: -1
+Wipe/SuperWin_en_24
+  rotate: false
+  xy: 27, 432
+  size: 23, 23
+  orig: 105, 49
+  offset: 74, 17
+  index: -1
+Wipe/SuperWin_en_25
+  rotate: true
+  xy: 419, 467
+  size: 20, 23
+  orig: 105, 49
+  offset: 78, 17
+  index: -1
+Wipe/SuperWin_en_26
+  rotate: true
+  xy: 410, 491
+  size: 16, 22
+  orig: 105, 49
+  offset: 82, 17
+  index: -1
+Wipe/SuperWin_en_27
+  rotate: true
+  xy: 242, 494
+  size: 13, 21
+  orig: 105, 49
+  offset: 85, 17
+  index: -1
+Wipe/SuperWin_en_28
+  rotate: true
+  xy: 101, 498
+  size: 9, 20
+  orig: 105, 49
+  offset: 89, 17
+  index: -1
+Wipe/SuperWin_en_29
+  rotate: true
+  xy: 36, 501
+  size: 6, 17
+  orig: 105, 49
+  offset: 92, 17
+  index: -1
+
+BigWinShow2.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+M
+  rotate: true
+  xy: 116, 329
+  size: 109, 112
+  orig: 109, 112
+  offset: 0, 0
+  index: -1
+O
+  rotate: true
+  xy: 2, 333
+  size: 105, 112
+  orig: 105, 112
+  offset: 0, 0
+  index: -1
+Text_BigWin_en
+  rotate: false
+  xy: 230, 293
+  size: 201, 145
+  orig: 420, 196
+  offset: 107, 3
+  index: -1
+Text_MegaWin_en
+  rotate: false
+  xy: 2, 2
+  size: 321, 150
+  orig: 420, 196
+  offset: 45, 3
+  index: -1
+super
+  rotate: false
+  xy: 2, 154
+  size: 375, 137
+  orig: 375, 137
+  offset: 0, 0
+  index: -1

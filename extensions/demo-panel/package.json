@@ -1,0 +1,16 @@
+{
+    "package_version": 2,
+    "version": "1.0.4",
+    "name": "demo-panel",
+    "description": "i18n:demo-panel.description",
+    "author": "jumbo",
+    "editor": ">=3.3.2",
+    "contributions": {
+        "asset-db": {
+            "mount": {
+                "path": "./assets",
+                "readonly": true
+            }
+        }
+    }
+}

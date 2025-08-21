@@ -1,0 +1,11 @@
+{
+    "name": "onSpinDown",
+    "data": {
+        "sfsId": 66
+    },
+    "description": "測試Spin Down",
+    "event": "onSpinDown",
+    "delay": 2000,
+    "repeat": 1,
+    "duration": 0
+}

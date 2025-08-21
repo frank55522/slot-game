@@ -1,0 +1,75 @@
+{
+  "ver": "1.0.23",
+  "importer": "image",
+  "imported": true,
+  "uuid": "f8fa0944-58e0-4d2d-b4b5-8640cf4b3ca8",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "f8fa0944-58e0-4d2d-b4b5-8640cf4b3ca8@6c48a",
+      "displayName": "Ui_TimeBg",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f8fa0944-58e0-4d2d-b4b5-8640cf4b3ca8"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "f8fa0944-58e0-4d2d-b4b5-8640cf4b3ca8@f9941",
+      "displayName": "Ui_TimeBg",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 1,
+        "offsetY": 0,
+        "trimX": 2,
+        "trimY": 0,
+        "width": 77,
+        "height": 26,
+        "rawWidth": 79,
+        "rawHeight": 26,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f8fa0944-58e0-4d2d-b4b5-8640cf4b3ca8@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "sprite-frame",
+    "redirect": "f8fa0944-58e0-4d2d-b4b5-8640cf4b3ca8@f9941",
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

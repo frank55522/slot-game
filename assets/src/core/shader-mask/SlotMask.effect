@@ -1,0 +1,99 @@
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: sprite-vs:vert
+      frag: sprite-fs:frag
+      depthStencilState:
+        depthTest: false
+        depthWrite: false
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendDstAlpha: one_minus_src_alpha
+      rasterizerState:
+        cullMode: none
+      properties:
+        ignoreColor: { value: [1, 1, 1, 1], editor: { type: color }}
+        baseMap: { value: white }
+}%
+
+CCProgram sprite-vs %{
+  precision highp float;
+  #include <cc-global>
+  in vec3 a_position;
+  in vec2 a_texCoord;
+  in vec4 a_color;
+
+  out vec3 v_wpos;
+  out vec4 color;
+  out vec2 uv0;
+
+  vec4 vert () {
+    vec4 pos = vec4(a_position, 1);
+
+    v_wpos = pos.xyz; // 取得世界座標
+    pos = cc_matViewProj * pos;
+    uv0 = a_texCoord;
+    color = a_color;
+
+    return pos;
+  }
+}%
+
+CCProgram sprite-fs %{
+  precision highp float;
+  #include <embedded-alpha>
+
+  in vec4 color;
+  in vec3 v_wpos;
+  // 遊戲畫面大小
+  uniform view {
+    vec2 viewSize;
+    vec2 viewOffset;
+  };
+  // 遮罩範圍的參考圖
+  #if USE_BASE_MAP
+    uniform data {
+      vec4 ignoreColor;
+    };
+    uniform sampler2D baseMap;
+  #endif
+  
+  #if USE_TEXTURE
+    in vec2 uv0;
+    #pragma builtin(local)
+    layout(set = 2, binding = 10) uniform sampler2D cc_spriteTexture;
+  #endif
+
+  vec4 frag () {
+    vec2 worldXY = v_wpos.xy;
+    // 將世界座標對應到視窗上的 uv，直橫式轉換 viewSize 需重新設定
+    worldXY.x = (worldXY.x + viewOffset.x) / viewSize.x;
+    worldXY.y = (worldXY.y + viewOffset.y) / viewSize.y ;
+    vec4 o = vec4(1, 1, 1, 1);
+    
+    #if USE_BASE_MAP
+      vec4 mapTex = texture(baseMap, worldXY);
+    #endif
+
+    #if USE_TEXTURE
+      o *= CCSampleWithAlphaSeparated(cc_spriteTexture, uv0);
+      #if USE_BASE_MAP
+        // 與參考圖的顏色不同的 pixel 不渲染
+        // 與 ignoreColor 相同顏色的 pixel 不受影響，可正常渲染
+        if (color != mapTex.rgba && color != ignoreColor) {
+          discard;
+        }
+      #endif
+    #else
+      #if USE_BASE_MAP
+        // 單純把參考圖渲染在 sprite 上
+        o = mapTex;
+      #endif
+    #endif
+
+    return o;
+  }
+}%

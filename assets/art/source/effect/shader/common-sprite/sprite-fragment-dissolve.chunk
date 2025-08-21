@@ -1,0 +1,27 @@
+  precision highp float;
+
+  in vec4 color;
+
+  in vec2 uv0;
+  #pragma builtin(local)
+  layout(set = 2, binding = 10) uniform sampler2D cc_spriteTexture;
+  uniform sampler2D dissolveMap;
+  uniform sampler2D u_fluxayTexture;
+  uniform Constant {
+    vec4 dissolveColor;
+    vec4 dissolveValue;  
+  };
+
+  vec4 frag () {
+    vec4 dissolve = texture(dissolveMap, uv0);
+    float fDelta = dissolve.r - dissolveValue.r;
+    if(fDelta < 0.0) {
+        discard;
+    }
+
+    float fWeight = 1.0 - clamp(fDelta/dissolveValue.g, 0.0, 1.0);
+    vec4 col = texture(cc_spriteTexture, uv0);
+    col.rgb += dissolveColor.rgb*fWeight;
+ 
+    return col;
+}

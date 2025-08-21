@@ -1,0 +1,44 @@
+{
+  "_from": "smartfox@2.4.28",
+  "_id": "smartfox@2.4.28",
+  "_inBundle": false,
+  "_integrity": "sha1-mxmhgxBcNS3Xxvs0UtQUCpgMV6Y=",
+  "_location": "/smartfox",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "smartfox@2.4.28",
+    "name": "smartfox",
+    "escapedName": "smartfox",
+    "rawSpec": "2.4.28",
+    "saveSpec": null,
+    "fetchSpec": "2.4.28"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://10.20.8.41:4873/smartfox/-/smartfox-2.4.28.tgz",
+  "_shasum": "9b19a183105c352dd7c6fb3452d4140a980c57a6",
+  "_spec": "smartfox@2.4.28",
+  "_where": "/Users/zhuangwenshi/Documents/Git/LineModel/libs",
+  "author": "",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Smartfox moudle",
+  "keywords": [
+    "smartfox"
+  ],
+  "license": "ISC",
+  "main": "smart-fox-server.js",
+  "name": "smartfox",
+  "repository": {
+    "type": "git",
+    "url": "http://10.20.8.14:30000/game/h5-game-framework.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.4.28"
+}

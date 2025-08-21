@@ -1,0 +1,779 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "balance": 534475.556,
+        "spinResult": {
+            "playerTotalWin": 14790,
+            "baseGameResult": {
+                "usedTableIndex": 0,
+                "screenSymbol": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [7, 3, 5],
+                    [2, 4, 6]
+                ],
+                "baseGameTotalWin": 0,
+                "waysGameResult": {
+                    "playerWin": 0,
+                    "waysResult": []
+                },
+                "specialFeatureResult": [
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "waitingForClient",
+                        "specialOperations": ["freeGame_03", "freeGame_02", "freeGame_01", "topUpGame_01"],
+                        "jsonExtendData": "{\"ballCount\":9,\"ballTotalCredit\":700,\"ballScreenLabel\":[[100,100,70],[100,100,10],[20,100,100],[0,0,0],[0,0,0]],\"bonusHitPool\":-1,\"bonusHitCase\":-1}",
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    }
+                ],
+                "displayInfo": {
+                    "displayMethod": [[false], [false], [false], [false], [false]],
+                    "bigWinType": "normal_1",
+                    "prizePredictionType": "NoPredictionType",
+                    "fortuneLevelType": "level2",
+                    "dampInfo": [
+                        [6, 3, 3, 6, 2],
+                        [2, 2, 2, 5, 2]
+                    ],
+                    "rngInfo": [[14, 14, 10, 0, 0]]
+                },
+                "extendInfoForbaseGameResult": {
+                    "isPowerUp": false,
+                    "ballCount": 9,
+                    "ballTotalCredit": 700,
+                    "ballScreenLabel": [
+                        [100, 100, 70],
+                        [100, 100, 10],
+                        [20, 100, 100],
+                        [0, 0, 0],
+                        [0, 0, 0]
+                    ],
+                    "extendPlayerWin": 0,
+                    "extendGameFeature": 0
+                }
+            },
+            "freeGameResult": {
+                "freeGameTotalWin": 14790,
+                "totalRound": 8,
+                "freeGameOneRoundResult": [
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 50,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [5, 4, 3],
+                            [4, 4, 3],
+                            [3, 5, 7],
+                            [4, 3, 5],
+                            [6, 6, 5]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 50,
+                            "waysResult": [
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 4,
+                                    "count": 1,
+                                    "hitOdds": 50,
+                                    "symbolWin": 50,
+                                    "screenHitData": [
+                                        [false, false, true],
+                                        [false, false, true],
+                                        [true, false, false],
+                                        [false, true, false],
+                                        [false, false, false]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 0,
+                            "afterAccumulateWinWithoutBaseGameWin": 50,
+                            "beforeAccumulateWinWithBaseGameWin": 0,
+                            "afterAccumulateWinWithBaseGameWin": 50
+                        },
+                        "roundInfo": {
+                            "roundNumber": 1,
+                            "totalRound": 6,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_1",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [5, 5, 4, 2, 2],
+                                [3, 3, 0, 5, 5]
+                            ],
+                            "rngInfo": [[5, 18, 23, 19, 10]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 0,
+                            "sideCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "isRetrigger": false,
+                            "accumulateCredit": 0,
+                            "sideCreditBallCount": 0,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 5000,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [4, 6, 3],
+                            [4, 3, 3],
+                            [5, 0, 4],
+                            [6, 3, 4],
+                            [5, 3, 3]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 5000,
+                            "waysResult": [
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 5,
+                                    "count": 4,
+                                    "hitOdds": 150,
+                                    "symbolWin": 4800,
+                                    "screenHitData": [
+                                        [false, false, true],
+                                        [false, true, true],
+                                        [false, true, false],
+                                        [false, true, false],
+                                        [false, true, true]
+                                    ]
+                                },
+                                {
+                                    "symbolID": 4,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 4,
+                                    "count": 2,
+                                    "hitOdds": 30,
+                                    "symbolWin": 200,
+                                    "screenHitData": [
+                                        [true, false, false],
+                                        [true, false, false],
+                                        [false, true, true],
+                                        [false, false, true],
+                                        [false, false, false]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 50,
+                            "afterAccumulateWinWithoutBaseGameWin": 5050,
+                            "beforeAccumulateWinWithBaseGameWin": 50,
+                            "afterAccumulateWinWithBaseGameWin": 5050
+                        },
+                        "roundInfo": {
+                            "roundNumber": 2,
+                            "totalRound": 6,
+                            "addRound": 1
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_7",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [3, 4, 4, 6, 5],
+                                [3, 6, 6, 7, 5]
+                            ],
+                            "rngInfo": [[30, 19, 1, 28, 24]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 8,
+                            "sideCreditBallScreenLabel": [
+                                [0, 0, 700],
+                                [0, 0, 0],
+                                [700, 0, 700],
+                                [0, 0, 0],
+                                [0, 0, 700]
+                            ],
+                            "isRetrigger": true,
+                            "accumulateCredit": 2800,
+                            "sideCreditBallCount": 4,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 500,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [4, 4, 3],
+                            [4, 3, 3],
+                            [5, 5, 0],
+                            [2, 2, 6],
+                            [5, 2, 2]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 500,
+                            "waysResult": [
+                                {
+                                    "symbolID": 4,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 3,
+                                    "count": 2,
+                                    "hitOdds": 20,
+                                    "symbolWin": 320,
+                                    "screenHitData": [
+                                        [true, true, false],
+                                        [true, false, false],
+                                        [false, false, true],
+                                        [false, false, false],
+                                        [false, false, false]
+                                    ]
+                                },
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 3,
+                                    "count": 2,
+                                    "hitOdds": 20,
+                                    "symbolWin": 180,
+                                    "screenHitData": [
+                                        [false, false, true],
+                                        [false, true, true],
+                                        [false, false, true],
+                                        [false, false, false],
+                                        [false, false, false]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 5050,
+                            "afterAccumulateWinWithoutBaseGameWin": 5550,
+                            "beforeAccumulateWinWithBaseGameWin": 5050,
+                            "afterAccumulateWinWithBaseGameWin": 5550
+                        },
+                        "roundInfo": {
+                            "roundNumber": 3,
+                            "totalRound": 7,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_1",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [7, 4, 3, 3, 3],
+                                [3, 6, 7, 3, 2]
+                            ],
+                            "rngInfo": [[13, 19, 6, 6, 6]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 8,
+                            "sideCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "isRetrigger": false,
+                            "accumulateCredit": 0,
+                            "sideCreditBallCount": 0,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 300,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [4, 3, 3],
+                            [3, 2, 2],
+                            [4, 3, 6],
+                            [6, 3, 4],
+                            [6, 3, 5]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 300,
+                            "waysResult": [
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 5,
+                                    "count": 2,
+                                    "hitOdds": 150,
+                                    "symbolWin": 300,
+                                    "screenHitData": [
+                                        [false, true, true],
+                                        [true, false, false],
+                                        [false, true, false],
+                                        [false, true, false],
+                                        [false, true, false]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 5550,
+                            "afterAccumulateWinWithoutBaseGameWin": 5850,
+                            "beforeAccumulateWinWithBaseGameWin": 5550,
+                            "afterAccumulateWinWithBaseGameWin": 5850
+                        },
+                        "roundInfo": {
+                            "roundNumber": 4,
+                            "totalRound": 7,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_4",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [5, 3, 6, 6, 6],
+                                [7, 3, 4, 7, 2]
+                            ],
+                            "rngInfo": [[35, 25, 13, 28, 4]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 0,
+                            "sideCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "isRetrigger": false,
+                            "accumulateCredit": 0,
+                            "sideCreditBallCount": 0,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 1600,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [3, 3, 5],
+                            [4, 3, 3],
+                            [5, 0, 7],
+                            [3, 6, 6],
+                            [2, 2, 2]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 1600,
+                            "waysResult": [
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 4,
+                                    "count": 4,
+                                    "hitOdds": 50,
+                                    "symbolWin": 1600,
+                                    "screenHitData": [
+                                        [true, true, false],
+                                        [false, true, true],
+                                        [false, true, false],
+                                        [true, false, false],
+                                        [false, false, false]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 5850,
+                            "afterAccumulateWinWithoutBaseGameWin": 7450,
+                            "beforeAccumulateWinWithBaseGameWin": 5850,
+                            "afterAccumulateWinWithBaseGameWin": 7450
+                        },
+                        "roundInfo": {
+                            "roundNumber": 5,
+                            "totalRound": 7,
+                            "addRound": 1
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_3",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [6, 4, 5, 6, 5],
+                                [4, 5, 5, 3, 6]
+                            ],
+                            "rngInfo": [[32, 34, 7, 9, 7]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 8,
+                            "sideCreditBallScreenLabel": [
+                                [700, 0, 700],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 700],
+                                [0, 0, 0]
+                            ],
+                            "isRetrigger": true,
+                            "accumulateCredit": 2100,
+                            "sideCreditBallCount": 3,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 20,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [3, 7, 4],
+                            [3, 6, 4],
+                            [3, 5, 2],
+                            [2, 2, 2],
+                            [4, 3, 5]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 20,
+                            "waysResult": [
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 3,
+                                    "count": 1,
+                                    "hitOdds": 20,
+                                    "symbolWin": 20,
+                                    "screenHitData": [
+                                        [true, false, false],
+                                        [true, false, false],
+                                        [true, false, false],
+                                        [false, false, false],
+                                        [false, false, false]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 7450,
+                            "afterAccumulateWinWithoutBaseGameWin": 7470,
+                            "beforeAccumulateWinWithBaseGameWin": 7450,
+                            "afterAccumulateWinWithBaseGameWin": 7470
+                        },
+                        "roundInfo": {
+                            "roundNumber": 6,
+                            "totalRound": 8,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_1",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [4, 4, 4, 7, 4],
+                                [4, 4, 4, 4, 5]
+                            ],
+                            "rngInfo": [[11, 31, 33, 16, 29]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 0,
+                            "sideCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "isRetrigger": false,
+                            "accumulateCredit": 0,
+                            "sideCreditBallCount": 0,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 420,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [4, 3, 2],
+                            [3, 6, 4],
+                            [3, 6, 4],
+                            [7, 4, 4],
+                            [5, 4, 4]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 420,
+                            "waysResult": [
+                                {
+                                    "symbolID": 4,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 5,
+                                    "count": 4,
+                                    "hitOdds": 100,
+                                    "symbolWin": 400,
+                                    "screenHitData": [
+                                        [true, false, false],
+                                        [false, false, true],
+                                        [false, false, true],
+                                        [false, true, true],
+                                        [false, true, true]
+                                    ]
+                                },
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 3,
+                                    "count": 1,
+                                    "hitOdds": 20,
+                                    "symbolWin": 20,
+                                    "screenHitData": [
+                                        [false, true, false],
+                                        [true, false, false],
+                                        [true, false, false],
+                                        [false, false, false],
+                                        [false, false, false]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 7470,
+                            "afterAccumulateWinWithoutBaseGameWin": 7890,
+                            "beforeAccumulateWinWithBaseGameWin": 7470,
+                            "afterAccumulateWinWithBaseGameWin": 7890
+                        },
+                        "roundInfo": {
+                            "roundNumber": 7,
+                            "totalRound": 8,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_5",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [4, 4, 5, 3, 3],
+                                [2, 4, 3, 7, 3]
+                            ],
+                            "rngInfo": [[25, 31, 11, 1, 27]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 0,
+                            "sideCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [700, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "isRetrigger": false,
+                            "accumulateCredit": 700,
+                            "sideCreditBallCount": 1,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "freeGame_03",
+                        "playerWin": 600,
+                        "usedTableIndex": 2,
+                        "screenSymbol": [
+                            [3, 3, 7],
+                            [3, 3, 2],
+                            [5, 6, 3],
+                            [4, 3, 7],
+                            [7, 7, 3]
+                        ],
+                        "waysGameResult": {
+                            "playerWin": 600,
+                            "waysResult": [
+                                {
+                                    "symbolID": 3,
+                                    "hitDirection": "LeftToRight",
+                                    "hitNumber": 5,
+                                    "count": 4,
+                                    "hitOdds": 150,
+                                    "symbolWin": 600,
+                                    "screenHitData": [
+                                        [true, true, false],
+                                        [true, true, false],
+                                        [false, false, true],
+                                        [false, true, false],
+                                        [false, false, true]
+                                    ]
+                                }
+                            ]
+                        },
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "displayLogicInfo": {
+                            "maxTriggerCountFlag": false,
+                            "beforeAccumulateWinWithoutBaseGameWin": 7890,
+                            "afterAccumulateWinWithoutBaseGameWin": 8490,
+                            "beforeAccumulateWinWithBaseGameWin": 7890,
+                            "afterAccumulateWinWithBaseGameWin": 8490
+                        },
+                        "roundInfo": {
+                            "roundNumber": 8,
+                            "totalRound": 8,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [[false], [false], [false], [false], [false]],
+                            "bigWinType": "normal_7",
+                            "prizePredictionType": "NoPredictionType",
+                            "fortuneLevelType": "level1",
+                            "dampInfo": [
+                                [4, 5, 0, 4, 5],
+                                [7, 2, 4, 4, 4]
+                            ],
+                            "rngInfo": [[0, 24, 18, 35, 16]]
+                        },
+                        "extendInfoForFreeGameResult": {
+                            "roundWildMultiplier": 0,
+                            "sideCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "isRetrigger": false,
+                            "accumulateCredit": 0,
+                            "sideCreditBallCount": 0,
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    }
+                ]
+            },
+            "bigWinType": "jumboWin",
+            "probabilityDetail": {
+                "randomNumberUsed": 163,
+                "randomDataUsed": [
+                    5, 18, 23, 19, 10, 19102, 19182, 67100, 34861, 38031, 17110, 63700, 32944, 23421, 23845, 17992,
+                    44262, 6440, 20971, 5644, 30, 19, 1, 28, 24, 8541, 41647, 18465, 1096, 47448, 30646, 23829, 754,
+                    50553, 1087, 28208, 53841, 73951, 24984, 64212, 387, 13, 19, 6, 6, 6, 7581, 15870, 43095, 64682,
+                    13731, 67705, 5882, 27552, 30044, 34597, 38302, 51831, 45452, 31235, 57990, 44794, 35, 25, 13, 28,
+                    4, 51899, 21067, 37640, 67458, 39031, 6181, 51210, 16565, 43482, 57850, 12960, 62653, 41624, 30974,
+                    54394, 32, 34, 7, 9, 7, 5498, 727, 15679, 435, 54819, 26114, 26343, 48134, 29238, 55943, 72710,
+                    33866, 1312, 11823, 3638, 3360, 11, 31, 33, 16, 29, 2817, 18958, 59886, 26211, 27692, 56780, 27734,
+                    65322, 72180, 3304, 67588, 38553, 45543, 15054, 65269, 25, 31, 11, 1, 27, 10271, 70129, 50752, 1280,
+                    42874, 5930, 72560, 16005, 4092, 62914, 60772, 38238, 31152, 22338, 40774, 0, 24, 18, 35, 16, 63730,
+                    72397, 48736, 19984, 12750, 48647, 51582, 59626, 43121, 74848, 60586, 18821, 6061, 58821, 26734,
+                    4023318
+                ]
+            }
+        },
+        "gameSeq": 231885283,
+        "ts": 1636969963203
+    },
+    "description": "獲得Retrigger FreeGame盤面",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

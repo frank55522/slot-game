@@ -1,0 +1,13 @@
+{
+  "ver": "2.0.3",
+  "importer": "animation-clip",
+  "imported": true,
+  "uuid": "1e8613f7-8eb1-4d3e-9893-98e55cb7f26f",
+  "files": [
+    ".cconb"
+  ],
+  "subMetas": {},
+  "userData": {
+    "name": "ScoreCollectAnimation_Hide"
+  }
+}

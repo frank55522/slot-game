@@ -1,0 +1,48 @@
+
+FeatureSelection.png
+size: 379,80
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body_01
+  rotate: true
+  xy: 2, 63
+  size: 15, 375
+  orig: 15, 375
+  offset: 0, 0
+  index: -1
+Head_01
+  rotate: true
+  xy: 2, 2
+  size: 59, 105
+  orig: 59, 105
+  offset: 0, 0
+  index: -1
+Head_02a
+  rotate: true
+  xy: 265, 35
+  size: 26, 58
+  orig: 26, 58
+  offset: 0, 0
+  index: -1
+Head_02c
+  rotate: true
+  xy: 325, 36
+  size: 25, 37
+  orig: 25, 37
+  offset: 0, 0
+  index: -1
+Head_03a
+  rotate: true
+  xy: 109, 23
+  size: 38, 83
+  orig: 38, 83
+  offset: 0, 0
+  index: -1
+Leg_01
+  rotate: true
+  xy: 194, 35
+  size: 26, 69
+  orig: 26, 69
+  offset: 0, 0
+  index: -1

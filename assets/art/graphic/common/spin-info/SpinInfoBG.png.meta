@@ -1,0 +1,79 @@
+{
+  "ver": "1.0.23",
+  "importer": "image",
+  "imported": true,
+  "uuid": "94f7fd78-d878-410f-a6f9-c5f1e99d2872",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "94f7fd78-d878-410f-a6f9-c5f1e99d2872@6c48a",
+      "displayName": "SpinInfoBG",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "94f7fd78-d878-410f-a6f9-c5f1e99d2872"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "94f7fd78-d878-410f-a6f9-c5f1e99d2872@f9941",
+      "displayName": "SpinInfoBG",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 2,
+        "width": 56,
+        "height": 76,
+        "rawWidth": 56,
+        "rawHeight": 80,
+        "borderTop": 15,
+        "borderBottom": 15,
+        "borderLeft": 15,
+        "borderRight": 15,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "94f7fd78-d878-410f-a6f9-c5f1e99d2872@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "sprite-frame",
+    "redirect": "94f7fd78-d878-410f-a6f9-c5f1e99d2872@f9941",
+    "compressSettings": {
+      "useCompressTexture": true,
+      "presetId": "c2DD1UYRdP47cNPKyrDZCN"
+    },
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

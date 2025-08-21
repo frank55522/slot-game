@@ -1,0 +1,41 @@
+# 通知部分先拿掉，之後再一起處理
+default:
+  image: alpine:latest
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH   #主線啟動CI/CD
+    - if: $CI_COMMIT_BRANCH =~ /^release/           #release開頭的分支，啟動CI/CD
+    - if: $CI_COMMIT_TAG                            #Tag動作，啟動CI/CD
+      when: always
+    - when: never
+
+include:
+  - project: h5_cicd/gitlab-yml
+    ref: master
+    file: 
+      - game_client/build-game-cocos-command.yaml
+      - game_client/post-result-message-command.yaml     
+  - project: h5_cicd/gitlab-yml
+    ref: master
+    file:
+      - game_client/deploy-game-command.yaml
+    rules:
+      - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+stages:
+  - prepare
+  - build
+  - sendSourceMap
+  - publish
+  - deploy
+  - notify
+
+variables:
+  COCOS_VERSION: '3.5.2'
+  GAME_TYPE: '1'
+  GAME_ID: '100004'
+  EXPORT_ID: '100004/110004'
+  CHECK_GAME_SIZE: '10' #打包容量判斷，MB為基礎單位
+  CHECK_MEMORY: '8g'
+  NEED_COPY_HELP: 'true' #判斷是否需要啟動複製Help頁面工作;預設為false

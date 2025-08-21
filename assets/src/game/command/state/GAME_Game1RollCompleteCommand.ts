@@ -1,0 +1,135 @@
+import { ViewMediatorEvent } from 'src/sgv3/util/Constant';
+import { Game1RollCompleteCommand } from '../../../sgv3/command/state/Game1RollCompleteCommand';
+import { StateMachineProxy } from '../../../sgv3/proxy/StateMachineProxy';
+import { GlobalTimer } from '../../../sgv3/util/GlobalTimer';
+import { GameScene } from '../../../sgv3/vo/data/GameScene';
+import { BaseGameResult } from '../../../sgv3/vo/result/BaseGameResult';
+import { SymbolId } from 'src/sgv3/vo/enum/Reel';
+import { GTMUtil } from 'src/core/utils/GTMUtil';
+
+export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
+    protected timerKey = 'game1RollComplete';
+    private isHitGrand: boolean = false;
+
+    public execute(notification: puremvc.INotification): void {
+        this.gameDataProxy.isSpinning = false;
+        // 滾停，將 Web Spin 按鈕改變圖示
+        this.webBridgeProxy.setElementStyle('spinBtn', 'stop', 'remove');
+        // 進入Roll代表可以重置preScene為當前的Scene
+        this.gameDataProxy.preScene = GameScene.Game_1;
+        let curRoundResult = this.gameDataProxy.curRoundResult as BaseGameResult;
+        let emblemLevel = (this.gameDataProxy.curEmblemLevel = this.getEmblemLevel());
+        // 判斷是否有意象物升階表演
+        this.sendNotification(ViewMediatorEvent.UPDATE_EMBLEM_LEVEL, emblemLevel);
+        this.sentGTMEvent();
+
+        // 判斷是否有特殊獎項
+        this.isHitGrand = this.gameDataProxy.isHitGrand();
+
+        // 延遲收集球的表演
+        let delayTime: number = 0;
+        let ballCount = curRoundResult.extendInfoForbaseGameResult.ballCount;
+        if (ballCount >= 6 && this.isHitGrand == false) {
+            delayTime = 2;
+        } else if (ballCount > 0) {
+            delayTime = 0.1;
+        }
+        GlobalTimer.getInstance().registerTimer(this.timerKey, delayTime, this.endGame1RollComplete, this).start();
+    }
+
+    private endGame1RollComplete() {
+        GlobalTimer.getInstance().removeTimer(this.timerKey);
+        if (this.isHitGrand) {
+            this.changeState(StateMachineProxy.GAME1_HITSPECIAL);
+        } else {
+            this.changeState(StateMachineProxy.GAME1_BEFORESHOW);
+        }
+    }
+
+    private getEmblemLevel(): number[] {
+        let level: number[] = this.gameDataProxy.curEmblemLevel;
+        let curRoundResult = this.gameDataProxy.curRoundResult as BaseGameResult;
+        if (this.hasSymbolC1(curRoundResult)) {
+            level = this.gameDataProxy.isHitMiniGame() ? [4] : this.gameDataProxy.getEmblemLevelInBaseGame();
+        }
+        return level;
+    }
+
+    private hasSymbolC1(curRoundResult: BaseGameResult) {
+        let hasC1 = false;
+        for (let i = 0; i < curRoundResult.screenSymbol.length; i++) {
+            for (let j = 0; j < curRoundResult.screenSymbol[i].length; j++) {
+                if (curRoundResult.screenSymbol[i][j] == SymbolId.C1) {
+                    hasC1 = true;
+                    break;
+                }
+            }
+        }
+        return hasC1;
+    }
+    
+    protected sentGTMEvent() {
+        if (!this.gameDataProxy.isFirstSpin) {
+            GTMUtil.setGTMEvent('FirstSpin', {
+                Member_ID: this.gameDataProxy.userId,
+                Game_ID: this.gameDataProxy.machineType,
+                DateTime: Date.now(),
+                Session_ID: this.gameDataProxy.sessionId,
+            });
+            this.gameDataProxy.isFirstSpin = true;
+        }
+        const spinResult = this.gameDataProxy.spinEventData;
+        let jp_Type = [];
+        if (spinResult.bonusGameResult) {
+            for (let i = 0; i < spinResult.bonusGameResult.bonusGameOneRoundResult.length; i++) {
+                jp_Type.push(...spinResult.bonusGameResult.bonusGameOneRoundResult[i].hitPool);
+            }
+        }
+
+        let freeGameType = '0';
+        let freeGameWin = 0;
+        let freeGameSpin = 0;
+        if (spinResult.freeGameResult) {
+            const specialHitInfo = spinResult.freeGameResult.freeGameOneRoundResult[0]?.specialHitInfo;
+            switch (specialHitInfo) {
+                case 'freeGame_01':
+                    freeGameType = '1';
+                    break;
+                case 'freeGame_02':
+                    freeGameType = '2';
+                    break;
+                case 'freeGame_03':
+                    freeGameType = '3';
+                    break;
+            }
+
+            freeGameWin = spinResult.freeGameResult.freeGameTotalWin;
+            freeGameSpin = spinResult.freeGameResult.totalRound;
+        }
+        
+        if (spinResult.topUpGameResult) {
+            freeGameType = '4';
+
+            freeGameWin = spinResult.topUpGameResult.topUpGameTotalWin;
+            freeGameSpin = spinResult.topUpGameResult.totalRound;
+        }
+
+        GTMUtil.setGTMEvent('SpinResponse', {
+            GameSeqNo: this.gameDataProxy.spinSequenceNumber,
+            Bet_Type: '0',
+            Bet_Multiplier: this._gameDataProxy.isOmniChannel() ? this.gameDataProxy.curBet : this.gameDataProxy.curTotalBet,
+            Feature_Bet: this._gameDataProxy.isOmniChannel() ? this.gameDataProxy.curFeatureBet : '1',
+            OmniDenom: this._gameDataProxy.isOmniChannel() ? this.gameDataProxy.curDenomMultiplier : '1',
+            BaseGame_Win: this._gameDataProxy.convertCredit2Cash(spinResult.baseGameResult.baseGameTotalWin),
+            FreeGame_Win: this._gameDataProxy.convertCredit2Cash(freeGameWin),
+            FreeGame_Type: freeGameType,
+            FreeGame_Spin: freeGameSpin,
+            FeatureGame_Win: '0',
+            FeatureGame_Type: '0',
+            JP_Type: jp_Type.length > 0 ? jp_Type : undefined,
+            SpinSpeedMode: this.gameDataProxy.curSpeedMode,
+            Session_ID: this.gameDataProxy.sessionId,
+            PreviewType: this.gameDataProxy.previewType
+        });
+    }
+}

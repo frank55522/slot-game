@@ -1,0 +1,15 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "randomDataUsed": [0, 3, 3, 3, 3, 3, 0]
+    },
+    "totalBet": 88,
+    "denom": 1,
+    "multiplier": 1,
+    "featureBet": 88,
+    "description": "MiniGameWin",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

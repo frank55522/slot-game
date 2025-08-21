@@ -1,0 +1,12 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "randomDataUsed": [0, 2, 8, 20, 15, 16]
+    },
+    "totalBet": 10,
+    "description": "BaseGame BigWin",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

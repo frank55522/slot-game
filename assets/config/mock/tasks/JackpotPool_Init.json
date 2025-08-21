@@ -1,0 +1,18 @@
+{
+    "name": "jackpotPoolNotify",
+    "data": {
+        "typeId": 1,
+        "typeName": "",
+        "typeItems": [
+            { "poolId": 1, "poolName": "grand", "poolValue": 20001.62, "initialValue": 20000 },
+            { "poolId": 2, "poolName": "major", "poolValue": 2001.62, "initialValue": 2000 },
+            { "poolId": 3, "poolName": "minor", "poolValue": 101.62, "initialValue": 100 },
+            { "poolId": 4, "poolName": "mini", "poolValue": 3.0, "initialValue": 3 }
+        ]
+    },
+    "description": "jackpot初始化",
+    "event": "jackpotPoolNotify",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

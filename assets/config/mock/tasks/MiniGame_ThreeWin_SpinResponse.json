@@ -1,0 +1,121 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "balance": 185313714.12,
+        "spinResult": {
+            "playerTotalWin": 0,
+            "baseGameResult": {
+                "usedTableIndex": 0,
+                "screenSymbol": [
+                    [1, 7, 3],
+                    [3, 2, 2],
+                    [6, 6, 5],
+                    [2, 2, 2],
+                    [5, 8, 3]
+                ],
+                "baseGameTotalWin": 0,
+                "waysGameResult": { "playerWin": 0, "waysResult": [] },
+                "specialFeatureResult": [
+                    {
+                        "specialHitInfo": "bonusGame_01",
+                        "specialOperations": [],
+                        "jsonExtendData": "{\"jackpotResult\":{\"hitCase\":4,\"hitPool\":[2,3],\"poolamount\":[0,0,0,0],\"poolHitInfo\":[{\"jackpotStyle\":1,\"hitPool\":1,\"hitAmount\":0,\"awarded\":false},{\"jackpotStyle\":1,\"hitPool\":2,\"hitAmount\":0,\"awarded\":true},{\"jackpotStyle\":1,\"hitPool\":3,\"hitAmount\":0,\"awarded\":true},{\"jackpotStyle\":4,\"hitPool\":4,\"hitAmount\":0,\"awarded\":false}]}}",
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    }
+                ],
+                "displayInfo": {
+                    "displayMethod": [[false], [false], [false], [false], [false]],
+                    "bigWinType": "normal_1",
+                    "prizePredictionType": "NoPredictionType",
+                    "fortuneLevelType": "level1",
+                    "dampInfo": [
+                        [6, 3, 6, 5, 3],
+                        [5, 0, 5, 4, 2]
+                    ],
+                    "rngInfo": [[4, 4, 4, 4, 4]]
+                },
+                "extendInfoForbaseGameResult": { "isPowerUp": [], "extendPlayerWin": 0, "extendGameFeature": 0 }
+            },
+            "bonusGameResult": {
+                "bonusGameTotalWin": 0,
+                "jackpotTotalWin": 210000,
+                "totalRound": 1,
+                "jackpotPoolHit": [0, 0, 1, 1],
+                "bonusGameOneRoundResult": [
+                    {
+                        "specialHitInfo": "bonusGame_01",
+                        "hitPool": [2, 3, 4],
+                        "poolamount": [0, 0, 0, 0],
+                        "oneRoundTotalWinWithoutJP": 0,
+                        "oneRoundJPTotalWin": 390000,
+                        "jpHitInfo": [
+                            { "jackpotStyle": 1, "hitPool": 1, "hitAmount": 2000000, "awarded": false },
+                            { "jackpotStyle": 1, "hitPool": 2, "hitAmount": 200000, "awarded": true },
+                            { "jackpotStyle": 1, "hitPool": 3, "hitAmount": 10000, "awarded": true },
+                            { "jackpotStyle": 4, "hitPool": 4, "hitAmount": 180000, "awarded": true }
+                        ],
+                        "extendInfoForBonusGameResult": {
+                            "hitCase": 4,
+                            "bonusGame15C3Result": { "script": [1, 0, 2, 1, 3, 2, 3, 4] }
+                        }
+                    }
+                ]
+            },
+            "bigWinType": "normal_1",
+            "probabilityDetail": {
+                "randomNumberUsed": 12,
+                "randomDataUsed": [0, 4, 4, 4, 4, 4, 0, 4, 0, 1, 0, 2, 1, 3, 1]
+            }
+        },
+        "gameSeq": 13861536,
+        "ts": 1631689439548
+    },
+    "description": "在BaseGame同時獲得MiniGame和FreeGame盤面",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

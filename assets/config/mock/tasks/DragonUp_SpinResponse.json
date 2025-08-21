@@ -1,0 +1,745 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "balance": 2392585.116,
+        "spinResult": {
+            "playerTotalWin": 3950,
+            "baseGameResult": {
+                "usedTableIndex": 0,
+                "screenSymbol": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [7, 3, 5],
+                    [2, 4, 6]
+                ],
+                "baseGameTotalWin": 0,
+                "waysGameResult": {
+                    "playerWin": 0,
+                    "waysResult": []
+                },
+                "specialFeatureResult": [
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "waitingForClient",
+                        "specialOperations": ["freeGame_03", "freeGame_02", "freeGame_01", "topUpGame_01"],
+                        "jsonExtendData": "{\"ballCount\":9,\"ballTotalCredit\":790,\"ballScreenLabel\":[[100,100,20],[100,100,100],[100,100,70],[0,0,0],[0,0,0]],\"bonusHitPool\":-1,\"bonusHitCase\":-1}",
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    }
+                ],
+                "displayInfo": {
+                    "displayMethod": [[false], [false], [false], [false], [false]],
+                    "bigWinType": "normal_1",
+                    "prizePredictionType": "NoPredictionType",
+                    "fortuneLevelType": "level1",
+                    "dampInfo": [
+                        [6, 3, 3, 6, 2],
+                        [2, 2, 2, 5, 2]
+                    ],
+                    "rngInfo": [[14, 14, 10, 0, 0]]
+                },
+                "extendInfoForbaseGameResult": {
+                    "isPowerUp": false,
+                    "ballCount": 9,
+                    "ballTotalCredit": 790,
+                    "ballScreenLabel": [
+                        [100, 100, 20],
+                        [100, 100, 100],
+                        [100, 100, 70],
+                        [0, 0, 0],
+                        [0, 0, 0]
+                    ],
+                    "extendPlayerWin": 0,
+                    "extendGameFeature": 0
+                }
+            },
+            "topUpGameResult": {
+                "topUpGameTotalWin": 3950,
+                "totalRound": 8,
+                "topUpGameOneRoundResult": [
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [6, 3, 3],
+                            [7, 6, 7]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 1,
+                            "totalRound": 6,
+                            "addRound": 1
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [7, 5, 9, 6, 6],
+                                [9, 5, 7, 7, 3],
+                                [4, 9, 5, 3, 3],
+                                [6, 5, 4, 6, 9],
+                                [2, 7, 3, 6, 6],
+                                [6, 7, 4, 3, 6]
+                            ],
+                            "rngInfo": [
+                                [7, 26, 5, 38, 35],
+                                [43, 36, 12, 45, 0],
+                                [22, 31, 28, 3, 49]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": true,
+                            "goldReSpin": 1,
+                            "accumulateMultiplier": 100,
+                            "accumulateCredit": 0,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 1],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 7, 6],
+                            [7, 6, 5]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 2,
+                            "totalRound": 7,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [7, 9, 9, 3, 6],
+                                [9, 3, 2, 6, 9],
+                                [9, 3, 6, 6, 4],
+                                [6, 9, 7, 3, 7],
+                                [9, 7, 4, 6, 6],
+                                [3, 6, 4, 6, 7]
+                            ],
+                            "rngInfo": [
+                                [7, 10, 29, 5, 16],
+                                [33, 5, 25, 28, 34],
+                                [25, 30, 53, 37, 0]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": false,
+                            "goldReSpin": 0,
+                            "accumulateMultiplier": 100,
+                            "accumulateCredit": 790,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [790, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 3, 6],
+                            [2, 9, 4]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 3,
+                            "totalRound": 7,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [2, 7, 2, 6, 6],
+                                [6, 7, 4, 6, 6],
+                                [6, 5, 3, 7, 4],
+                                [4, 7, 4, 3, 6],
+                                [9, 5, 4, 6, 3],
+                                [3, 9, 5, 6, 9]
+                            ],
+                            "rngInfo": [
+                                [40, 40, 32, 26, 44],
+                                [45, 38, 47, 44, 21],
+                                [25, 51, 1, 0, 9]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": false,
+                            "goldReSpin": 0,
+                            "accumulateMultiplier": 150,
+                            "accumulateCredit": 1580,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 790, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 50, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 3, 6],
+                            [6, 9, 6]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 4,
+                            "totalRound": 7,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [2, 3, 5, 9, 6],
+                                [6, 3, 9, 7, 7],
+                                [3, 5, 4, 7, 6],
+                                [4, 5, 4, 3, 6],
+                                [7, 3, 6, 6, 6],
+                                [9, 5, 6, 6, 7]
+                            ],
+                            "rngInfo": [
+                                [40, 2, 3, 34, 15],
+                                [14, 26, 53, 21, 23],
+                                [7, 35, 24, 0, 15]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": false,
+                            "goldReSpin": 0,
+                            "accumulateMultiplier": 150,
+                            "accumulateCredit": 1580,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 3, 5],
+                            [6, 9, 6]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 5,
+                            "totalRound": 7,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [6, 7, 9, 3, 7],
+                                [2, 6, 2, 6, 9],
+                                [5, 6, 4, 7, 6],
+                                [2, 6, 5, 3, 9],
+                                [2, 9, 3, 9, 5],
+                                [5, 7, 4, 5, 6]
+                            ],
+                            "rngInfo": [
+                                [53, 30, 29, 49, 0],
+                                [38, 22, 1, 40, 28],
+                                [36, 27, 9, 15, 13]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": false,
+                            "goldReSpin": 0,
+                            "accumulateMultiplier": 150,
+                            "accumulateCredit": 1580,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 3, 6],
+                            [9, 9, 5]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 6,
+                            "totalRound": 7,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [2, 9, 4, 4, 6],
+                                [6, 3, 7, 6, 6],
+                                [2, 7, 3, 7, 5],
+                                [3, 7, 2, 3, 6],
+                                [2, 6, 6, 6, 9],
+                                [3, 4, 6, 6, 6]
+                            ],
+                            "rngInfo": [
+                                [44, 10, 19, 24, 41],
+                                [12, 48, 40, 21, 52],
+                                [13, 6, 24, 26, 0]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": false,
+                            "goldReSpin": 0,
+                            "accumulateMultiplier": 250,
+                            "accumulateCredit": 3160,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [1580, 0, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [100, 0, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 4, 3],
+                            [9, 9, 3]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 7,
+                            "totalRound": 7,
+                            "addRound": 1
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [6, 7, 3, 7, 4],
+                                [4, 5, 4, 3, 6],
+                                [5, 7, 2, 5, 6],
+                                [2, 9, 4, 6, 6],
+                                [6, 5, 6, 7, 2],
+                                [9, 7, 3, 3, 4]
+                            ],
+                            "rngInfo": [
+                                [45, 41, 47, 52, 21],
+                                [38, 25, 32, 0, 39],
+                                [31, 38, 26, 29, 32]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": true,
+                            "goldReSpin": 1,
+                            "accumulateMultiplier": 250,
+                            "accumulateCredit": 3160,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 1]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    },
+                    {
+                        "specialHitInfo": "topUpGame_01",
+                        "playerWin": 0,
+                        "usedTableIndex": 3,
+                        "holdSpinGameResult": {
+                            "playerWin": 0
+                        },
+                        "screenSymbol": [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [9, 3, 6],
+                            [9, 9, 5]
+                        ],
+                        "specialFeatureResult": [
+                            {
+                                "specialHitInfo": "noSpecialHit",
+                                "specialOperations": [],
+                                "specialScreenWin": 0
+                            }
+                        ],
+                        "roundInfo": {
+                            "roundNumber": 8,
+                            "totalRound": 8,
+                            "addRound": 0
+                        },
+                        "displayInfo": {
+                            "displayMethod": [
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false],
+                                [false, false, false]
+                            ],
+                            "bigWinType": "normal_1",
+                            "dampInfo": [
+                                [9, 7, 3, 7, 6],
+                                [7, 7, 4, 3, 7],
+                                [6, 5, 7, 3, 6],
+                                [4, 3, 5, 9, 6],
+                                [4, 6, 3, 7, 9],
+                                [9, 7, 4, 6, 5]
+                            ],
+                            "rngInfo": [
+                                [5, 52, 18, 11, 4],
+                                [37, 3, 21, 4, 41],
+                                [39, 23, 28, 0, 11]
+                            ]
+                        },
+                        "extendInfoForTopUpGameResult": {
+                            "isRetrigger": false,
+                            "goldReSpin": 0,
+                            "accumulateMultiplier": 250,
+                            "accumulateCredit": 3160,
+                            "goldCreditBallScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "goldMultiplierScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "addReSpinScreenLabel": [
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]
+                            ],
+                            "extendPlayerWin": 0,
+                            "specialFeatureIndex": 0
+                        }
+                    }
+                ]
+            },
+            "bigWinType": "megaWin",
+            "probabilityDetail": {
+                "randomNumberUsed": 149,
+                "randomDataUsed": [
+                    7, 26, 5, 38, 35, 43, 36, 12, 45, 20, 22, 31, 28, 3, 49, 33, 4, 115, 2, 7, 10, 29, 5, 16, 33, 5, 25,
+                    28, 34, 25, 30, 53, 37, 15, 45, 5, 179, 1, 40, 40, 32, 26, 44, 45, 38, 47, 44, 21, 25, 51, 1, 7, 9,
+                    5, 1, 384, 83, 40, 2, 3, 34, 15, 14, 26, 53, 21, 23, 7, 35, 24, 26, 15, 35, 1, 36, 53, 30, 29, 49,
+                    6, 38, 22, 1, 40, 28, 36, 27, 9, 15, 13, 5, 2, 7, 44, 10, 19, 24, 41, 12, 48, 40, 21, 52, 13, 6, 24,
+                    26, 47, 2, 3, 719, 75, 45, 41, 47, 52, 21, 38, 25, 32, 17, 39, 31, 38, 26, 29, 32, 28, 0, 110, 2, 5,
+                    52, 18, 11, 4, 37, 3, 21, 4, 41, 39, 23, 28, 36, 11, 7, 1, 27
+                ]
+            }
+        },
+        "gameSeq": 234349040,
+        "ts": 1637651099477
+    },
+    "description": "獲得DragonUp盤面",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

@@ -1,0 +1,115 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "balance": 2416122057.23,
+        "spinResult": {
+            "playerTotalWin": 0,
+            "baseGameResult": {
+                "usedTableIndex": 0,
+                "screenSymbol": [
+                    [1, 1, 1],
+                    [3, 7, 6],
+                    [7, 1, 1],
+                    [6, 6, 1],
+                    [7, 6, 3]
+                ],
+                "baseGameTotalWin": 0,
+                "waysGameResult": {
+                    "playerWin": 0,
+                    "waysResult": []
+                },
+                "specialFeatureResult": [
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "waitingForClient",
+                        "specialOperations": ["freeGame_01", "topUpGame_01"],
+                        "jsonExtendData": "{\"ballCount\":6,\"ballTotalCredit\":45800,\"ballScreenLabel\":[[8800,8800,8800],[0,0,0],[0,8800,8800],[0,0,1800],[0,0,0]],\"jackpotResult\":{\"hitCase\":-1},\"groupingIdx\":4,\"bonusHitPool\":-1,\"bonusHitCase\":-1,\"playerBetLevel\":0}",
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    }
+                ],
+                "displayInfo": {
+                    "displayMethod": [[false], [false], [false], [false], [false]],
+                    "bigWinType": "normal_1",
+                    "dampInfo": [
+                        [5, 5, 7, 7, 2],
+                        [5, 4, 1, 1, 3]
+                    ],
+                    "rngInfo": [[14, 5, 56, 52, 26]]
+                },
+                "extendInfoForbaseGameResult": {
+                    "featureIdx": 4,
+                    "isPowerUp": false,
+                    "ballCount": 6,
+                    "ballTotalCredit": 45800,
+                    "ballScreenLabel": [
+                        [8800, 8800, 8800],
+                        [0, 0, 0],
+                        [0, 8800, 8800],
+                        [0, 0, 1800],
+                        [0, 0, 0]
+                    ],
+                    "mysterySymbol": -1,
+                    "seatInfo": {
+                        "statusAccumulation": [6668],
+                        "miniGameWaterLevel": 4,
+                        "denomMultiplier": 100,
+                        "featureIdx": 4,
+                        "usedTableIndex": 0,
+                        "screenRngInfo": [[14, 5, 56, 52, 26]]
+                    },
+                    "extendPlayerWin": 0,
+                    "extendGameFeature": 0
+                },
+                "isHitFeatureGame": false
+            },
+            "bigWinType": "normal_1",
+            "probabilityDetail": {
+                "randomNumberUsed": 6,
+                "randomDataUsed": [0, 14, 5, 56, 52, 26, 453618198, 924, 771, 582, 499, 944, 91],
+                "settingId": "0-0-0"
+            }
+        },
+        "gameSeq": 432718754,
+        "minusBetBalance": 2416122057.23,
+        "ts": 1739008451999
+    },
+    "totalBet": 88,
+    "denom": 1,
+    "multiplier": 1,
+    "featureBet": 88,
+    "description": "6C1",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}

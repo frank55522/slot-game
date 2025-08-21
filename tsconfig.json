@@ -1,0 +1,22 @@
+{
+  /* Base configuration. Do not edit this field. */
+  "extends": "./temp/tsconfig.cocos.json",
+
+  /* Add your custom configuration here. */
+  "compilerOptions": {
+    "strict": false,
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es2015","es2016","es2017","dom"],
+    "paths": {
+      "src/*":["./assets/src/*"],
+      "util/*":["./assets/src/sgv3/util/*"],
+      "Logger":["./assets/src/core/utils/Logger.ts"],
+      "AudioManager":["./assets/src/audio/AudioManager.ts"],
+      "TimelineTool":["./extensions/timeline-tool/assets/src/timeline-tool/TimelineTool.ts"],
+      "ParticleContentTool":["./extensions/timeline-tool/assets/src/particle-tool/ParticleContentTool.ts"],
+      "i18n/*":["./extensions/i18n/assets/*"],
+      "common-ui/*": ["./extensions/common-ui/assets/src/*"]
+    }
+  }
+}

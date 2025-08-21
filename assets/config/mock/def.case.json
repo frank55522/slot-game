@@ -1,0 +1,126 @@
+{
+    "cases": [
+        {
+            "name": "NoWinLogin_json",
+            "path": "resource/config/mock/NoWinLogin.json"
+        },
+        {
+            "name": "NormalWinLogin_json",
+            "path": "resource/config/mock/NormalWinLogin.json"
+        },
+        {
+            "name": "NormalWinM1FullLogin_json",
+            "path": "resource/config/mock/NormalWinM1FullLogin.json"
+        },
+        {
+            "name": "FreeWinLogin_json",
+            "path": "resource/config/mock/FreeWinLogin.json"
+        },
+        {
+            "name": "FreeM1FullWinLogin_json",
+            "path": "resource/config/mock/FreeM1FullWinLogin.json"
+        },
+        {
+            "name": "FreeWinRetriggerLogin_json",
+            "path": "resource/config/mock/FreeWinRetriggerLogin.json"
+        },
+        {
+            "name": "MiniGameWinLogin_json",
+            "path": "resource/config/mock/MiniGameWinLogin.json"
+        },
+        {
+            "name": "MiniGameTwoWinLogin_json",
+            "path": "resource/config/mock/MiniGameTwoWinLogin.json"
+        },
+        {
+            "name": "MiniGameThreeWinLogin_json",
+            "path": "resource/config/mock/MiniGameThreeWinLogin.json"
+        },
+        {
+            "name": "MiniGameFourWinLogin_json",
+            "path": "resource/config/mock/MiniGameFourWinLogin.json"
+        },
+        {
+            "name": "MiniGameAndFreeGameWinInBaseGameLogin_json",
+            "path": "resource/config/mock/MiniGameAndFreeGameWinInBaseGameLogin.json"
+        },
+        {
+            "name": "FreeGameWinAndMiniGameWinInFreeGameLogin_json",
+            "path": "resource/config/mock/FreeGameWinAndMiniGameWinInFreeGameLogin.json"
+        },
+        {
+            "name": "WinMultiMiniGameInFreeGameLogin_json",
+            "path": "resource/config/mock/WinMultiMiniGameInFreeGameLogin.json"
+        }
+    ],
+    "tasks": [
+        {
+            "name": "Login_Info.json",
+            "path": "resource/config/mock/tasks/Login_Info.json"
+        },
+        {
+            "name": "Game_Init.json",
+            "path": "resource/config/mock/tasks/Game_Init.json"
+        },
+        {
+            "name": "JackpotPool_Init.json",
+            "path": "resource/config/mock/tasks/JackpotPool_Init.json"
+        },
+        {
+            "name": "Spin_Down.json",
+            "path": "resource/config/mock/tasks/Spin_Down.json"
+        },
+        {
+            "name": "NoWin_SpinResponse.json",
+            "path": "resource/config/mock/tasks/NoWin_SpinResponse.json"
+        },
+        {
+            "name": "Win_SpinResponse.json",
+            "path": "resource/config/mock/tasks/Win_SpinResponse.json"
+        },
+        {
+            "name": "WinM1Full_SpinResponse.json",
+            "path": "resource/config/mock/tasks/WinM1Full_SpinResponse.json"
+        },
+        {
+            "name": "FG_SpinResponse.json",
+            "path": "resource/config/mock/tasks/FG_SpinResponse.json"
+        },
+        {
+            "name": "FG_M1Full_SpinResponse.json",
+            "path": "resource/config/mock/tasks/FG_M1Full_SpinResponse.json"
+        },
+        {
+            "name": "FG_Retrigger_SpinResponse.json",
+            "path": "resource/config/mock/tasks/FG_Retrigger_SpinResponse.json"
+        },
+        {
+            "name": "MiniGameWin_SpinResponse.json",
+            "path": "resource/config/mock/tasks/MiniGameWin_SpinResponse.json"
+        },
+        {
+            "name": "MiniGame_TwoWin_SpinResponse.json",
+            "path": "resource/config/mock/tasks/MiniGame_TwoWin_SpinResponse.json"
+        },
+        {
+            "name": "MiniGame_ThreeWin_SpinResponse.json",
+            "path": "resource/config/mock/tasks/MiniGame_ThreeWin_SpinResponse.json"
+        },
+        {
+            "name": "MiniGame_FourWin_SpinResponse.json",
+            "path": "resource/config/mock/tasks/MiniGame_FourWin_SpinResponse.json"
+        },
+        {
+            "name": "MiniGameAndFreeGameWinInBaseGame_SpinResponse.json",
+            "path": "resource/config/mock/tasks/MiniGameAndFreeGameWinInBaseGame_SpinResponse.json"
+        },
+        {
+            "name": "FreeGameWinAndMiniGameWinInFreeGame_SpinResponse.json",
+            "path": "resource/config/mock/tasks/FreeGameWinAndMiniGameWinInFreeGame_SpinResponse.json"
+        },
+        {
+            "name": "WinMultiMiniGameInFreeGame_SpinResponse.json",
+            "path": "resource/config/mock/tasks/WinMultiMiniGameInFreeGame_SpinResponse.json"
+        }
+    ]
+}

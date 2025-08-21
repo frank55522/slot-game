@@ -1,0 +1,115 @@
+{
+    "name": "h5.spin",
+    "data": {
+        "balance": 2392563.534,
+        "spinResult": {
+            "playerTotalWin": 60750,
+            "baseGameResult": {
+                "usedTableIndex": 0,
+                "screenSymbol": [
+                    [2, 2, 2],
+                    [2, 2, 2],
+                    [2, 2, 2],
+                    [2, 2, 2],
+                    [2, 2, 2]
+                ],
+                "baseGameTotalWin": 60750,
+                "waysGameResult": {
+                    "playerWin": 60750,
+                    "waysResult": [
+                        {
+                            "symbolID": 2,
+                            "hitDirection": "LeftToRight",
+                            "hitNumber": 5,
+                            "count": 243,
+                            "hitOdds": 250,
+                            "symbolWin": 60750,
+                            "screenHitData": [
+                                [true, true, true],
+                                [true, true, true],
+                                [true, true, true],
+                                [true, true, true],
+                                [true, true, true]
+                            ]
+                        }
+                    ]
+                },
+                "specialFeatureResult": [
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    },
+                    {
+                        "specialHitInfo": "noSpecialHit",
+                        "specialOperations": [],
+                        "specialScreenHitData": [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        "specialScreenWin": 0
+                    }
+                ],
+                "displayInfo": {
+                    "displayMethod": [[false], [false], [false], [false], [true]],
+                    "bigWinType": "jumboWin",
+                    "prizePredictionType": "TYPE_1",
+                    "fortuneLevelType": "level1",
+                    "dampInfo": [
+                        [5, 4, 6, 4, 6],
+                        [7, 5, 7, 1, 6]
+                    ],
+                    "rngInfo": [[6, 22, 24, 43, 14]]
+                },
+                "extendInfoForbaseGameResult": {
+                    "isPowerUp": false,
+                    "ballCount": 0,
+                    "ballTotalCredit": 0,
+                    "ballScreenLabel": [
+                        [0, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 0]
+                    ],
+                    "extendPlayerWin": 0,
+                    "extendGameFeature": 0
+                }
+            },
+            "bigWinType": "jumboWin",
+            "probabilityDetail": {
+                "randomNumberUsed": 6,
+                "randomDataUsed": [0, 6, 22, 24, 43, 14]
+            }
+        },
+        "gameSeq": 234349036,
+        "ts": 1637650794214
+    },
+    "description": "BaseGame拿到M1的滿盤",
+    "event": "h5.spinResponse",
+    "delay": 0,
+    "repeat": 1,
+    "duration": 0
+}
