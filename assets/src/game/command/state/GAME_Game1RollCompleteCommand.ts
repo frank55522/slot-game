@@ -1,4 +1,4 @@
-import { ViewMediatorEvent } from 'src/sgv3/util/Constant';
+import { ViewMediatorEvent, DragonUpEvent } from 'src/sgv3/util/Constant';
 import { Game1RollCompleteCommand } from '../../../sgv3/command/state/Game1RollCompleteCommand';
 import { StateMachineProxy } from '../../../sgv3/proxy/StateMachineProxy';
 import { GlobalTimer } from '../../../sgv3/util/GlobalTimer';
@@ -22,6 +22,9 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
         // 判斷是否有意象物升階表演
         this.sendNotification(ViewMediatorEvent.UPDATE_EMBLEM_LEVEL, emblemLevel);
         this.sentGTMEvent();
+
+        // 題目三：發送 BaseGame 滾停後的贏分事件
+        this.triggerBaseGameWinDisplay();
 
         // 判斷是否有特殊獎項
         this.isHitGrand = this.gameDataProxy.isHitGrand();
@@ -131,5 +134,19 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
             Session_ID: this.gameDataProxy.sessionId,
             PreviewType: this.gameDataProxy.previewType
         });
+    }
+
+    private triggerBaseGameWinDisplay(): void {
+        const spinResult = this.gameDataProxy.spinEventData;
+        const baseGameWin = spinResult.baseGameResult.baseGameTotalWin;
+        
+        // 只有在有贏分時才發送事件
+        if (baseGameWin > 0) {
+            // 發送龍珠顯示贏分事件，帶上贏分參數
+            this.sendNotification(DragonUpEvent.ON_BASEGAME_WIN_DISPLAY, {
+                winAmount: baseGameWin,
+                formattedWin: this._gameDataProxy.convertCredit2Cash(baseGameWin)
+            });
+        }
     }
 }

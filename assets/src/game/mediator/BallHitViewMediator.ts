@@ -62,6 +62,7 @@ export class BallHitViewMediator extends BaseMediator<BallHitView> {
             ViewMediatorEvent.UPDATE_EMBLEM_LEVEL,
             DragonUpEvent.ON_ALL_CREDIT_COLLECT_START,
             DragonUpEvent.ON_C2_COUNT_UPDATE,
+            DragonUpEvent.ON_BASEGAME_WIN_DISPLAY,
             SceneManager.EV_ORIENTATION_VERTICAL,
             SceneManager.EV_ORIENTATION_HORIZONTAL,
             GameStateProxyEvent.ON_SCENE_BEFORE_CHANGE,
@@ -126,6 +127,9 @@ export class BallHitViewMediator extends BaseMediator<BallHitView> {
                 break;
             case ScreenEvent.ON_SPIN_DOWN:
                 this.onSpinDown();
+                break;
+            case DragonUpEvent.ON_BASEGAME_WIN_DISPLAY:
+                this.displayBaseGameWinOnBall(notification.getBody());
                 break;
         }
     }
@@ -271,11 +275,27 @@ export class BallHitViewMediator extends BaseMediator<BallHitView> {
     }
 
     private onSpinDown() {
+        // 在 BaseGame 中，spin 開始時清除龍珠上的贏分顯示
+        if (this.gameDataProxy.curScene === GameScene.Game_1) {
+            this.hideBallCredit();
+        }
+        
         if (this.gameDataProxy.gameState == StateMachineProxy.GAME4_END) {
             if (this.bCanUseSkip == false) return;
             this.bCanUseSkip = false;
             this.tempFunc();
         }
+    }
+
+    private displayBaseGameWinOnBall(data: { winAmount: number; formattedWin: string }): void {
+        // 檢查目前場景是否為 Game_1 (BaseGame)
+        if (this.gameDataProxy.curScene !== GameScene.Game_1) {
+            return;
+        }
+
+        // 在上方大龍珠顯示當局 BaseGame 贏分
+        // playType 0 表示 BaseGame 的顯示模式
+        this.view.setBallCredit(data.formattedWin, 0);
     }
 
     private _gameDataProxy: GAME_GameDataProxy;

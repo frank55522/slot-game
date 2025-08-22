@@ -236,6 +236,8 @@ export class DragonUpEvent {
     /** 目標金球最後獲得倍數結果 事件 */
     public static ON_GET_MULTIPLE_RESULT_START: string = 'onGetMultipleResultStart';
     public static ON_GET_MULTIPLE_RESULT_END: string = 'onGetMultipleResultEnd';
+    /** BaseGame 滾停後顯示贏分在龍珠上 */
+    public static ON_BASEGAME_WIN_DISPLAY: string = 'onBaseGameWinDisplay';
 }
 
 export class FreeGameEvent {
