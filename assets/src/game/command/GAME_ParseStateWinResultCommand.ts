@@ -48,6 +48,9 @@ export class GAME_ParseStateWinResultCommand extends ParseStateWinResultCommand 
                 this.getScatterWinInfo(this.gameDataProxy.spinEventData.topUpGameResult.topUpGameTotalWin)
             );
         }
+
+        // 觸發中獎連線顯示
+        this.triggerWinLineDisplay();
     }
 
     protected parseGame1Result() {
@@ -155,5 +158,54 @@ export class GAME_ParseStateWinResultCommand extends ParseStateWinResultCommand 
         }
 
         return wayWinInfo;
+    }
+
+    /**
+     * 觸發中獎連線顯示
+     */
+    private triggerWinLineDisplay() {
+        // 發送通知給 WinLineDisplay 組件顯示中獎連線
+        if (this.gameDataProxy.stateWinData.wayInfos.length > 0) {
+            // 過濾掉沒有中獎的項目 (symbolWin > 0)
+            const validWinInfos = this.gameDataProxy.stateWinData.wayInfos.filter(info => info.symbolWin > 0);
+            
+            if (validWinInfos.length > 0) {
+                // === 輸出中獎信息到 Console ===
+                console.log('=== 本局中獎連線結果 ===');
+                validWinInfos.forEach((winInfo, index) => {
+                    const symbolName = this.getSymbolNameById(winInfo.symbolId);
+                    console.log(`${symbolName} × ${winInfo.hitCount} = ${winInfo.symbolWin.toFixed(2)}`);
+                });
+                console.log(`總共 ${validWinInfos.length} 條中獎連線`);
+                console.log('========================');
+                
+                this.sendNotification('SHOW_WIN_LINES', validWinInfos);
+                console.log(`GAME_ParseStateWinResultCommand: 觸發顯示 ${validWinInfos.length} 條中獎連線`);
+            } else {
+                console.log('本局無中獎連線');
+            }
+        } else {
+            console.log('本局無任何中獎數據');
+        }
+    }
+
+    /**
+     * 根據 symbolId 獲取符號名稱
+     */
+    private getSymbolNameById(symbolId: number): string {
+        const symbolMap: { [key: number]: string } = {
+            0: 'WILD',
+            1: 'C1', // Scatter
+            2: 'M1',
+            3: 'M2', 
+            4: 'M3',
+            5: 'J',
+            6: 'Q',
+            7: 'K',
+            8: 'A',
+            9: '10',
+            10: '9'
+        };
+        return symbolMap[symbolId] || `Symbol_${symbolId}`;
     }
 }
