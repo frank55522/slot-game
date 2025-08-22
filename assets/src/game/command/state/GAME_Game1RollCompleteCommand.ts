@@ -23,6 +23,9 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
         this.sendNotification(ViewMediatorEvent.UPDATE_EMBLEM_LEVEL, emblemLevel);
         this.sentGTMEvent();
 
+        // 題目一：發送 BaseGame 滾停後的中獎連線顯示
+        this.triggerWinLineDisplay();
+        
         // 題目三：發送 BaseGame 滾停後的贏分事件
         this.triggerBaseGameWinDisplay();
 
@@ -134,6 +137,62 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
             Session_ID: this.gameDataProxy.sessionId,
             PreviewType: this.gameDataProxy.previewType
         });
+    }
+
+    /**
+     * 觸發中獎連線顯示（題目一）
+     */
+    private triggerWinLineDisplay(): void {
+        // 只在 BaseGame 和 FreeGame 場景觸發，避免在 feature selection 等場景顯示
+        if (this.gameDataProxy.curScene !== GameScene.Game_1 && this.gameDataProxy.curScene !== GameScene.Game_2) {
+            return;
+        }
+
+        if (this.gameDataProxy.stateWinData.wayInfos.length > 0) {
+            // 過濾掉沒有中獎的項目 (symbolWin > 0)
+            const validWinInfos = this.gameDataProxy.stateWinData.wayInfos.filter(info => info.symbolWin > 0);
+            
+            if (validWinInfos.length > 0) {
+                // === 輸出中獎信息到 Console ===
+                const sceneType = this.gameDataProxy.curScene === GameScene.Game_1 ? 'BaseGame' : 'FreeGame';
+                console.log(`=== ${sceneType} 滾停後中獎連線結果 ===`);
+                validWinInfos.forEach((winInfo) => {
+                    const symbolName = this.getSymbolNameById(winInfo.symbolId);
+                    console.log(`${symbolName} × ${winInfo.hitCount} = ${winInfo.symbolWin.toFixed(2)}`);
+                });
+                console.log(`總共 ${validWinInfos.length} 條中獎連線`);
+                console.log('================================');
+                
+                this.sendNotification('SHOW_WIN_LINES', validWinInfos);
+                console.log(`GAME_Game1RollCompleteCommand: 觸發顯示 ${validWinInfos.length} 條中獎連線 (${sceneType})`);
+            } else {
+                const sceneType = this.gameDataProxy.curScene === GameScene.Game_1 ? 'BaseGame' : 'FreeGame';
+                console.log(`${sceneType} 本局無中獎連線`);
+            }
+        } else {
+            const sceneType = this.gameDataProxy.curScene === GameScene.Game_1 ? 'BaseGame' : 'FreeGame';
+            console.log(`${sceneType} 本局無任何中獎數據`);
+        }
+    }
+
+    /**
+     * 根據 symbolId 獲取符號名稱
+     */
+    private getSymbolNameById(symbolId: number): string {
+        const symbolMap: { [key: number]: string } = {
+            0: 'WILD',
+            1: 'C1', // Scatter
+            2: 'M1',
+            3: 'M2', 
+            4: 'M3',
+            5: 'J',
+            6: 'Q',
+            7: 'K',
+            8: 'A',
+            9: '10',
+            10: '9'
+        };
+        return symbolMap[symbolId] || `Symbol_${symbolId}`;
     }
 
     private triggerBaseGameWinDisplay(): void {

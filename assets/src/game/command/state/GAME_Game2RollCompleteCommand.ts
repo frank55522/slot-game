@@ -29,6 +29,9 @@ export class GAME_Game2RollCompleteCommand extends WAY_Game2RollCompleteCommand 
         // 進入Roll代表可以重置preScene為當前的Scene
         this.gameDataProxy.preScene = GameScene.Game_2;
 
+        // 題目一：發送 FreeGame 滾停後的中獎連線顯示
+        this.triggerWinLineDisplay();
+
         let freeGameSpecialInfo: FreeGameSpecialInfo = this.getSpecialInfo();
         this.freeGameSpecialInfo = freeGameSpecialInfo;
 
@@ -117,5 +120,65 @@ export class GAME_Game2RollCompleteCommand extends WAY_Game2RollCompleteCommand 
             this._reelDataProxy = this.facade.retrieveProxy(ReelDataProxy.NAME) as ReelDataProxy;
         }
         return this._reelDataProxy;
+    }
+
+    /**
+     * 觸發中獎連線顯示（題目一）- FreeGame版本
+     */
+    private triggerWinLineDisplay(): void {
+        // 獲取當前 FreeGame 這一局的結果，而不是累積結果
+        const freeGameOneRoundResult = this.gameDataProxy.curRoundResult as FreeGameOneRoundResult;
+        
+        if (freeGameOneRoundResult && freeGameOneRoundResult.waysGameResult && freeGameOneRoundResult.waysGameResult.waysResult) {
+            const waysResults = freeGameOneRoundResult.waysGameResult.waysResult;
+            
+            // 過濾掉沒有中獎的項目 (symbolWin > 0)
+            const validWinInfos = waysResults
+                .filter(result => result.symbolWin > 0)
+                .map(result => ({
+                    symbolId: result.symbolID,
+                    hitCount: result.hitNumber,
+                    symbolWin: this.gameDataProxy.convertCredit2Cash(result.symbolWin),
+                    hitOdds: result.hitOdds
+                }));
+            
+            if (validWinInfos.length > 0) {
+                // === 輸出中獎信息到 Console ===
+                console.log('=== FreeGame 當局滾停後中獎連線結果 ===');
+                validWinInfos.forEach((winInfo) => {
+                    const symbolName = this.getSymbolNameById(winInfo.symbolId);
+                    console.log(`${symbolName} × ${winInfo.hitCount} = ${winInfo.symbolWin.toFixed(2)}`);
+                });
+                console.log(`總共 ${validWinInfos.length} 條中獎連線`);
+                console.log('================================');
+                
+                this.sendNotification('SHOW_WIN_LINES', validWinInfos);
+                console.log(`GAME_Game2RollCompleteCommand: 觸發顯示 ${validWinInfos.length} 條中獎連線 (FreeGame 當局)`);
+            } else {
+                console.log('FreeGame 當局無中獎連線');
+            }
+        } else {
+            console.log('FreeGame 當局無 waysGameResult 數據');
+        }
+    }
+
+    /**
+     * 根據 symbolId 獲取符號名稱
+     */
+    private getSymbolNameById(symbolId: number): string {
+        const symbolMap: { [key: number]: string } = {
+            0: 'WILD',
+            1: 'C1', // Scatter
+            2: 'M1',
+            3: 'M2', 
+            4: 'M3',
+            5: 'J',
+            6: 'Q',
+            7: 'K',
+            8: 'A',
+            9: '10',
+            10: '9'
+        };
+        return symbolMap[symbolId] || `Symbol_${symbolId}`;
     }
 }
