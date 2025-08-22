@@ -33,6 +33,9 @@ export class Game1ShowWinCommand extends StateCommand {
     }
 
     protected showView() {
+        // 播放 Win 動畫
+        this.sendNotification('PLAY_WIN_ANIMATION');
+        
         // 輪播贏分 Symbol
         if (this.gameDataProxy.stateWinData.totalAmount() > 0) {
             if (this.gameDataProxy.afterFeatureGame) {

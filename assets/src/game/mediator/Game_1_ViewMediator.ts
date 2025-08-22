@@ -21,14 +21,16 @@ export class Game_1_ViewMediator extends BaseGameViewMediator<Game_1_View> {
         SceneManager.EV_ORIENTATION_VERTICAL,
         SceneManager.EV_ORIENTATION_HORIZONTAL,
         GameStateProxyEvent.ON_SCENE_BEFORE_CHANGE,
-        ViewMediatorEvent.LEAVE
+        ViewMediatorEvent.LEAVE,
+        'PLAY_WIN_ANIMATION'
     ];
 
     protected myInterestsList: string[] = [
         SceneManager.EV_ORIENTATION_VERTICAL,
         SceneManager.EV_ORIENTATION_HORIZONTAL,
         GameStateProxyEvent.ON_SCENE_BEFORE_CHANGE,
-        ViewMediatorEvent.ENTER
+        ViewMediatorEvent.ENTER,
+        'PLAY_WIN_ANIMATION'
     ];
 
     public constructor(name?: string, component?: any) {
@@ -61,6 +63,9 @@ export class Game_1_ViewMediator extends BaseGameViewMediator<Game_1_View> {
             case GameStateProxyEvent.ON_SCENE_BEFORE_CHANGE: // 讓Mediator進入畫面前必須要重整監聽事件
                 self.view.changeOrientation(this.gameDataProxy.orientationEvent, this.gameDataProxy.curScene);
                 self.refreshMediatorEventList();
+                break;
+            case 'PLAY_WIN_ANIMATION':
+                self.view.playWinAnimation();
                 break;
         }
     }
