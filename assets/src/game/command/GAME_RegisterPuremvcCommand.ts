@@ -1,5 +1,7 @@
 import { StateMachineProxy } from '../../sgv3/proxy/StateMachineProxy';
 import { GAME_GameDataProxy } from '../proxy/GAME_GameDataProxy';
+import { CountdownDisplayMediator } from '../mediator/CountdownDisplayMediator';
+import { WinLineDisplayMediator } from '../mediator/WinLineDisplayMediator';
 import { GAME_InitEventCommand } from './GAME_InitEventCommand';
 import { GAME_ReelEffectCommand } from './reelEffect/GAME_ReelEffectCommand';
 
@@ -56,5 +58,13 @@ export class GAME_RegisterPuremvcCommand extends WAY_RegisterPuremvcCommand {
      *  */
     protected registerMediator(notification: puremvc.INotification): void {
         super.registerMediator(notification);
+        
+        // 註冊中獎連線顯示 Mediator（題目一）
+        this.facade.registerMediator(new WinLineDisplayMediator());
+        console.log('[GAME_RegisterPuremvcCommand] WinLineDisplayMediator 已註冊');
+        
+        // 註冊倒數顯示 Mediator（題目四）
+        this.facade.registerMediator(new CountdownDisplayMediator());
+        console.log('[GAME_RegisterPuremvcCommand] CountdownDisplayMediator 已註冊');
     }
 }

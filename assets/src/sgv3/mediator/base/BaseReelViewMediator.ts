@@ -291,7 +291,7 @@ export class BaseReelViewMediator<T extends ReelView> extends BaseMediator<T> {
             case GameScene.Game_1:
                 this.sendNotification(
                     StateMachineCommand.NAME,
-                    new StateMachineObject(StateMachineProxy.GAME1_ROLLCOMPLETE)
+                    new StateMachineObject(StateMachineProxy.GAME1_COUNTDOWN)
                 );
                 break;
             case GameScene.Game_2:

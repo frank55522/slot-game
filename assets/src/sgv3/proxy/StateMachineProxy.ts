@@ -17,6 +17,9 @@ export class StateMachineProxy extends CoreStateMachineProxy {
     public static readonly GAME1_SPIN: string = 'game1Spin';
     public static readonly GAME1_EV_SPIN: string = 'game1EvSpin';
 
+    public static readonly GAME1_COUNTDOWN: string = 'game1Countdown';
+    public static readonly GAME1_EV_COUNTDOWN: string = 'game1EvCountdown';
+
     public static readonly GAME1_ROLLCOMPLETE: string = 'game1Rollcomplete';
     public static readonly GAME1_EV_ROLLCOMPLETE: string = 'game1EvRollcomplete';
 
@@ -134,7 +137,8 @@ export class StateMachineProxy extends CoreStateMachineProxy {
             StateMachineProxy.GAME1_END
         ];
         this.stateMachineMap[StateMachineProxy.GAME1_IDLE] = [StateMachineProxy.GAME1_SPIN];
-        this.stateMachineMap[StateMachineProxy.GAME1_SPIN] = [StateMachineProxy.GAME1_ROLLCOMPLETE];
+        this.stateMachineMap[StateMachineProxy.GAME1_SPIN] = [StateMachineProxy.GAME1_COUNTDOWN];
+        this.stateMachineMap[StateMachineProxy.GAME1_COUNTDOWN] = [StateMachineProxy.GAME1_ROLLCOMPLETE];
         this.stateMachineMap[StateMachineProxy.GAME1_ROLLCOMPLETE] = [
             StateMachineProxy.GAME1_BEFORESHOW,
             StateMachineProxy.GAME1_HITSPECIAL
@@ -244,6 +248,7 @@ export class StateMachineProxy extends CoreStateMachineProxy {
         this.stateEventMap[StateMachineProxy.GAME1_INIT] = StateMachineProxy.GAME1_EV_INIT;
         this.stateEventMap[StateMachineProxy.GAME1_IDLE] = StateMachineProxy.GAME1_EV_IDLE;
         this.stateEventMap[StateMachineProxy.GAME1_SPIN] = StateMachineProxy.GAME1_EV_SPIN;
+        this.stateEventMap[StateMachineProxy.GAME1_COUNTDOWN] = StateMachineProxy.GAME1_EV_COUNTDOWN;
         this.stateEventMap[StateMachineProxy.GAME1_ROLLCOMPLETE] = StateMachineProxy.GAME1_EV_ROLLCOMPLETE;
         this.stateEventMap[StateMachineProxy.GAME1_HITSPECIAL] = StateMachineProxy.GAME1_EV_HITSPECIAL;
         this.stateEventMap[StateMachineProxy.GAME1_BEFORESHOW] = StateMachineProxy.GAME1_EV_BEFORESHOW;
