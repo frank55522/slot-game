@@ -1,6 +1,5 @@
 import { _decorator } from 'cc';
 import BaseMediator from '../../base/BaseMediator';
-import { ScreenEvent } from '../../sgv3/util/Constant';
 
 const { ccclass } = _decorator;
 
@@ -12,7 +11,6 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
 
     public constructor(component?: any) {
         super(WinLineDisplayMediator.NAME, component);
-        console.log('[WinLineDisplayMediator] constructor()');
     }
 
     protected lazyEventListener(): void {
@@ -23,8 +21,7 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
     public listNotificationInterests(): Array<any> {
         return [
             'SHOW_WIN_LINES',
-            'HIDE_WIN_LINES',
-            ScreenEvent.ON_SPIN_DOWN  // 監聽 spin 事件，點擊時立即隱藏
+            'HIDE_WIN_LINES'
         ];
     }
 
@@ -37,11 +34,6 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
             case 'HIDE_WIN_LINES':
                 this.hideHTMLWinText();
                 break;
-            case ScreenEvent.ON_SPIN_DOWN:
-                // 玩家點擊 spin 時立即隱藏中獎顯示，避免持續出現
-                console.log('[WinLineDisplayMediator] 收到 SPIN_DOWN 事件，立即隱藏中獎顯示');
-                this.hideHTMLWinText();
-                break;
         }
     }
 
@@ -50,8 +42,6 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
      */
     private showHTMLWinText(winData: any[]) {
         if (!winData || winData.length === 0) return;
-        
-        console.log(`[WinLineDisplayMediator] 顯示HTML覆蓋層中獎文字，共 ${winData.length} 條`);
         
         // 清除現有的覆蓋層
         this.hideHTMLWinText();
@@ -140,8 +130,6 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
             }
         }, 10);
         
-        console.log(`[WinLineDisplayMediator] HTML覆蓋層已創建並播放持續動畫: ${winTexts.join(', ')}`);
-        
         // 3秒後自動隱藏（帶淡出動畫）
         setTimeout(() => {
             this.hideHTMLWinTextWithAnimation();
@@ -153,8 +141,6 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
      */
     private hideHTMLWinTextWithAnimation() {
         if (this.htmlOverlay && this.htmlOverlay.parentNode) {
-            console.log('[WinLineDisplayMediator] 隱藏HTML覆蓋層（帶動畫）');
-            
             // 停止持續動畫，開始淡出
             this.htmlOverlay.style.animation = 'none';
             this.htmlOverlay.style.transition = 'all 0.5s ease-out';
@@ -176,7 +162,6 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
      */
     private hideHTMLWinText() {
         if (this.htmlOverlay && this.htmlOverlay.parentNode) {
-            console.log('[WinLineDisplayMediator] 隱藏HTML覆蓋層');
             // 停止所有動畫
             this.htmlOverlay.style.animation = 'none';
             this.htmlOverlay.parentNode.removeChild(this.htmlOverlay);

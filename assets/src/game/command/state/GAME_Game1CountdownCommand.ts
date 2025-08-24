@@ -10,8 +10,6 @@ export class GAME_Game1CountdownCommand extends Game1CountdownCommand {
     public execute(notification: puremvc.INotification): void {
         this.notifyWebControl();
         
-        console.log('[GAME_Game1CountdownCommand] 開始倒數五秒狀態');
-        
         // 觸發HTML覆蓋層顯示倒數
         this.sendNotification('SHOW_COUNTDOWN_DISPLAY');
         
@@ -54,13 +52,10 @@ export class GAME_Game1CountdownCommand extends Game1CountdownCommand {
     }
 
     private updateCountdownDisplay(remainingTime: number): void {
-        console.log(`[GAME_Game1CountdownCommand] 倒數顯示: ${remainingTime}秒`);
         this.sendNotification('UPDATE_COUNTDOWN_DISPLAY', remainingTime);
     }
 
     private finishCountdown(): void {
-        console.log('[GAME_Game1CountdownCommand] 倒數完成，隱藏顯示並進入ROLLCOMPLETE狀態');
-        
         // 清理計時器
         GlobalTimer.getInstance().removeTimer(this.TIMER_KEY);
         

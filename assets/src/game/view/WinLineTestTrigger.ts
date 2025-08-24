@@ -14,8 +14,6 @@ export class WinLineTestTrigger extends Component {
     }
 
     private initialize() {
-        console.log('WinLineTestTrigger: 開始初始化...');
-        
         // 註冊中獎連線顯示Mediator
         this.registerWinLineMediator();
         
@@ -23,8 +21,6 @@ export class WinLineTestTrigger extends Component {
         if (typeof window !== 'undefined') {
             (window as any).testWinLineDisplay = this.testWinLineDisplay.bind(this);
             (window as any).hideWinLineDisplay = this.hideWinLineDisplay.bind(this);
-            console.log('WinLineTestTrigger: 測試函數已暴露');
-            console.log('可用命令: testWinLineDisplay(), hideWinLineDisplay()');
         }
     }
 
@@ -35,8 +31,6 @@ export class WinLineTestTrigger extends Component {
         const facade = puremvc.Facade.getInstance();
         const mediator = new WinLineDisplayMediator();
         facade.registerMediator(mediator);
-        
-        console.log('WinLineTestTrigger: WinLineDisplayMediator 已註冊');
     }
 
     /**
@@ -61,7 +55,6 @@ export class WinLineTestTrigger extends Component {
             }
         ];
 
-        console.log('WinLineTestTrigger: 發送測試通知');
         const facade = puremvc.Facade.getInstance();
         facade.sendNotification('SHOW_WIN_LINES', testWinData);
     }
@@ -70,7 +63,6 @@ export class WinLineTestTrigger extends Component {
      * 隱藏中獎連線顯示
      */
     public hideWinLineDisplay() {
-        console.log('WinLineTestTrigger: 發送隱藏通知');
         const facade = puremvc.Facade.getInstance();
         facade.sendNotification('HIDE_WIN_LINES');
     }

@@ -14,8 +14,6 @@ export class CountdownTestTrigger extends Component {
     }
 
     private initialize() {
-        console.log('[CountdownTestTrigger] 開始初始化...');
-        
         // 註冊倒數顯示Mediator
         this.registerCountdownMediator();
         
@@ -23,8 +21,6 @@ export class CountdownTestTrigger extends Component {
         if (typeof window !== 'undefined') {
             (window as any).testCountdownDisplay = this.testCountdownDisplay.bind(this);
             (window as any).hideCountdownDisplay = this.hideCountdownDisplay.bind(this);
-            console.log('[CountdownTestTrigger] 測試函數已暴露');
-            console.log('可用命令: testCountdownDisplay(), hideCountdownDisplay()');
         }
     }
 
@@ -35,15 +31,12 @@ export class CountdownTestTrigger extends Component {
         const facade = puremvc.Facade.getInstance();
         const mediator = new CountdownDisplayMediator();
         facade.registerMediator(mediator);
-        
-        console.log('[CountdownTestTrigger] CountdownDisplayMediator 已註冊');
     }
 
     /**
      * 測試倒數顯示
      */
     public testCountdownDisplay() {
-        console.log('[CountdownTestTrigger] 發送倒數測試通知');
         const facade = puremvc.Facade.getInstance();
         
         // 模擬倒數流程
@@ -66,7 +59,6 @@ export class CountdownTestTrigger extends Component {
      * 隱藏倒數顯示
      */
     public hideCountdownDisplay() {
-        console.log('[CountdownTestTrigger] 發送隱藏倒數通知');
         const facade = puremvc.Facade.getInstance();
         facade.sendNotification('HIDE_COUNTDOWN_DISPLAY');
     }

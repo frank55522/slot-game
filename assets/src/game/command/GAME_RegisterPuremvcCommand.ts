@@ -61,10 +61,8 @@ export class GAME_RegisterPuremvcCommand extends WAY_RegisterPuremvcCommand {
         
         // 註冊中獎連線顯示 Mediator（題目一）
         this.facade.registerMediator(new WinLineDisplayMediator());
-        console.log('[GAME_RegisterPuremvcCommand] WinLineDisplayMediator 已註冊');
         
         // 註冊倒數顯示 Mediator（題目四）
         this.facade.registerMediator(new CountdownDisplayMediator());
-        console.log('[GAME_RegisterPuremvcCommand] CountdownDisplayMediator 已註冊');
     }
 }

@@ -12,7 +12,6 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
 
     constructor() {
         super(CountdownDisplayMediator.NAME);
-        console.log('[CountdownDisplayMediator] 初始化');
     }
 
     protected lazyEventListener(): void {
@@ -30,7 +29,6 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
 
     public handleNotification(notification: puremvc.INotification): void {
         const notificationName = notification.getName();
-        console.log(`[CountdownDisplayMediator] 收到通知: ${notificationName}`);
         
         switch (notificationName) {
             case 'SHOW_COUNTDOWN_DISPLAY':
@@ -49,8 +47,6 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
     }
 
     private showCountdownDisplay(): void {
-        console.log('[CountdownDisplayMediator] 顯示倒數覆蓋層');
-        
         // 確保樣式已注入
         this.injectCountdownCSS();
         
@@ -92,8 +88,6 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
         `;
         document.head.appendChild(style);
         this.isStyleInjected = true;
-        
-        console.log('[CountdownDisplayMediator] 倒數樣式已注入');
     }
 
     private createCountdownOverlay(): void {
@@ -126,16 +120,13 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
         this.htmlOverlay.innerHTML = this.generateCountdownHTML(5);
         
         document.body.appendChild(this.htmlOverlay);
-        console.log('[CountdownDisplayMediator] 倒數覆蓋層已創建');
     }
 
     private updateCountdownDisplay(remainingTime: number): void {
         if (!this.htmlOverlay) {
-            console.warn('[CountdownDisplayMediator] 覆蓋層不存在，無法更新顯示');
             return;
         }
 
-        console.log(`[CountdownDisplayMediator] 更新倒數顯示: ${remainingTime}秒`);
         this.htmlOverlay.innerHTML = this.generateCountdownHTML(remainingTime);
         
         // 為數字添加彈跳動畫
@@ -174,10 +165,7 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
     }
 
     private hideCountdownDisplay(): void {
-        console.log('[CountdownDisplayMediator] 隱藏倒數覆蓋層');
-        
         if (!this.htmlOverlay) {
-            console.warn('[CountdownDisplayMediator] 覆蓋層不存在，無法隱藏');
             return;
         }
 
@@ -194,7 +182,6 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
         if (this.htmlOverlay && this.htmlOverlay.parentNode) {
             this.htmlOverlay.parentNode.removeChild(this.htmlOverlay);
             this.htmlOverlay = null;
-            console.log('[CountdownDisplayMediator] 倒數覆蓋層已移除');
         }
     }
 
@@ -209,7 +196,5 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
             style.parentNode.removeChild(style);
             this.isStyleInjected = false;
         }
-        
-        console.log('[CountdownDisplayMediator] Mediator已清理');
     }
 }

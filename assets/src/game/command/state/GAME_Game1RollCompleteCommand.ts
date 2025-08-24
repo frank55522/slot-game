@@ -155,25 +155,8 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
             const validWinInfos = wayData.wayInfos.filter((info: any) => info.symbolWin > 0);
             
             if (validWinInfos.length > 0) {
-                // === 輸出中獎信息到 Console ===
-                const sceneType = this.gameDataProxy.curScene === GameScene.Game_1 ? 'BaseGame' : 'FreeGame';
-                console.log(`=== ${sceneType} 滾停後中獎連線結果 ===`);
-                validWinInfos.forEach((winInfo: any) => {
-                    const symbolName = this.getSymbolNameById(winInfo.symbolId);
-                    console.log(`${symbolName} × ${winInfo.hitCount} = ${winInfo.symbolWin.toFixed(2)}`);
-                });
-                console.log(`總共 ${validWinInfos.length} 條中獎連線`);
-                console.log('================================');
-                
                 this.sendNotification('SHOW_WIN_LINES', validWinInfos);
-                console.log(`GAME_Game1RollCompleteCommand: 觸發顯示 ${validWinInfos.length} 條中獎連線 (${sceneType})`);
-            } else {
-                const sceneType = this.gameDataProxy.curScene === GameScene.Game_1 ? 'BaseGame' : 'FreeGame';
-                console.log(`${sceneType} 本局無中獎連線`);
             }
-        } else {
-            const sceneType = this.gameDataProxy.curScene === GameScene.Game_1 ? 'BaseGame' : 'FreeGame';
-            console.log(`${sceneType} 本局無任何中獎數據`);
         }
     }
 
