@@ -35,28 +35,30 @@
 
 **關鍵程式碼段**:
 ```typescript
-// GAME_ParseStateWinResultCommand.ts - 數據攔截與處理
+// GAME_Game1RollCompleteCommand.ts - 滾停後觸發中獎顯示
 private triggerWinLineDisplay(): void {
-    const validWinInfos = this.gameDataProxy.stateWinData.wayInfos
-        .filter(info => info.symbolWin > 0);
-    
-    if (validWinInfos.length > 0) {
-        // === Console輸出實現 ===
-        console.log('=== 本局中獎連線結果 ===');
-        validWinInfos.forEach((winInfo) => {
-            const symbolName = this.getSymbolNameById(winInfo.symbolId);
-            console.log(`${symbolName} × ${winInfo.hitCount} = ${winInfo.symbolWin.toFixed(2)}`);
-        });
+    // 只在 BaseGame 和 FreeGame 場景觸發
+    if (this.gameDataProxy.curScene !== GameScene.Game_1 && 
+        this.gameDataProxy.curScene !== GameScene.Game_2) {
+        return;
+    }
+
+    const wayData = this.gameDataProxy.stateWinData as any;
+    if (wayData.wayInfos && wayData.wayInfos.length > 0) {
+        // 過濾掉沒有中獎的項目 (symbolWin > 0)
+        const validWinInfos = wayData.wayInfos.filter((info: any) => info.symbolWin > 0);
         
-        // 發送PureMVC通知觸發UI顯示
-        this.sendNotification('SHOW_WIN_LINES', validWinInfos);
+        if (validWinInfos.length > 0) {
+            this.sendNotification('SHOW_WIN_LINES', validWinInfos);
+        }
     }
 }
 ```
 
 **實作重點**:
-- 在封包解析命令中攔截中獎數據
-- 使用符號映射表轉換ID為可讀名稱
+- 在BaseGame滾停完成後觸發（GAME_Game1RollCompleteCommand.ts 第27行調用）
+- 從 `stateWinData.wayInfos` 取得中獎數據
+- 場景檢查確保只在適當場景顯示
 - 透過PureMVC事件系統觸發UI顯示
 
 ### 第三頁：創新解決方案
@@ -188,9 +190,18 @@ BaseGame滾停 → 計算贏分 → 發送事件 → 龍珠顯示 → 下次spin
 ### 第三頁：核心實作代碼
 **標題**: 關鍵程式碼實現
 
+**事件定義**:
+```typescript
+// Constant.ts 第240行 - 事件常數定義
+export class DragonUpEvent {
+    /** BaseGame 滾停後顯示贏分在龍珠上 */
+    public static ON_BASEGAME_WIN_DISPLAY: string = 'onBaseGameWinDisplay';
+}
+```
+
 **事件觸發邏輯**:
 ```typescript
-// GAME_Game1RollCompleteCommand.ts - 滾停後觸發
+// GAME_Game1RollCompleteCommand.ts 第183-195行
 private triggerBaseGameWinDisplay(): void {
     const spinResult = this.gameDataProxy.spinEventData;
     const baseGameWin = spinResult.baseGameResult.baseGameTotalWin;
@@ -207,14 +218,26 @@ private triggerBaseGameWinDisplay(): void {
 
 **龍珠顯示處理**:
 ```typescript
-// BallHitViewMediator.ts - 事件接收與處理
+// BallHitViewMediator.ts 第290-299行 - 事件接收與處理
 private displayBaseGameWinOnBall(data: { winAmount: number; formattedWin: string }): void {
     // 檢查目前場景是否為 Game_1 (BaseGame)
     if (this.gameDataProxy.curScene !== GameScene.Game_1) {
         return;
     }
-    // 在上方大龍珠顯示當局 BaseGame 贏分
+    // 在上方大龍珠顯示當局 BaseGame 贏分，playType 0 表示 BaseGame 模式
     this.view.setBallCredit(data.formattedWin, 0);
+}
+```
+
+**事件註冊**:
+```typescript
+// BallHitViewMediator.ts 第49-72行 - 監聽事件列表
+public listNotificationInterests(): Array<any> {
+    return [
+        // ...其他事件
+        DragonUpEvent.ON_BASEGAME_WIN_DISPLAY, // 第65行
+        // ...
+    ];
 }
 ```
 
@@ -272,21 +295,28 @@ this.stateMachineMap[StateMachineProxy.GAME1_COUNTDOWN] = [StateMachineProxy.GAM
 ### 第三頁：倒數控制邏輯
 **標題**: 精確計時器管理
 
-**倒數實現**:
+**倒數Command實現**:
 ```typescript
-// GAME_Game1CountdownCommand.ts - 倒數邏輯控制
+// GAME_Game1CountdownCommand.ts 第20-50行
 private startCountdownProcess(): void {
-    this.currentCountdown = 5;
+    this.currentCountdown = this.COUNTDOWN_DURATION; // 5秒
+    
+    // 立即顯示初始倒數（5秒）
     this.updateCountdownDisplay(this.currentCountdown);
+    
+    // 開始計時器，每秒執行一次
     this.scheduleCountdownTimer();
 }
 
 private onCountdownTick(): void {
     this.currentCountdown--;
+    
     if (this.currentCountdown > 0) {
+        // 更新顯示並繼續倒數
         this.updateCountdownDisplay(this.currentCountdown);
         this.scheduleCountdownTimer();
     } else {
+        // 倒數完成，進入ROLLCOMPLETE
         this.finishCountdown();
     }
 }
@@ -294,12 +324,27 @@ private onCountdownTick(): void {
 
 **計時器安全管理**:
 ```typescript
-// 避免計時器ID衝突的關鍵技術
+// GAME_Game1CountdownCommand.ts 第30-38行 - 避免計時器ID衝突
 private scheduleCountdownTimer(): void {
-    GlobalTimer.getInstance().removeTimer(this.TIMER_KEY); // 先清除
+    // 確保先清除任何現有的計時器
+    GlobalTimer.getInstance().removeTimer(this.TIMER_KEY);
+    
+    // 註冊新的計時器
     GlobalTimer.getInstance().registerTimer(this.TIMER_KEY, 1, () => {
         this.onCountdownTick();
     }, this).start();
+}
+```
+
+**HTML顯示控制**:
+```typescript
+// CountdownDisplayMediator.ts 第22-47行 - 事件監聽
+public listNotificationInterests(): Array<any> {
+    return [
+        'SHOW_COUNTDOWN_DISPLAY',
+        'UPDATE_COUNTDOWN_DISPLAY', 
+        'HIDE_COUNTDOWN_DISPLAY'
+    ];
 }
 ```
 
@@ -402,11 +447,29 @@ private scheduleCountdownTimer(): void {
 
 ---
 
-## 📝 附錄：完整程式碼參考
+## 📝 實際程式碼文件位置
 
-所有核心程式碼都可以在專案的實作文件中找到：
-- `練習題實現報告.md` - 詳細的實作過程和程式碼
-- `練習題技術實作指南.md` - 技術實作的完整指導
-- `老虎機練習題總結報告.md` - 專案總結和學習價值分析
+### 各題核心實作文件
+**題目一：中獎連線顯示**
+- `assets/src/game/command/state/GAME_Game1RollCompleteCommand.ts` (第145-161行)
+- `assets/src/game/mediator/WinLineDisplayMediator.ts` (完整實作)
 
-這份PPT指南提供了完整的報告結構和關鍵內容，可以根據實際需要調整詳細程度和重點方向。
+**題目二：Show Win 動畫**  
+- `assets/src/game/mediator/WinLineDisplayMediator.ts` (CSS動畫第62-87行)
+
+**題目三：BaseGame 贏分顯示**
+- `assets/src/sgv3/util/Constant.ts` (第240行事件定義)
+- `assets/src/game/command/state/GAME_Game1RollCompleteCommand.ts` (第183-195行)
+- `assets/src/game/mediator/BallHitViewMediator.ts` (第290-299行)
+
+**題目四：倒數五秒狀態**
+- `assets/src/game/command/state/GAME_Game1CountdownCommand.ts` (完整實作)
+- `assets/src/game/mediator/CountdownDisplayMediator.ts` (完整實作)
+
+### 參考文件
+雖然程式碼有所調整，但這些文件有助於理解整體概念：
+- `練習題實現報告.md` - 實作思路和解決方案
+- `練習題技術實作指南.md` - 技術架構解析  
+- `老虎機練習題總結報告.md` - 學習價值總結
+
+**注意**：PPT中的程式碼都已更新為實際文件中的真實代碼，包含正確的行號和檔案路徑。
