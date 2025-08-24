@@ -6,7 +6,8 @@
       "mcp__ide__getDiagnostics",
       "Bash(npm run build:*)",
       "Bash(npm run:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

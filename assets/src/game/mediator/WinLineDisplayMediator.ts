@@ -17,7 +17,7 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
         // WinLineDisplayMediator 主要透過 HTML DOM 操作，不需要監聽 Cocos Creator 組件事件
         // 保留此方法以滿足 BaseMediator 抽象方法要求
     }
-
+ㄑ
     public listNotificationInterests(): Array<any> {
         return [
             'SHOW_WIN_LINES',
