@@ -11,7 +11,7 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
     protected timerKey = 'game1RollComplete';
     private isHitGrand: boolean = false;
 
-    public execute(notification: puremvc.INotification): void {
+    public execute(_notification: puremvc.INotification): void {
         this.gameDataProxy.isSpinning = false;
         // 滾停，將 Web Spin 按鈕改變圖示
         this.webBridgeProxy.setElementStyle('spinBtn', 'stop', 'remove');
@@ -148,15 +148,17 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
             return;
         }
 
-        if (this.gameDataProxy.stateWinData.wayInfos.length > 0) {
+        // 類型斷言確保正確的類型推導
+        const wayData = this.gameDataProxy.stateWinData as any;
+        if (wayData.wayInfos && wayData.wayInfos.length > 0) {
             // 過濾掉沒有中獎的項目 (symbolWin > 0)
-            const validWinInfos = this.gameDataProxy.stateWinData.wayInfos.filter(info => info.symbolWin > 0);
+            const validWinInfos = wayData.wayInfos.filter((info: any) => info.symbolWin > 0);
             
             if (validWinInfos.length > 0) {
                 // === 輸出中獎信息到 Console ===
                 const sceneType = this.gameDataProxy.curScene === GameScene.Game_1 ? 'BaseGame' : 'FreeGame';
                 console.log(`=== ${sceneType} 滾停後中獎連線結果 ===`);
-                validWinInfos.forEach((winInfo) => {
+                validWinInfos.forEach((winInfo: any) => {
                     const symbolName = this.getSymbolNameById(winInfo.symbolId);
                     console.log(`${symbolName} × ${winInfo.hitCount} = ${winInfo.symbolWin.toFixed(2)}`);
                 });

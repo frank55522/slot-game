@@ -48,8 +48,6 @@ export class GAME_ParseStateWinResultCommand extends ParseStateWinResultCommand 
                 this.getScatterWinInfo(this.gameDataProxy.spinEventData.topUpGameResult.topUpGameTotalWin)
             );
         }
-
-        // 注意：中獎連線顯示已移到 GAME_Game1RollCompleteCommand 中，在滾停後才顯示
     }
 
     protected parseGame1Result() {

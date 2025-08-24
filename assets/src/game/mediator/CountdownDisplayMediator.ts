@@ -15,6 +15,11 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
         console.log('[CountdownDisplayMediator] 初始化');
     }
 
+    protected lazyEventListener(): void {
+        // CountdownDisplayMediator 主要透過 HTML DOM 操作，不需要監聽 Cocos Creator 組件事件
+        // 保留此方法以滿足 BaseMediator 抽象方法要求
+    }
+
     public listNotificationInterests(): Array<any> {
         return [
             'SHOW_COUNTDOWN_DISPLAY',

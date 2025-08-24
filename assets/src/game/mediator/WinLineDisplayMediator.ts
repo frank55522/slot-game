@@ -15,6 +15,11 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
         console.log('[WinLineDisplayMediator] constructor()');
     }
 
+    protected lazyEventListener(): void {
+        // WinLineDisplayMediator 主要透過 HTML DOM 操作，不需要監聽 Cocos Creator 組件事件
+        // 保留此方法以滿足 BaseMediator 抽象方法要求
+    }
+
     public listNotificationInterests(): Array<any> {
         return [
             'SHOW_WIN_LINES',
@@ -52,7 +57,7 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
         this.hideHTMLWinText();
         
         // 組合顯示文字
-        const winTexts = winData.map((win, index) => {
+        const winTexts = winData.map((win, _index) => {
             const symbolName = this.getSymbolNameById(win.symbolId);
             return `${symbolName} × ${win.hitCount} = ${win.symbolWin.toFixed(2)}`;
         });
