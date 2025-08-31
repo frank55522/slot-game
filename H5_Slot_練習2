@@ -1,0 +1,6 @@
+1.	調整特色遊戲結算流程，在免費遊戲或昇龍賞結算分數時，若贏分小於
+Big Win，則跳過結算流程，不顯示結算面板直接回到BaseGame。
+
+2.	在BaseGame滾停後若有觸發特色遊戲 (盤面上有6顆或以上的分數球)，則在收集球分之前卡住流程，讓盤面上的分數球做任意表演 (簡單的縮放動畫或播放任意粒子特效都可以)，表演完後再繼續後續收集球分的流程，並請說明卡住流程及分數球表演的作法。
+
+3.	練習使用TimeLineToolScene場景來測試動畫播放，自己製作一個prefab，prefab包含兩個子物件，一個用來播放序列圖動畫，一個用來播放Spine動畫，透過TimeLineToolScene來播放這個物件上的兩組動畫。(圖一)把身上有TimeLineTool.ts的物件放在TimelineManager下方並執行場景。(圖二)TimeLineToolScene是唯讀的場景，無法存檔，把物件放到TimelineManager後執行Current scene即可。
