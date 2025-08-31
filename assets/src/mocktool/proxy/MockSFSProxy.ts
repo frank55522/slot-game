@@ -175,6 +175,7 @@ export class MockSFSProxy extends GameProxy implements TaskHandlerListener {
         this.caseManager.handleTask(requestName, this);
     }
 
+
     public resetSettlePlayState(): void {}
 
     public getSettlePlayState(): boolean {

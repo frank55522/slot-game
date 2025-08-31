@@ -49,6 +49,8 @@ export class GameData extends CoreGameData {
     public curAutoTimes: number = 0;
     /** 自動模式 - 最大次數 */
     public maxAutoTimes: number = 0;
+    /** 倒數計時是否啟用 */
+    public isCountdownEnabled: boolean = true;
     /** BaseGame的TurboMode狀態 */
     public curTurboMode: boolean = false;
     /** BaseGame的TurboMode狀態*/
@@ -123,4 +125,6 @@ export class GameData extends CoreGameData {
     public curSpeedMode: string = SpeedMode.STATUS_NORMAL;
     /** 是否準備進入 Mini game */
     public isReadyEnterMiniGame: boolean = false;
+    /** 臨時Big Win門檻測試 */
+    public tempBigWinThreshold: number = 15;
 }

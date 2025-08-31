@@ -4,6 +4,7 @@ import { FreeGameEvent, StateWinEvent } from '../../../sgv3/util/Constant';
 import { GlobalTimer } from '../../../sgv3/util/GlobalTimer';
 import { GameScene } from '../../../sgv3/vo/data/GameScene';
 import { GAME_GameDataProxy } from '../../proxy/GAME_GameDataProxy';
+import { MathUtil } from '../../../core/utils/MathUtil';
 const { ccclass } = _decorator;
 @ccclass('GAME_Game2EndCommand')
 export class GAME_Game2EndCommand extends Game2EndCommand {
@@ -30,8 +31,31 @@ export class GAME_Game2EndCommand extends Game2EndCommand {
         let runningTime = sceneData.wonCreditBoardRunningTime + sceneData.wonCreditBoardEndTime;
         let totalWin: number = this.gameDataProxy.convertCredit2Cash(this.gameDataProxy.spinEventData.playerTotalWin);
 
+        // 檢查是否達到Big Win標準，未達到則跳過結算面板
+        if (!this.isBigWinOrAbove(totalWin)) {
+            // 贏分小於Big Win，直接跳過結算面板回到BaseGame
+            this.delayCloseBoard();
+            return;
+        }
+
+        // 達到Big Win以上，正常顯示結算面板
         this.sendNotification(StateWinEvent.SHOW_LAST_CREDIT_BOARD, totalWin);
         GlobalTimer.getInstance().registerTimer(this.timerKey, runningTime, this.delayCloseBoard, this).start();
+    }
+
+    /**
+     * 判定贏分是否達到Big Win標準
+     * @param totalWin 總贏分金額
+     * @returns true: 達到Big Win以上, false: 未達到Big Win
+     */
+    private isBigWinOrAbove(totalWin: number): boolean {
+        const curTotalBet = this.gameDataProxy.curTotalBet;
+        const winMultiple = MathUtil.div(totalWin, curTotalBet);
+        
+        // Big Win門檻：使用臨時設定或預設15倍
+        const bigWinThreshold = this.gameDataProxy.tempBigWinThreshold;
+        
+        return winMultiple >= bigWinThreshold;
     }
 
     // ======================== Get Set ========================

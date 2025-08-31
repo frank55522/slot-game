@@ -1,6 +1,7 @@
 import { Game1CountdownCommand } from '../../../sgv3/command/state/Game1CountdownCommand';
 import { StateMachineProxy } from '../../../sgv3/proxy/StateMachineProxy';
 import { GlobalTimer } from '../../../sgv3/util/GlobalTimer';
+import { GAME_GameDataProxy } from '../../proxy/GAME_GameDataProxy';
 
 export class GAME_Game1CountdownCommand extends Game1CountdownCommand {
     private readonly COUNTDOWN_DURATION = 5; // 5秒倒數
@@ -9,6 +10,13 @@ export class GAME_Game1CountdownCommand extends Game1CountdownCommand {
 
     public execute(notification: puremvc.INotification): void {
         this.notifyWebControl();
+        
+        // 檢查是否啟用倒數計時
+        if (!this.gameDataProxy.isCountdownEnabled) {
+            // 倒數被關閉，直接進入下一個狀態
+            this.changeState(StateMachineProxy.GAME1_ROLLCOMPLETE);
+            return;
+        }
         
         // 觸發HTML覆蓋層顯示倒數
         this.sendNotification('SHOW_COUNTDOWN_DISPLAY');
@@ -64,5 +72,14 @@ export class GAME_Game1CountdownCommand extends Game1CountdownCommand {
         
         // 進入下一個狀態
         this.changeState(StateMachineProxy.GAME1_ROLLCOMPLETE);
+    }
+
+    // ======================== Get Set ========================
+    protected _gameDataProxy: GAME_GameDataProxy;
+    protected get gameDataProxy(): GAME_GameDataProxy {
+        if (!this._gameDataProxy) {
+            this._gameDataProxy = this.facade.retrieveProxy(GAME_GameDataProxy.NAME) as GAME_GameDataProxy;
+        }
+        return this._gameDataProxy;
     }
 }

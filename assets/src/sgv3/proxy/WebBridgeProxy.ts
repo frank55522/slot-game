@@ -44,6 +44,10 @@ export class WebBridgeProxy extends CoreWebBridgeProxy {
         window['checkControlPanelBtnEnable'] = () => this.checkControlPanelBtnEnable();
         window['onAutoPlay'] = () => this.onAutoPlay();
 
+        // Console指令
+        window['toggleCountdown'] = (_enable?: boolean) => this.toggleCountdown(_enable);
+        window['setBigWinThreshold'] = (_threshold: number) => this.setBigWinThreshold(_threshold);
+
         // if (DEBUG || window['serviceProvider'] === ServiceProvider.OTHERS) {
         //     // 無container包 直接spin
         //     window['onWebSpinBtnClick'] = () => this.onSpin();
@@ -203,6 +207,40 @@ export class WebBridgeProxy extends CoreWebBridgeProxy {
     public setFeature(result: number): void {
         this.gameDataProxy.featureMode = result;
         this.sendNotification(ScreenEvent.ON_SPIN_DOWN);
+    }
+
+
+    /**
+     * 開關Game1倒數計時
+     * 使用方式：
+     * - toggleCountdown(true)  - 開啟倒數
+     * - toggleCountdown(false) - 關閉倒數
+     * - toggleCountdown()      - 切換狀態
+     */
+    public toggleCountdown(enable?: boolean): void {
+        // 如果沒有傳參數，則切換當前狀態
+        if (enable === undefined) {
+            enable = !this.gameDataProxy.isCountdownEnabled;
+        }
+
+        this.gameDataProxy.isCountdownEnabled = enable;
+        const status = enable ? '✅ 開啟' : '❌ 關閉';
+        console.log(`🕒 Game1倒數計時已 ${status}`);
+        console.log('💡 提示：此設定會在下次spin時生效');
+    }
+
+    /**
+     * 設定Big Win門檻測試
+     * 使用方式：setBigWinThreshold(20) - 設定為20倍
+     */
+    public setBigWinThreshold(threshold: number): void {
+        if (threshold && threshold > 0) {
+            this.gameDataProxy.tempBigWinThreshold = threshold;
+            console.log(`🎯 Big Win門檻已設定為 ${threshold}x`);
+            console.log('💡 提示：此設定會在下次feature game結算時生效');
+        } else {
+            console.log('❌ 請輸入大於0的數值');
+        }
     }
 
     // ===========================

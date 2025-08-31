@@ -301,6 +301,22 @@ export class GameDataProxy extends CoreGameDataProxy {
         this._gameData.maxAutoTimes = _val;
     }
 
+    /** 倒數計時是否啟用 */
+    public get isCountdownEnabled(): boolean {
+        return this._gameData.isCountdownEnabled;
+    }
+    public set isCountdownEnabled(_val: boolean) {
+        this._gameData.isCountdownEnabled = _val;
+    }
+
+    /** 臨時Big Win門檻測試 */
+    public get tempBigWinThreshold(): number {
+        return this._gameData.tempBigWinThreshold;
+    }
+    public set tempBigWinThreshold(_val: number) {
+        this._gameData.tempBigWinThreshold = _val;
+    }
+
     /** 紀錄BaseGame的TurboMode狀態 */
     public get curTurboMode(): boolean {
         return this._gameData.curTurboMode;
