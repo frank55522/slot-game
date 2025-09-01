@@ -27,6 +27,7 @@ export class SymbolFXStateRegister extends UIViewStateRegister {
             case SymbolId.C1:
                 this.registerState(new SymbolFXShowState(this.content));
                 this.registerState(new SymbolFXBaseCreditUpdateState(this.content));
+                this.registerState(new SymbolFXBeforeCollectState(this.content));
                 break;
             case SymbolId.C2:
                 this.registerState(new SymbolFXShowState(this.content));
@@ -223,6 +224,56 @@ export class SymbolFXGetTargertCreditResultState extends UIViewStateBase {
         this.content.labelText.string = String();
         if (this.content.animation) {
             this.content.animation.play('PlayLastCollect');
+        }
+        this.onEffectFinished();
+    }
+}
+
+export class SymbolFXBeforeCollectState extends UIViewStateBase {
+    //// Internal Member
+    private content: SymbolFXContent | null = null;
+    private tempTween: Tween<Node> | null = null;
+    ////
+
+    //// API
+    public effectId: number = SymbolPerformType.BEFORE_COLLECT;
+
+    constructor(content: SymbolFXContent) {
+        super();
+        this.content = content;
+    }
+    ////
+
+    //// Hook
+    onPlay() {
+        // 設定分數球標籤文字
+        if (this.content.labelText) {
+            this.content.labelText.font = this.content.isSpecialFont
+                ? this.content.specialFont
+                : this.content.baseFont;
+            this.content.labelText.string = this.content.isOmniChannel
+                ? String(this.content.credit)
+                : String(BalanceUtil.formatBalanceWithExpressingUnits(this.content.credit));
+        }
+
+        // 播放縮放動畫表演 (簡單的強調動畫)
+        const originalScale = this.content.node.scale.clone();
+        const targetScale = new Vec3(originalScale.x * 1.2, originalScale.y * 1.2, originalScale.z);
+        
+        this.tempTween = tween(this.content.node)
+            .to(0.3, { scale: targetScale })
+            .to(0.3, { scale: originalScale })
+            .to(0.3, { scale: targetScale })
+            .to(0.3, { scale: originalScale })
+            .call(() => {
+                this.onEffectFinished();
+            })
+            .start();
+    }
+
+    onSkip() {
+        if (this.tempTween) {
+            this.tempTween.stop();
         }
         this.onEffectFinished();
     }

@@ -173,6 +173,8 @@ export class ViewMediatorEvent {
     /** 顯示 Feature selection */
     public static readonly SHOW_FEATURE_SELECTION: string = 'showFeatureSelection';
 
+    /** 練習2: 收集分數球前的表演 */
+    public static readonly BEFORE_COLLECT_BALL: string = 'beforeCollectBall';
     public static readonly PREPARE_COLLECT_BALL: string = 'prepareCollectBall';
     public static readonly ON_CREDIT_BALL_COLLECT_START: string = 'onCreditBallCollectStart';
     public static readonly COLLECT_CREDIT_BALL: string = 'collectCreditBall';

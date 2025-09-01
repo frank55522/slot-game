@@ -30,7 +30,8 @@ export enum SymbolPerformType {
     SHOW_RESPIN = 11, //升龍賞 RESPIN 表演
     SHOW_BASE_CREDIT_COLLECT = 12, //升龍賞 C1 球 收集 表演
     SHOW_TARGERT_CREDIT_COLLECT = 13, //升龍賞 C2 球 收集 表演
-    SHOW_TARGERT_CREDIT_RESULT = 14 //升龍賞 C2 球 最終結果 表演
+    SHOW_TARGERT_CREDIT_RESULT = 14, //升龍賞 C2 球 最終結果 表演
+    BEFORE_COLLECT = 15 //練習2: 收集分數球前的表演
 }
 
 export enum SymbolId {

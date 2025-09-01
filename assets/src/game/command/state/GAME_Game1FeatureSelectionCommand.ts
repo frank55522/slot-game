@@ -11,8 +11,22 @@ import { BalanceUtil } from 'src/sgv3/util/BalanceUtil';
 export class GAME_Game1FeatureSelectionCommand extends Game1FeatureSelectionCommand {
     public execute(notification: puremvc.INotification): void {
         this.gameDataProxy.hasSelectionResponse = false;
-        this.sendNotification(ViewMediatorEvent.PREPARE_COLLECT_BALL);
-        this.endGame1FeatureSelection();
+        
+        // 練習2: 檢查是否需要播放分數球表演
+        let ballCount = this.gameDataProxy.spinEventData.baseGameResult.extendInfoForbaseGameResult.ballCount;
+        if (ballCount >= 6) {
+            // 先觸發分數球表演
+            this.sendNotification(ViewMediatorEvent.BEFORE_COLLECT_BALL);
+            // 延遲發送PREPARE_COLLECT_BALL (表演時間約1.2秒)
+            setTimeout(() => {
+                this.sendNotification(ViewMediatorEvent.PREPARE_COLLECT_BALL);
+                this.endGame1FeatureSelection();
+            }, 1200);
+        } else {
+            // 原有邏輯：直接發送PREPARE_COLLECT_BALL
+            this.sendNotification(ViewMediatorEvent.PREPARE_COLLECT_BALL);
+            this.endGame1FeatureSelection();
+        }
     }
 
     private endGame1FeatureSelection() {

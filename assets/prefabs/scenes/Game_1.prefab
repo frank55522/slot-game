@@ -400,6 +400,7 @@
       "__uuid__": "ff08993d-cfc3-4856-ad6b-20b1df2644a6",
       "__expectedType__": "cc.Prefab"
     },
+    "winAnimationTimeline": null,
     "_id": ""
   },
   {
@@ -441,7 +442,6 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "baJRBG5iNDeoSbn5+y1/rB",
-    "targetOverrides": []
+    "fileId": "baJRBG5iNDeoSbn5+y1/rB"
   }
 ]

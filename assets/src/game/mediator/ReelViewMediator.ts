@@ -10,11 +10,12 @@ import {
     ReelEvent,
     ScreenEvent,
     SpinResultProxyEvent,
+    ViewMediatorEvent,
     WinEvent
 } from '../../sgv3/util/Constant';
 import { SingleReelContent } from '../../sgv3/view/reel/single-reel/SingleReelContent';
 import { GameScene, GameSceneOption } from '../../sgv3/vo/data/GameScene';
-import { ReelType, SymbolId } from '../../sgv3/vo/enum/Reel';
+import { ReelType, SymbolId, SymbolPerformType } from '../../sgv3/vo/enum/Reel';
 import { SpecialHitInfo } from '../../sgv3/vo/enum/SpecialHitInfo';
 import { SymbolInfo } from '../../sgv3/vo/info/SymbolInfo';
 import { FreeGameOneRoundResult } from '../../sgv3/vo/result/FreeGameOneRoundResult';
@@ -82,7 +83,8 @@ export class ReelViewMediator extends BaseReelViewMediator<GAME_ReelView> {
                     ReelEvent.SHOW_LAST_SYMBOL_OF_REELS,
                     ReelEvent.ON_HIDE_C1_AND_C2,
                     UIEvent.UPDATE_TOTAL_BET,
-                    AfterReconnectionCommand.NAME
+                    AfterReconnectionCommand.NAME,
+                    ViewMediatorEvent.BEFORE_COLLECT_BALL
                 ].concat(super.baseListNotificationInterests())
             )
         );
@@ -162,6 +164,9 @@ export class ReelViewMediator extends BaseReelViewMediator<GAME_ReelView> {
             case UIEvent.UPDATE_TOTAL_BET:
             case AfterReconnectionCommand.NAME:
                 this.changeWheelData();
+                break;
+            case ViewMediatorEvent.BEFORE_COLLECT_BALL:
+                this.playBeforeCollectBallAnimation();
                 break;
         }
     }
@@ -693,6 +698,31 @@ export class ReelViewMediator extends BaseReelViewMediator<GAME_ReelView> {
                 (result) => result.hitNumber == 5
             );
             return isFiveOfKind;
+        }
+    }
+
+    /**
+     * 練習2: 播放收集分數球前的表演動畫
+     */
+    protected playBeforeCollectBallAnimation() {
+        // 獲取BaseGame結果和分數球位置信息
+        let ballHitInfo = this.gameDataProxy.spinEventData.baseGameResult.extendInfoForbaseGameResult;
+        
+        // 找出所有有分數球的位置
+        for (let x = 0; x < ballHitInfo.ballScreenLabel.length; x++) {
+            for (let y = 0; y < ballHitInfo.ballScreenLabel[x].length; y++) {
+                if (ballHitInfo.ballScreenLabel[x][y] > 0) {
+                    // 創建SymbolInfo來標識分數球位置
+                    let symbolInfo: SymbolInfo = new SymbolInfo();
+                    symbolInfo.sid = SymbolId.C1; // 分數球的Symbol ID
+                    symbolInfo.x = x;
+                    symbolInfo.y = y;
+                    
+                    // 從pool中取出SymbolFX並播放BEFORE_COLLECT動畫
+                    this.reelView.createAnimSymbol(symbolInfo);
+                    this.reelView.showBeforeCollectBallAnimation(symbolInfo, this.reelDataProxy.symbolFeature[x][y]);
+                }
+            }
         }
     }
 }

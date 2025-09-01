@@ -58,7 +58,7 @@ var servInfo = {
 };
 
 var gameData = {
-    isDemo: false,
+    isDemo: true,
     isShowGoHome: true,
     isShowPlayerReport: true,
     brandId: '1',

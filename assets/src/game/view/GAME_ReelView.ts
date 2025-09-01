@@ -328,5 +328,22 @@ export class GAME_ReelView extends ReelView {
         symbol.setColor(this.reelsList[reelIndex].singleReelContent.shaderColor);
         this.reelsList[reelIndex].singleReelContent.singleReelView!.symbolsCompare();
     }
+
+    /**
+     * 練習2: 播放收集分數球前的表演動畫
+     */
+    public showBeforeCollectBallAnimation(symbolInfo: SymbolInfo, featureInfo: SymbolPosData) {
+        const self = this;
+        let poolKey: number = symbolInfo.y * self.reelsList.length + symbolInfo.x;
+        let anim: SymbolFX = self.animManager.pool.get(poolKey);
+
+        if (anim) {
+            anim.node.setWorldPosition(self.getSymbolPosition(symbolInfo.x, symbolInfo.y));
+            anim.setInfo(symbolInfo.sid, featureInfo);
+            anim.node.active = true;
+            // 播放BEFORE_COLLECT表演動畫
+            anim.play(SymbolPerformType.BEFORE_COLLECT);
+        }
+    }
     ////
 }
