@@ -6,6 +6,7 @@ import { GlobalTimer } from '../../../sgv3/util/GlobalTimer';
 import { GameScene } from '../../../sgv3/vo/data/GameScene';
 import { GAME_GameDataProxy } from '../../proxy/GAME_GameDataProxy';
 import { MathUtil } from '../../../core/utils/MathUtil';
+import { WinType } from '../../../sgv3/vo/enum/WinType';
 
 export class GAME_4_CreditCollectResultCommand extends puremvc.MacroCommand {
     public static readonly NAME = 'GAME_4_CreditCollectResultCommand';
@@ -121,17 +122,20 @@ export class GAME_4_CreditCollectResultCommand extends puremvc.MacroCommand {
 
     /**
      * 判定贏分是否達到Big Win標準（練習2-1）
-     * @param totalWin 總贏分金額
+     * 直接使用 MultipleCalculateCommand 已經計算好的 totalWinType
+     * @param totalWin 總贏分金額 (unused - 使用已計算的 totalWinType)
      * @returns true: 達到Big Win以上, false: 未達到Big Win
      */
     private isBigWinOrAbove(totalWin: number): boolean {
-        const curTotalBet = this.gameDataProxy.curTotalBet;
-        const winMultiple = MathUtil.div(totalWin, curTotalBet);
+        // 直接使用 MultipleCalculateCommand 已經計算並設定的 totalWinType
+        // 這樣就能確保與 MultipleCalculateCommand 的邏輯完全同步
+        const winType = this.gameDataProxy.totalWinType;
         
-        // Big Win門檻：使用臨時設定或預設15倍
-        const bigWinThreshold = this.gameDataProxy.tempBigWinThreshold;
-        
-        return winMultiple >= bigWinThreshold;
+        // 判斷是否為 Big Win 以上等級
+        return winType === WinType.bigWin || 
+               winType === WinType.megaWin || 
+               winType === WinType.superWin || 
+               winType === WinType.jumboWin;
     }
 
     protected onSkip() {
