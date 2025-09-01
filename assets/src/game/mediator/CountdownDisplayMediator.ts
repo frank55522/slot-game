@@ -1,5 +1,6 @@
 import { _decorator } from 'cc';
 import BaseMediator from '../../base/BaseMediator';
+import { ScreenEvent } from '../../sgv3/util/Constant';
 
 const { ccclass } = _decorator;
 
@@ -41,8 +42,9 @@ export class CountdownDisplayMediator extends BaseMediator<any> {
                 break;
                 
             case 'HIDE_COUNTDOWN_DISPLAY':
-                this.hideCountdownDisplay();
+                this.removeCountdownOverlay(); // 直接移除，避免淡出動畫造成時序衝突
                 break;
+                
         }
     }
 

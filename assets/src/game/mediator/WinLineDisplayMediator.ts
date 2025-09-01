@@ -1,5 +1,6 @@
 import { _decorator } from 'cc';
 import BaseMediator from '../../base/BaseMediator';
+import { ScreenEvent } from '../../sgv3/util/Constant';
 
 const { ccclass } = _decorator;
 
@@ -21,7 +22,8 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
     public listNotificationInterests(): Array<any> {
         return [
             'SHOW_WIN_LINES',
-            'HIDE_WIN_LINES'
+            'HIDE_WIN_LINES',
+            ScreenEvent.ON_SPIN_DOWN
         ];
     }
 
@@ -32,6 +34,10 @@ export class WinLineDisplayMediator extends BaseMediator<any> {
                 this.showHTMLWinText(notification.getBody());
                 break;
             case 'HIDE_WIN_LINES':
+                this.hideHTMLWinText();
+                break;
+            case ScreenEvent.ON_SPIN_DOWN:
+                // 當spin開始時立即清除中獎連線顯示
                 this.hideHTMLWinText();
                 break;
         }
