@@ -8,7 +8,8 @@
       "Bash(npm run:*)",
       "Bash(node:*)",
       "Bash(find:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []
