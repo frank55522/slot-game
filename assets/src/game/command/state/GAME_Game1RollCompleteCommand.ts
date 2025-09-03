@@ -36,7 +36,7 @@ export class GAME_Game1RollCompleteCommand extends Game1RollCompleteCommand {
         let delayTime: number = 0;
         let ballCount = curRoundResult.extendInfoForbaseGameResult.ballCount;
         if (ballCount >= 6 && this.isHitGrand == false) {
-            delayTime = 2;
+            delayTime = 0;  // 移除2秒延遲，倒數完立即進入分數球表演
         } else if (ballCount > 0) {
             delayTime = 0.1;
         }

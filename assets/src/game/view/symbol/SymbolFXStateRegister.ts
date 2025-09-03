@@ -256,7 +256,7 @@ export class SymbolFXBeforeCollectState extends UIViewStateBase {
                 : String(BalanceUtil.formatBalanceWithExpressingUnits(this.content.credit));
         }
 
-        // 播放縮放動畫表演 (簡單的強調動畫)
+        // 播放縮放動畫表演
         const originalScale = this.content.node.scale.clone();
         const targetScale = new Vec3(originalScale.x * 1.2, originalScale.y * 1.2, originalScale.z);
         

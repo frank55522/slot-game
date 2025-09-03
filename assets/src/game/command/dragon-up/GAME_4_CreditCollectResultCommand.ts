@@ -102,7 +102,7 @@ export class GAME_4_CreditCollectResultCommand extends puremvc.MacroCommand {
             this.gameDataProxy.spinEventData.topUpGameResult.topUpGameTotalWin
         );
 
-        // 練習2-1: 檢查是否達到Big Win標準，未達到則跳過結算面板
+        // 檢查是否達到Big Win標準，未達到則跳過結算面板
         if (!this.isBigWinOrAbove(totalWin)) {
             // 贏分小於Big Win，直接跳過結算面板回到BaseGame
             this.delayCloseBoard();
