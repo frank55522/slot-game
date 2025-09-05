@@ -1,5 +1,5 @@
 import { _decorator } from 'cc';
-import { ScoringClipsEnum } from '../../../game/vo/enum/SoundMap';
+import { ScoringClipsEnum, BGMClipsEnum } from '../../../game/vo/enum/SoundMap';
 import { AudioManager } from '../../../audio/AudioManager';
 import { GameDataProxy } from '../../proxy/GameDataProxy';
 import { ReelDataProxy } from '../../proxy/ReelDataProxy';
@@ -80,6 +80,8 @@ export class ScoringHandleCommand extends puremvc.SimpleCommand {
                 this.timerKey_Sound,
                 delayTime,
                 () => {
+                    // 滾分開始前淡出BGM
+                    this.fadeBGMForScoring(0, 0.5);
                     this.playScoring(this.finalWinType);
                     this.playScoringVocal(this.finalWinType);
                     this.setScoringData(startAmount, targetAmount, winBoardTargetAmount);
@@ -120,6 +122,8 @@ export class ScoringHandleCommand extends puremvc.SimpleCommand {
     // 表演結束
     protected runComplete(isForceComplete: boolean) {
         this.playScoringEnd(isForceComplete);
+        // 滾分結束後恢復BGM
+        this.fadeBGMForScoring(1, 1.0);
         this.sendNotification(WinEvent.RUN_WIN_LABEL_COMPLETE, {
             targetAmount: this.finalWinAmount,
             winBoardTargetAmount: this.finalWinBoardAmount,
@@ -257,5 +261,21 @@ export class ScoringHandleCommand extends puremvc.SimpleCommand {
             this._gameDataProxy = this.facade.retrieveProxy(GameDataProxy.NAME) as GameDataProxy;
         }
         return this._gameDataProxy;
+    }
+
+    /**
+     * 根據遊戲場景淡入淡出BGM
+     * @param volume 目標音量 (0-1)
+     * @param duration 淡入淡出時間
+     */
+    private fadeBGMForScoring(volume: number, duration: number) {
+        switch (this.gameDataProxy.curScene) {
+            case GameScene.Game_1:
+                AudioManager.Instance.fade(BGMClipsEnum.BGM_Base, volume, duration);
+                break;
+            case GameScene.Game_2:
+                AudioManager.Instance.fade(BGMClipsEnum.BGM_FreeGame, volume, duration);
+                break;
+        }
     }
 }
