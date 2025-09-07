@@ -184,6 +184,14 @@ export class GAME_ReelView extends ReelView {
                 self.setAnimSymbolPlay(symbolInfo, featureInfo);
                 self.setDefaultSymbolPlay(symbolInfo, SymbolPerformType.HIDE);
                 break;
+            case SymbolId.M1:
+            case SymbolId.M2:
+            case SymbolId.M3:
+            case SymbolId.M4:
+            case SymbolId.M5:
+            case SymbolId.M6:
+                self.setDefaultSymbolPlay(symbolInfo, SymbolPerformType.SHOW_M_PULSE);
+                break;
             default:
                 self.setDefaultSymbolPlay(symbolInfo, SymbolPerformType.SHOW_LOOP_WIN);
                 break;
