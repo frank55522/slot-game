@@ -11,7 +11,8 @@ export const languages = {
     autospin: 'สปินอัตโนมัติ',
     autospinnumber: 'จำนวนสปินอัตโนมัติ',
     betoption: 'ตัวเลือกเดิมพัน',
-    autoStart: 'เริ่มอัตโนมัติ:'
+    autoStart: 'เริ่มอัตโนมัติ:',
+    testText: 'ข้อความทดสอบ',
 };
 
 if (!win.languages) {

@@ -15,7 +15,8 @@ export const languages = {
     sound: '声音',
     close: '关闭',
     totalBetInBetMenu: '总投注：',
-    confirm: '确定'
+    confirm: '确定',
+    testText: '測試文字',
 };
 
 if (!win.languages) {

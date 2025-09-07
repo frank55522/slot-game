@@ -17,6 +17,7 @@ export const languages = {
     betTitleInBetMenu: 'BET',
     totalBetInBetMenu: 'TOTAL BET : ',
     confirm: 'CONFIRM',
+    testText: 'Test Text',
 };
 
 if (!win.languages) {
