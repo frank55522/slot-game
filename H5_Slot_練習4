@@ -1,0 +1,5 @@
+1.	新增一個在preload(baseLoad)載入名為gameLogo的Bundle資料夾，資料夾裡面有一個名為GameLogo的prefab，prefab上掛有一個sprite，依照語系顯示遊戲Logo，需在進入遊戲一開始時顯示圖片，點擊圖片或3秒後關閉圖片才可以遊玩遊戲。
+
+2.	新增一個Symbol動畫，動畫表現需要放大2倍在縮小回1倍，動畫表演時Symbol階層須高於其他未表演Symbol。
+
+hint:bundle讀取可參考LoadingViewMediator.ts的setLoadList()，資料夾設定可參考preload資料夾.
