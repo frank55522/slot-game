@@ -41,7 +41,7 @@ var initTicket = {
 };
 
 var userInfo = {
-    lang: 'en',
+    lang: 'zh',
     uid: 'sptest1987',
     currency: dollarSign.toUpperCase(),
     currencySystemName: dollarSign.toUpperCase(),

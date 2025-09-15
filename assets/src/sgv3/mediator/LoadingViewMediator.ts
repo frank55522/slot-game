@@ -1,5 +1,6 @@
 import * as i18n from 'i18n/LanguageData';
-import { Component, director, instantiate, Prefab, Node, _decorator, sp, Asset } from 'cc';
+import { Component, director, instantiate, Prefab, Node, _decorator, sp, Asset, input, Input } from 'cc';
+import { LayerManager } from '../../core/utils/LayerManager';
 import { AudioManager } from '../../audio/AudioManager';
 import BaseMediator from '../../base/BaseMediator';
 import { NetworkProxy } from '../../core/proxy/NetworkProxy';
@@ -159,6 +160,15 @@ export default class LoadingViewMediator extends BaseMediator<LoadingView> {
                 onTaskFinished: (prefab: Prefab) => {
                     this.instantiateToSceneManager(prefab);
                     if (this.isUserInfoInit) AudioManager.Instance.setLoadList();
+                }
+            },
+            {
+                status: LoadStatus.NONE,
+                info: { bundleName: 'gameLogo', assetName: 'GameLogo' },
+                onTaskFinished: (prefab: Prefab) => {
+                    // 載入完成但不立即顯示，存儲 prefab 供稍後使用
+                    this.gameLogoPrefab = prefab;
+                    Logger.i('🎨 GameLogo prefab loaded and ready');
                 }
             },
             {
@@ -327,6 +337,26 @@ export default class LoadingViewMediator extends BaseMediator<LoadingView> {
 
     /** 因為一開始的loading畫面，如果沒有delay會看到loading bar未載完就進入遊戲的狀況 */
     protected delayEnterLobby(): void {
+        // 在進入遊戲前顯示 GameLogo
+        if (this.gameLogoPrefab && !this.gameLogoNode) {
+            this.showGameLogo(this.gameLogoPrefab);
+            return; // Logo 關閉後會自動呼叫 enterGameAfterLogo()
+        }
+
+        // 檢查是否可以進入遊戲（GameLogo 必須已關閉）
+        if (!this.canEnterGame) {
+            // GameLogo 還在顯示，等待 Logo 關閉時會自動呼叫 enterGameAfterLogo()
+            Logger.i('🚪 Waiting for GameLogo to close before entering game');
+            return;
+        }
+
+        this.enterGameAfterLogo();
+    }
+
+    /**
+     * GameLogo 關閉後進入遊戲
+     */
+    private enterGameAfterLogo(): void {
         GTMUtil.setGTMEvent('EnterGame', {
             Member_ID: this.gameDataProxy.userId,
             Game_ID: this.gameDataProxy.machineType,
@@ -513,6 +543,83 @@ export default class LoadingViewMediator extends BaseMediator<LoadingView> {
         this.pendEventInfo = notification.getBody() as PendingEvent;
         this.view.showPendingLoading();
         this.loadAssetByTaskList(this.extraLoadList);
+    }
+
+    // ======================== GameLogo Methods ========================
+    private gameLogoPrefab: Prefab | null = null;
+    private gameLogoNode: Node | null = null;
+    private logoCloseTimer: number = 0;
+    private canEnterGame: boolean = false;
+
+    /**
+     * 顯示遊戲 Logo
+     */
+    private showGameLogo(prefab: Prefab) {
+        this.gameLogoNode = instantiate(prefab);
+        director.getScene().addChild(this.gameLogoNode);
+
+        // 使用專案的圖層管理系統，設定為最高層級（999）
+        const dummyComponent = this.gameLogoNode.addComponent(Component);
+        LayerManager.setLayer(dummyComponent, 999);
+
+        // 監聽任何輸入操作
+        this.startInputListening();
+
+        // 設定 3 秒自動關閉
+        this.logoCloseTimer = window.setTimeout(() => {
+            this.closeGameLogo();
+        }, 3000);
+
+        Logger.i('🎨 GameLogo displayed with renderOrder: 999, any input will close');
+    }
+
+    /**
+     * 開始監聽輸入事件
+     */
+    private startInputListening() {
+        // 監聽滑鼠點擊
+        input.on(Input.EventType.MOUSE_DOWN, this.closeGameLogo, this);
+
+        // 監聽觸控
+        input.on(Input.EventType.TOUCH_START, this.closeGameLogo, this);
+    }
+
+    /**
+     * 停止監聽輸入事件
+     */
+    private stopInputListening() {
+        input.off(Input.EventType.MOUSE_DOWN, this.closeGameLogo, this);
+        input.off(Input.EventType.TOUCH_START, this.closeGameLogo, this);
+    }
+
+    /**
+     * 關閉遊戲 Logo
+     */
+    private closeGameLogo() {
+        if (this.gameLogoNode) {
+            // 清除計時器
+            if (this.logoCloseTimer) {
+                clearTimeout(this.logoCloseTimer);
+                this.logoCloseTimer = 0;
+            }
+
+            // 停止監聽輸入事件
+            this.stopInputListening();
+
+            // 移除節點
+            this.gameLogoNode.destroy();
+            this.gameLogoNode = null;
+
+            // 設定可以進入遊戲
+            this.canEnterGame = true;
+
+            Logger.i('🎨 GameLogo closed, can enter game now');
+
+            // 如果載入完成且等待進入遊戲，現在就進入
+            if (this.isInitData) {
+                this.enterGameAfterLogo();
+            }
+        }
     }
 
     // ======================== Get Set ========================
