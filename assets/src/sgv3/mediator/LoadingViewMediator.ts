@@ -168,7 +168,6 @@ export default class LoadingViewMediator extends BaseMediator<LoadingView> {
                 onTaskFinished: (prefab: Prefab) => {
                     // 載入完成但不立即顯示，存儲 prefab 供稍後使用
                     this.gameLogoPrefab = prefab;
-                    Logger.i('🎨 GameLogo prefab loaded and ready');
                 }
             },
             {
@@ -558,7 +557,6 @@ export default class LoadingViewMediator extends BaseMediator<LoadingView> {
         this.gameLogoNode = instantiate(prefab);
         director.getScene().addChild(this.gameLogoNode);
 
-        // 使用專案的圖層管理系統，設定為最高層級（999）
         const dummyComponent = this.gameLogoNode.addComponent(Component);
         LayerManager.setLayer(dummyComponent, 999);
 
@@ -569,8 +567,6 @@ export default class LoadingViewMediator extends BaseMediator<LoadingView> {
         this.logoCloseTimer = window.setTimeout(() => {
             this.closeGameLogo();
         }, 3000);
-
-        Logger.i('🎨 GameLogo displayed with renderOrder: 999, any input will close');
     }
 
     /**
