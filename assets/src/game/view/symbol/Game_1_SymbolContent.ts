@@ -3,6 +3,7 @@ import { PoolManager } from '../../../sgv3/PoolManager';
 import { SymbolContentBase } from '../../../sgv3/view/reel/symbol/SymbolContentBase';
 import { ParticleContentTool } from 'ParticleContentTool';
 import { SymbolPartType } from 'src/sgv3/vo/enum/Reel';
+import { TimelineTool } from 'TimelineTool';
 const { ccclass, property } = _decorator;
 
 @ccclass('Game_1_SymbolContent')
@@ -15,6 +16,8 @@ export class Game_1_SymbolContent extends SymbolContentBase {
     public specialFont: Font | null = null;
     @property({ type: Prefab, visible: true })
     public particlePrefab: Prefab | null = null;
+    @property({ type: TimelineTool, visible: true })
+    public timelineTool: TimelineTool | null = null;
 
     public credit: number = 0;
     public creditDisplay: string = '';

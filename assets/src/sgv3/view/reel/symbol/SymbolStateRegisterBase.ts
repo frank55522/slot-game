@@ -21,7 +21,6 @@ export class SymbolStateRegisterBase extends UIViewStateRegister {
         this.registerState(new SymbolLoopWinState(this.symbolContent));
         this.registerState(new SymbolRollCycledState());
         this.registerState(new SymbolShowState(this.symbolContent));
-        this.registerState(new SymbolMPulseState(this.symbolContent));
     }
 }
 
@@ -195,62 +194,3 @@ export class SymbolShowState extends UIViewStateBase {
     ////
 }
 
-export class SymbolMPulseState extends UIViewStateBase {
-    //// Internal Member
-    private symbolContent: SymbolContentBase | null = null;
-    ////
-
-    //// API
-    public effectId: number = SymbolPerformType.SHOW_M_PULSE;
-    ////
-
-    //// Hook
-    constructor(content: SymbolContentBase) {
-        super();
-        this.symbolContent = content;
-    }
-
-    onPlay() {
-        if (this.symbolContent.tween == null) {
-            // 脈衝動畫效果
-            this.symbolContent.tween = tween(this.symbolContent.mainSprite.node)
-                .to(0.2, { 
-                    scale: new Vec3(1.15, 1.15, 1) 
-                })
-                .to(0.2, { 
-                    scale: new Vec3(1, 1, 1) 
-                })
-                .to(0.2, { 
-                    scale: new Vec3(1.15, 1.15, 1) 
-                })
-                .to(0.2, { 
-                    scale: new Vec3(1, 1, 1) 
-                })
-                .call(() => {
-                    this.onEffectFinished();
-                    this.symbolContent.tween = null;
-                })
-                .union();
-        }
-        this.symbolContent.tween.start();
-    }
-
-    onStop() {
-        if (this.symbolContent.tween) {
-            this.symbolContent.tween.stop();
-            this.symbolContent.tween = null;
-            this.symbolContent.mainSprite.node.scale = new Vec3(1, 1, 1);
-        }
-        this.onEffectFinished(true);
-    }
-
-    onSkip() {
-        if (this.symbolContent.tween) {
-            this.symbolContent.tween.stop();
-            this.symbolContent.mainSprite.node.scale = new Vec3(1, 1, 1);
-            this.symbolContent.tween = null;
-        }
-        this.onEffectFinished(true);
-    }
-    ////
-}

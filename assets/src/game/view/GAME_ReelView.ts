@@ -190,8 +190,6 @@ export class GAME_ReelView extends ReelView {
             case SymbolId.M4:
             case SymbolId.M5:
             case SymbolId.M6:
-                self.setDefaultSymbolPlay(symbolInfo, SymbolPerformType.SHOW_M_PULSE);
-                break;
             default:
                 self.setDefaultSymbolPlay(symbolInfo, SymbolPerformType.SHOW_LOOP_WIN);
                 break;
